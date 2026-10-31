@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldRoof" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#FFDE7A" />
+      <stop offset="50%" stop-color="#F5C542" />
+      <stop offset="100%" stop-color="#D49B24" />
+    </linearGradient>
+    <linearGradient id="goldStem" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE58F" />
+      <stop offset="50%" stop-color="#E5B842" />
+      <stop offset="100%" stop-color="#B8861B" />
+    </linearGradient>
+  </defs>
+  <!-- Background Rich Burgundy -->
+  <rect width="200" height="200" fill="#7D001C" />
+  
+  <!-- Pediment Roof Triangle -->
+  <polygon points="18,60 100,26 182,60" fill="url(#goldRoof)" />
+  
+  <!-- Capital Bars -->
+  <rect x="60" y="76" width="80" height="5" rx="2.5" fill="url(#goldStem)" />
+  <rect x="60" y="86" width="80" height="5" rx="2.5" fill="url(#goldStem)" />
+  
+  <!-- Fluted Pillars (5 vertical columns) -->
+  <rect x="77" y="99" width="5" height="74" rx="2.5" fill="url(#goldStem)" />
+  <rect x="87.5" y="99" width="5" height="74" rx="2.5" fill="url(#goldStem)" />
+  <rect x="97.5" y="99" width="5" height="74" rx="2.5" fill="url(#goldStem)" />
+  <rect x="107.5" y="99" width="5" height="74" rx="2.5" fill="url(#goldStem)" />
+  <rect x="118" y="99" width="5" height="74" rx="2.5" fill="url(#goldStem)" />
+  
+  <!-- Circular Cradling Arc -->
+  <path d="M 38 78 A 68 68 0 1 0 162 78" stroke="url(#goldStem)" stroke-width="4.5" fill="none" stroke-linecap="round" />
+</svg>

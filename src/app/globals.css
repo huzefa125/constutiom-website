@@ -1,0 +1,516 @@
+@import url("https://fonts.googleapis.com/css2?family=Phudu:wght@400;500;600;700;800;900&family=Urbanist:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
+@import "tailwindcss";
+
+:root {
+  --background: #FAF9F6;
+  --foreground: #242424;
+  --card: #FFFFFF;
+  --card-foreground: #242424;
+  --popover: #FAF9F6;
+  --popover-foreground: #242424;
+  --primary: #800020;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F4F1EA;
+  --secondary-foreground: #242424;
+  --muted: #F4F1EA;
+  --muted-foreground: #777777;
+  --accent: #FFD700;
+  --accent-foreground: #800020;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #E9E5DF;
+  --input: #E9E5DF;
+  --ring: #800020;
+  --radius: 0.375rem;
+
+  --burgundy: #800020;
+  --burgundy-dark: #630018;
+  --gold: #FFD700;
+  --charcoal: #242424;
+  --warm-bg: #FAF9F6;
+  --warm-border: #E9E5DF;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-burgundy: #800020;
+  --color-burgundy-dark: #630018;
+  --color-gold: #FFD700;
+  --color-charcoal: #242424;
+  --color-warm-bg: #FAF9F6;
+  --color-warm-border: #E9E5DF;
+
+  --font-serif: var(--font-serif);
+  --font-sans: var(--font-sans);
+}
+
+.font-serif {
+  font-family: var(--font-serif), Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.font-sans {
+  font-family: var(--font-sans), Inter, system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Inter, system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: #800020;
+  color: #FFD700;
+}
+
+/* Smooth Architectural Entrance Animations */
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes heroSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroBuildingEnter {
+  from {
+    opacity: 0;
+    transform: translateY(45px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes heroTextEnter {
+  from {
+    opacity: 0;
+    transform: translateY(70px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gentleFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-hero-fade {
+  animation: heroFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-hero-slide-1 {
+  animation: heroSlideUp 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+.animate-hero-slide-2 {
+  animation: heroSlideUp 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+.animate-hero-building {
+  animation: heroBuildingEnter 1.3s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+.animate-hero-text {
+  animation: heroTextEnter 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+}
+
+.animate-hero-card {
+  animation: heroSlideUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
+}
+
+.animate-float-subtle {
+  animation: gentleFloat 6s ease-in-out infinite;
+}
+
+/* ========================================================
+   Exact Optik Webflow Hero System
+   ======================================================== */
+.optik-hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  padding-top: 140px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 12px;
+  position: relative;
+  background-color: #F7C290;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 991px) {
+  .optik-hero {
+    height: auto;
+    min-height: 100vh;
+    padding-top: 110px;
+    padding-bottom: 16px;
+  }
+}
+
+.optik-container {
+  width: 100%;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 10;
+  flex: 1 1 0%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.optik-hero-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex: 1 1 0%;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.optik-hero-middle-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+  position: relative;
+  z-index: 10;
+}
+
+.optik-hero-text {
+  max-width: 240px;
+  font-family: 'Urbanist', var(--font-urbanist), -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 20px;
+  line-height: 145%;
+  font-weight: 500;
+  letter-spacing: 0px;
+  color: rgba(0, 0, 0, 0.82);
+  margin: 0;
+}
+
+.optik-hero-btn-wrap {
+  position: relative;
+  z-index: 2;
+}
+
+.optik-theme-button-wrap {
+  display: inline-flex;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.optik-btn-link-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  background-color: #000000;
+  color: #FCC995;
+  border-radius: 10px;
+  padding: 13px 22px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.optik-btn-link-wrap:hover {
+  background-color: #111111;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.optik-btn-text-wrap-02 {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+.optik-btn-text-box {
+  display: flex;
+  flex-direction: column;
+  height: 20px;
+  overflow: hidden;
+}
+
+.optik-button-text {
+  font-family: 'Phudu', var(--font-phudu), sans-serif;
+  color: #FCC995;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: block;
+}
+
+.optik-btn-link-wrap:hover .optik-button-text {
+  transform: translateY(-20px);
+}
+
+.optik-btn-arrow-box {
+  display: flex;
+  flex-direction: column;
+  width: 28px;
+  height: 28px;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: #FCC995;
+}
+
+.optik-arrow-icon {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: block;
+  flex-shrink: 0;
+}
+
+.optik-btn-link-wrap:hover .optik-arrow-icon {
+  transform: translateY(-28px);
+}
+
+.optik-hero-title-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin-top: auto;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  position: relative;
+  z-index: 10;
+}
+
+.optik-hero-title {
+  font-family: 'Phudu', var(--font-phudu), sans-serif;
+  font-size: clamp(68px, 13.5vw, 195px);
+  line-height: 85%;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  z-index: 10;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+}
+
+.optik-hero-img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 1150px;
+  object-fit: cover;
+  object-position: right bottom;
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@media (max-width: 1200px) {
+  .optik-hero-img {
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 767px) {
+  .optik-hero-img {
+    position: relative;
+    max-width: 100%;
+    height: 380px;
+    margin-top: 20px;
+  }
+}
+
+.optik-hero-overlay {
+  display: none;
+}
+
+/* ========================================================
+   Exact Optik Header Navigation System
+   ======================================================== */
+.optik-header-section {
+  z-index: 100;
+  background-color: transparent;
+  padding: 24px 20px 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.optik-header-container {
+  width: 100%;
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.optik-header-wrap {
+  position: relative;
+  z-index: 10;
+}
+
+.optik-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.optik-header-left {
+  display: flex;
+  align-items: center;
+}
+
+.optik-nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+@media (max-width: 991px) {
+  .optik-nav-menu {
+    display: none;
+  }
+}
+
+.optik-navigation {
+  font-family: 'Urbanist', var(--font-urbanist), -apple-system, BlinkMacSystemFont, sans-serif;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 18px;
+  line-height: 145%;
+  font-weight: 500;
+  letter-spacing: 0px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.optik-navigation:hover {
+  color: #800020;
+}
+
+.optik-header-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+@media (max-width: 767px) {
+  .optik-header-right {
+    display: none;
+  }
+}
+
+.optik-call-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.optik-call-icon-wrap {
+  background-color: rgba(86, 86, 86, 0.19);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.optik-call-icon-wrap._02 {
+  background-color: #ffffff;
+  margin-left: -30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.optik-call-wrap:hover .optik-call-icon-wrap {
+  background-color: #800020;
+}
+
+.optik-call-wrap:hover .optik-call-icon-wrap img {
+  filter: brightness(0) invert(1);
+}
+
+.optik-call-text-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.optik-call-text {
+  font-family: 'Urbanist', var(--font-urbanist), -apple-system, BlinkMacSystemFont, sans-serif;
+  color: rgba(20, 20, 20, 0.74);
+  font-size: 14px;
+  line-height: 100%;
+  font-weight: 500;
+}
+
+.optik-call-number {
+  font-family: 'Urbanist', var(--font-urbanist), -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #000000;
+  font-size: 16px;
+  line-height: 120%;
+  font-weight: 600;
+}
+
+
+
+
+
