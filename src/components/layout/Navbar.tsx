@@ -4,10 +4,12 @@ import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { BrandLogo } from "@/components/ui/BrandLogo";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
+import { SERVICES_DATA } from "@/data/services";
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = React.useState(false);
 
   return (
     <header className="optik-header-section">
@@ -29,9 +31,44 @@ export function Navbar() {
               <Link href="/about" className="optik-navigation">
                 About
               </Link>
-              <Link href="/services" className="optik-navigation">
-                Services
-              </Link>
+              <div className="group relative">
+                <Link href="/services" className="optik-navigation inline-flex items-center gap-1">
+                  Services
+                  <ChevronDown className="h-4 w-4 transition-transform duration-300 group-hover:rotate-180 group-focus-within:rotate-180" />
+                </Link>
+
+                {/* Dropdown */}
+                <div className="invisible absolute left-1/2 top-full z-50 w-[380px] -translate-x-1/2 translate-y-2 pt-4 opacity-0 transition-all duration-300 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                  <div className="rounded-2xl border border-black/10 bg-white p-3 shadow-[0_24px_60px_-20px_rgba(0,0,0,0.25)]">
+                    {SERVICES_DATA.map((service) => (
+                      <Link
+                        key={service.id}
+                        href={service.link}
+                        className="flex items-center gap-4 rounded-xl p-3 transition-colors hover:bg-[#f7f7f7]"
+                      >
+                        <span className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg bg-[#e9e9e9]">
+                          <Image src={service.image} alt="" fill sizes="56px" className="object-cover" />
+                        </span>
+                        <span className="flex flex-col gap-1">
+                          <span className="font-serif text-[16px] font-semibold uppercase leading-none text-black">
+                            {service.title}
+                          </span>
+                          <span className="font-[Urbanist] text-sm font-medium leading-tight text-black/55">
+                            {service.category}
+                          </span>
+                        </span>
+                      </Link>
+                    ))}
+                    <Link
+                      href="/services"
+                      className="mt-1 flex items-center justify-between rounded-xl bg-[#800020] px-4 py-3 font-serif text-[15px] font-semibold uppercase text-white transition-colors hover:bg-[#FFD700] hover:text-[#800020]"
+                    >
+                      View all services
+                      <span aria-hidden="true">→</span>
+                    </Link>
+                  </div>
+                </div>
+              </div>
               <Link href="/projects" className="optik-navigation">
                 Projects
               </Link>
@@ -101,13 +138,40 @@ export function Navbar() {
                 >
                   About
                 </Link>
-                <Link
-                  href="/services"
-                  onClick={() => setMobileOpen(false)}
-                  className="font-medium text-base text-neutral-800 hover:text-[#800020]"
-                >
-                  Services
-                </Link>
+                <div>
+                  <div className="flex items-center justify-between">
+                    <Link
+                      href="/services"
+                      onClick={() => setMobileOpen(false)}
+                      className="font-medium text-base text-neutral-800 hover:text-[#800020]"
+                    >
+                      Services
+                    </Link>
+                    <button
+                      type="button"
+                      onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                      aria-label="Toggle services list"
+                      aria-expanded={mobileServicesOpen}
+                      className="flex h-8 w-8 items-center justify-center rounded-full bg-[#f7f7f7] text-neutral-800"
+                    >
+                      <ChevronDown className={`h-4 w-4 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} />
+                    </button>
+                  </div>
+                  {mobileServicesOpen && (
+                    <div className="mt-3 flex flex-col gap-3 border-l-2 border-[#FFD700] pl-4">
+                      {SERVICES_DATA.map((service) => (
+                        <Link
+                          key={service.id}
+                          href={service.link}
+                          onClick={() => setMobileOpen(false)}
+                          className="text-sm font-medium text-neutral-600 hover:text-[#800020]"
+                        >
+                          {service.title}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
                 <Link
                   href="/projects"
                   onClick={() => setMobileOpen(false)}

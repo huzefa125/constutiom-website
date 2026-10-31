@@ -21,19 +21,7 @@ export const MAIN_NAV_ITEMS: NavItem[] = [
   },
   {
     title: "Services",
-    href: "/#services",
-    dropdown: [
-      {
-        title: "Construction Services",
-        href: "/#services",
-        description: "Sustainable CEB eco-housing, reinforced masonry and structural civil works.",
-      },
-      {
-        title: "General Contracting",
-        href: "/#services",
-        description: "Turnkey project management, site logistics, and ISO 9001/COREN supervision.",
-      },
-    ],
+    href: "/services",
   },
   {
     title: "Projects",
