@@ -4,6 +4,7 @@ import { COMPANY_DATA } from "@/data/company";
 import { SERVICES_DATA } from "@/data/services";
 import { MAIN_NAV_ITEMS } from "@/data/navigation";
 import { BrandLogo } from "@/components/ui/BrandLogo";
+import { CurrentYear } from "@/components/ui/CurrentYear";
 
 const linkClass =
   "font-serif text-[16px] font-semibold uppercase leading-none text-black transition-colors hover:text-[#800020]";
@@ -81,7 +82,7 @@ export function Footer() {
               </a>
             </div>
             <p className="pt-2 font-[Urbanist] text-base font-medium text-black/70">
-              © {new Date().getFullYear()} {COMPANY_DATA.shortName}, All Rights Reserved
+              © <CurrentYear /> {COMPANY_DATA.shortName}, All Rights Reserved
             </p>
           </div>
         </div>
