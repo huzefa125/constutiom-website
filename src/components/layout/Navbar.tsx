@@ -18,9 +18,7 @@ export function Navbar() {
           <nav className="optik-navbar" role="banner">
             {/* Left: Official Brand Logo */}
             <div className="optik-header-left">
-              <Link href="/" className="flex items-center" aria-label="Home">
-                <BrandLogo size="sm" />
-              </Link>
+              <BrandLogo size="sm" priority={true} />
             </div>
 
             {/* Center: Navigation Menu */}
