@@ -1,98 +1,100 @@
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, MapPin, Tag } from "lucide-react";
+import { ArrowUpRight, MapPin } from "lucide-react";
 import { PROJECTS_DATA } from "@/data/projects";
 
 export function Projects() {
   return (
-    <section id="projects" className="relative w-full bg-[#FAF9F6] py-24 lg:py-32 border-b border-[#E9E5DF]">
-      <div className="mx-auto max-w-7xl px-6 lg:px-12">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-          <div className="max-w-2xl space-y-4">
-            <div className="inline-flex items-center gap-2 border-l-2 border-[#800020] pl-3">
-              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#800020]">
-                OUR PORTFOLIO
-              </span>
+    <section id="projects" className="bg-[#f7f7f7] px-[10px] py-[30px] sm:px-5 lg:py-[50px]">
+      <div className="mx-auto w-full max-w-[1300px]">
+        {/* Header */}
+        <div className="mb-10 flex flex-col gap-6 lg:mb-16 lg:flex-row lg:items-end lg:justify-between">
+          <div className="flex flex-col items-start gap-4">
+            <div className="flex items-center gap-[6px]">
+              <div className="h-2 w-2 rounded-full bg-black" />
+              <div className="font-[Urbanist] text-sm font-semibold uppercase leading-[150%] tracking-[1.92px] text-black">
+                Our portfolio
+              </div>
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#242424]">
-              Selected Projects
+            <h2 className="font-serif max-w-[640px] text-[30px] uppercase leading-[0.98] text-black sm:text-[36px] lg:text-[46px] xl:text-[56px]">
+              Selected work we are <span className="text-[#800020]">proud</span> of
             </h2>
-            <p className="text-base text-[#666666] font-light">
-              A curated record of verified residential, defense infrastructure, and institutional developments engineered across Nigeria.
-            </p>
           </div>
-          <div className="hidden md:block">
-            <span className="text-xs font-medium uppercase tracking-[0.2em] text-[#777777]">
-              {PROJECTS_DATA.length} Verified Landmarks
-            </span>
+
+          <div className="flex max-w-[420px] flex-col items-start gap-5">
+            <p className="font-[Urbanist] text-lg font-medium leading-[145%] text-black/70">
+              Residential, defence and institutional developments engineered across Nigeria, built to perform for
+              decades.
+            </p>
+            <Link
+              href="/projects"
+              className="group flex items-center gap-[10px] border-b border-black pb-[2px] transition-colors hover:border-[#800020] hover:text-[#800020]"
+            >
+              <span className="font-serif text-[16px] font-semibold uppercase leading-none lg:text-[18px]">
+                View all projects
+              </span>
+              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            </Link>
           </div>
         </div>
 
-        {/* Editorial Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {PROJECTS_DATA.map((project) => (
-            <div
+        {/* Staggered two-column grid */}
+        <div className="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 lg:gap-x-10 lg:gap-y-16">
+          {PROJECTS_DATA.map((project, index) => (
+            <Link
               key={project.id}
-              className="group flex flex-col justify-between border border-[#E9E5DF] bg-white transition-all duration-300 hover:border-[#800020]/50 hover:shadow-sm"
+              href="/projects"
+              className={`group block ${index % 2 === 1 ? "md:mt-16" : ""}`}
             >
-              {/* Image Container with Consistent Aspect Ratio */}
-              <div
-                className="relative aspect-[16/10] w-full overflow-hidden bg-[#F4F1EA]"
-                style={{ position: "relative" }}
-              >
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[20px] bg-[#e9e9e9]">
                 <Image
                   src={project.image}
                   alt={project.name}
                   fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 640px"
+                  className="object-cover transition-transform duration-[900ms] ease-out group-hover:scale-105"
                 />
-                {/* Category Badge */}
-                <div className="absolute top-4 left-4 bg-[#FAF9F6]/95 backdrop-blur-sm px-3 py-1 border border-[#E9E5DF]">
-                  <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#800020]">
-                    {project.category}
+                <span className="absolute left-4 top-4 rounded-full bg-white/95 px-4 py-1.5 font-[Urbanist] text-xs font-bold uppercase tracking-[0.14em] text-[#800020]">
+                  {project.category}
+                </span>
+                <span
+                  aria-hidden="true"
+                  className="absolute right-4 top-4 flex h-12 w-12 -rotate-45 items-center justify-center rounded-full bg-[#FFD700] text-[#800020] opacity-0 transition-all duration-500 group-hover:rotate-0 group-hover:opacity-100"
+                >
+                  <ArrowUpRight className="h-5 w-5" />
+                </span>
+              </div>
+
+              <div className="mt-5 flex flex-col gap-3">
+                <div className="flex items-start justify-between gap-4">
+                  <h3 className="font-serif text-[24px] uppercase leading-[0.98] text-black transition-colors group-hover:text-[#800020] sm:text-[28px] lg:text-[32px]">
+                    {project.name}
+                  </h3>
+                  <span className="font-serif text-[24px] leading-none text-black/25 lg:text-[28px]">
+                    0{index + 1}
                   </span>
                 </div>
-              </div>
 
-              {/* Project Meta and Description */}
-              <div className="p-6 sm:p-8 space-y-4">
-                <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#E9E5DF] pb-3 text-xs text-[#777777]">
-                  <div className="flex items-center gap-1.5">
-                    <MapPin className="h-3.5 w-3.5 text-[#800020]" />
-                    <span>{project.location}</span>
-                  </div>
-                  <div className="flex items-center gap-1.5 text-[11px] font-medium text-[#800020]">
-                    <Tag className="h-3 w-3" />
-                    <span>{project.highlight}</span>
-                  </div>
+                <div className="flex flex-wrap items-center gap-x-5 gap-y-1 font-[Urbanist] text-sm font-semibold text-black/60">
+                  <span className="flex items-center gap-1.5">
+                    <MapPin className="h-4 w-4 text-[#800020]" />
+                    {project.location}
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#FFD700]" />
+                    {project.highlight}
+                  </span>
                 </div>
 
-                <h3 className="font-serif text-2xl font-normal text-[#242424] group-hover:text-[#800020] transition-colors">
-                  {project.name}
-                </h3>
-
-                <p className="text-xs sm:text-sm leading-relaxed text-[#666666]">
+                <p className="max-w-[560px] font-[Urbanist] text-base font-medium leading-[145%] text-black/65">
                   {project.description}
                 </p>
-
-                <div className="pt-2">
-                  <Link
-                    href="/#contact"
-                    className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#800020] group-hover:text-[#630018]"
-                  >
-                    <span>Request Project Specifications</span>
-                    <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
     </section>
   );
 }
-

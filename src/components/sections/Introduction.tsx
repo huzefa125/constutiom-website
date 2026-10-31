@@ -1,97 +1,81 @@
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { COMPANY_DATA } from "@/data/company";
 
 export function Introduction() {
   return (
-    <section id="about" className="relative w-full bg-[#FAF9F6] py-24 lg:py-32 border-b border-[#E9E5DF]">
-      <div className="mx-auto max-w-7xl px-6 lg:px-12">
-        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-12 lg:gap-20">
-          {/* Left Column: Heading, Description & CTA */}
-          <div className="lg:col-span-6 space-y-8">
-            <div className="inline-flex items-center gap-2 border-l-2 border-[#800020] pl-3">
-              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#800020]">
-                WHO WE ARE
-              </span>
+    <section id="about" className="bg-[#f7f7f7] px-[10px] py-[30px] sm:px-5 lg:py-[50px]">
+      <div className="mx-auto w-full max-w-[1300px]">
+        <div className="flex flex-col gap-[40px] lg:flex-row lg:items-center lg:gap-16 xl:gap-20">
+          {/* Left */}
+          <div className="flex w-full flex-col items-start justify-center gap-5 lg:w-[38%] lg:shrink-0">
+            <div className="flex items-center gap-[6px]">
+              <div className="h-2 w-2 rounded-full bg-black" />
+              <div className="font-[Urbanist] text-sm font-semibold uppercase leading-[150%] tracking-[1.92px] text-black">
+                About us
+              </div>
             </div>
 
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-[#242424] leading-[1.15]">
-              Built on Trust. <br />
-              <span className="italic font-serif text-[#800020]">Driven by Excellence.</span>
+            <h2 className="font-serif max-w-[600px] text-[30px] uppercase leading-[0.98] text-black sm:text-[36px] lg:max-w-[520px] lg:text-[46px] xl:text-[56px]">
+              Experts in sustainable <span className="whitespace-nowrap">earth-brick</span> building!
             </h2>
 
-            <div className="space-y-4 text-base leading-relaxed text-[#555555]">
-              <p>
-                <strong className="text-[#242424] font-medium">{COMPANY_DATA.name}</strong> is a foremost Nigerian engineering, infrastructure development, and property management consultancy headquartered in Abuja. We combine time-honored construction integrity with modern low-carbon building technologies.
-              </p>
-              <p>
-                Guided by the disciplined leadership of former naval executive Rear Admiral James Oladapo (Rtd) alongside COREN-certified civil engineers and Hydraform-certified building specialists, we champion sustainable Compressed Earth Brick (CEB) architecture that reduces embodied carbon while delivering superior thermal performance in tropical climates.
-              </p>
-            </div>
+            <p className="mb-3 mt-2 max-w-[411px] font-[Urbanist] text-lg font-medium leading-[145%] text-black/70">
+              {COMPANY_DATA.shortName} combines COREN-certified civil engineering with Hydraform Compressed Earth Brick
+              technology, delivering resilient, low-carbon buildings that are as functional as they are beautiful.
+            </p>
 
-            {/* Key Verified Competencies */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#800020]" />
-                <span className="text-xs font-medium text-[#242424]">
-                  Hydraform Interlocking Earth Block Systems
-                </span>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#800020]" />
-                <span className="text-xs font-medium text-[#242424]">
-                  COREN-Certified Civil & Structural Engineering
-                </span>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#800020]" />
-                <span className="text-xs font-medium text-[#242424]">
-                  ISO 9001:2008 Quality Management Auditing
-                </span>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#800020]" />
-                <span className="text-xs font-medium text-[#242424]">
-                  NEBOSH International Site Safety Compliance
-                </span>
-              </div>
-            </div>
-
-            <div className="pt-4">
-              <Link
-                href="/#contact"
-                className="group inline-flex items-center gap-3 border-b-2 border-[#800020] pb-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#800020] transition-all hover:border-[#FFD700] hover:text-[#242424]"
-              >
-                <span>Consult Our Engineering Team</span>
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </div>
+            <Link
+              href="/about"
+              className="group flex items-center gap-[10px] border-b border-black pb-[2px] transition-colors hover:border-[#800020] hover:text-[#800020]"
+            >
+              <span className="font-serif text-[16px] font-semibold uppercase leading-none lg:text-[18px]">More about us</span>
+              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+            </Link>
           </div>
 
-          {/* Right Column: Large Architectural Photograph */}
-          <div className="lg:col-span-6">
+          {/* Right */}
+          <div className="relative flex min-w-0 flex-1 flex-col items-end justify-end gap-[30px] lg:flex-row lg:items-end lg:gap-10 xl:gap-[50px]">
+            {/* Decorative ring */}
             <div
-              className="relative aspect-[4/3] sm:aspect-[5/4] w-full overflow-hidden border border-[#E9E5DF] bg-[#F4F1EA] shadow-sm"
-              style={{ position: "relative" }}
-            >
-              <Image
-                src="/images/projects/ceb-technology.png"
-                alt="Ipile Earth Synergy Compressed Earth Brick Technology"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover object-center transition-transform duration-700 hover:scale-105"
-              />
-              {/* Architectural Caption Box */}
-              <div className="absolute bottom-0 left-0 right-0 border-t border-[#E9E5DF] bg-[#FAF9F6]/95 backdrop-blur-sm p-4 sm:p-6">
-                <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#800020]">
-                  Sustainable Building Innovation
-                </span>
-                <p className="mt-1 font-serif text-sm font-medium text-[#242424]">
-                  Interlocking Compressed Earth Bricks (CEB) — Providing 40% higher thermal insulation and structural longevity.
-                </p>
+              aria-hidden="true"
+              className="absolute left-0 top-[100px] hidden aspect-square w-full max-w-[310px] rounded-full border-[64px] border-[#800020]/[0.08] lg:block"
+            />
+
+            <div className="relative flex w-full min-w-0 items-end justify-start gap-6 lg:flex-1">
+              <div className="relative hidden aspect-[182/227] w-full max-w-[182px] overflow-hidden rounded-lg lg:block">
+                <Image
+                  src="/images/gallery/navy-barracks-kuje/navy-barracks-kuje-03.jpg"
+                  alt="Compressed Earth Brick bungalow with palm, Kuje, Abuja"
+                  fill
+                  sizes="182px"
+                  className="object-cover"
+                />
               </div>
+              <div className="relative h-[300px] w-full overflow-hidden rounded-lg lg:aspect-[2/3] lg:h-auto lg:max-w-[332px]">
+                <Image
+                  src="/images/gallery/navy-barracks-kuje/navy-barracks-kuje-06.jpg"
+                  alt="Compressed Earth Brick barracks, Kuje, Abuja"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 332px"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+
+            <div className="relative grid w-full grid-cols-1 gap-[30px] lg:flex lg:w-[150px] lg:shrink-0 lg:flex-col lg:gap-12">
+              {COMPANY_DATA.stats.map((stat) => (
+                <div key={stat.label} className="flex flex-col gap-3 max-lg:items-center max-lg:rounded-lg max-lg:bg-white max-lg:px-5 max-lg:py-10 max-lg:text-center">
+                  <div className="font-serif text-[30px] font-semibold leading-[1.1] text-black sm:text-[35px] xl:text-[40px]">
+                    {stat.value}
+                  </div>
+                  <p className="max-w-none font-[Urbanist] lg:max-w-[110px] text-base font-medium leading-[131%] text-black">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -99,4 +83,3 @@ export function Introduction() {
     </section>
   );
 }
-

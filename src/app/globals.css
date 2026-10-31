@@ -61,8 +61,18 @@
   --font-sans: var(--font-sans);
 }
 
+/* Display face used for all headings (replaces the old serif) */
 .font-serif {
-  font-family: var(--font-serif), Georgia, Cambria, "Times New Roman", Times, serif;
+  font-family: var(--font-phudu), 'Phudu', sans-serif;
+}
+
+h2.font-serif,
+h3.font-serif,
+h4.font-serif {
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 0.98;
 }
 
 .font-sans {
@@ -172,7 +182,7 @@ body {
   padding-right: 20px;
   padding-bottom: 12px;
   position: relative;
-  background-color: #F7C290;
+  background-color: #f7f7f7;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -223,13 +233,13 @@ body {
 }
 
 .optik-hero-text {
-  max-width: 240px;
+  max-width: 260px;
   font-family: 'Urbanist', var(--font-urbanist), -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 20px;
   line-height: 145%;
   font-weight: 500;
-  letter-spacing: 0px;
-  color: rgba(0, 0, 0, 0.82);
+  letter-spacing: -0.01em;
+  color: rgba(0, 0, 0, 0.78);
   margin: 0;
 }
 
@@ -260,9 +270,13 @@ body {
 }
 
 .optik-btn-link-wrap:hover {
-  background-color: #111111;
+  background-color: #800020;
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 20px rgba(128, 0, 32, 0.4), 0 0 0 1px #FFD700;
+}
+
+.optik-btn-link-wrap:hover .optik-button-text {
+  color: #FFD700;
 }
 
 .optik-btn-text-wrap-02 {
@@ -331,11 +345,11 @@ body {
 }
 
 .optik-hero-title {
-  font-family: 'Phudu', var(--font-phudu), sans-serif;
-  font-size: clamp(68px, 13.5vw, 195px);
-  line-height: 85%;
+  font-family: var(--font-sans), 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(60px, 11vw, 210px);
+  line-height: 0.82;
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.05em;
   text-transform: uppercase;
   z-index: 10;
   white-space: nowrap;
@@ -343,33 +357,91 @@ body {
   padding: 0;
 }
 
-.optik-hero-img {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  max-width: 1150px;
-  object-fit: cover;
-  object-position: right bottom;
-  overflow: hidden;
-  z-index: 1;
-  pointer-events: none;
+.optik-title-ipile {
+  color: #000000;
 }
 
-@media (max-width: 1200px) {
+.optik-title-earth {
+  color: #800020;
+}
+
+.optik-hero-img {
+  position: absolute;
+  bottom: -3vw;
+  right: 0;
+  width: 52vw;
+  max-width: 1000px;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+  -webkit-mask-image:
+    linear-gradient(to right, transparent 0%, #000 6%),
+    linear-gradient(to bottom, #000 82%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to right, transparent 0%, #000 6%),
+    linear-gradient(to bottom, #000 82%, transparent 100%);
+  mask-composite: intersect;
+}
+
+@media (max-width: 991px) {
   .optik-hero-img {
-    max-width: 900px;
+    width: 66vw;
   }
 }
 
 @media (max-width: 767px) {
+  .optik-hero {
+    padding-top: 96px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .optik-hero-middle {
+    align-items: center !important;
+    text-align: center;
+    width: 100%;
+  }
+
+  .optik-hero-text {
+    max-width: 340px;
+    font-size: 20px;
+  }
+
+  .optik-hero-row {
+    align-items: center;
+  }
+
+  .optik-hero-title-wrap {
+    justify-content: center;
+    margin-top: 36px;
+  }
+
+  .optik-hero-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 25vw;
+    line-height: 0.92;
+    text-align: center;
+  }
+
+  .optik-hero-title > span {
+    display: block;
+  }
+
   .optik-hero-img {
     position: relative;
-    max-width: 100%;
-    height: 380px;
-    margin-top: 20px;
+    top: auto;
+    bottom: auto;
+    right: auto;
+    width: 100%;
+    max-width: none;
+    margin: 0 0 -4% auto;
+  }
+
+  .optik-title-earth {
+    color: #800020;
   }
 }
 
@@ -417,7 +489,9 @@ body {
 .optik-nav-menu {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 28px;
+  margin-left: 48px;
+  margin-right: auto;
 }
 
 @media (max-width: 991px) {
@@ -428,11 +502,12 @@ body {
 
 .optik-navigation {
   font-family: 'Urbanist', var(--font-urbanist), -apple-system, BlinkMacSystemFont, sans-serif;
-  color: rgba(0, 0, 0, 0.85);
-  font-size: 18px;
+  color: #1a1a1a;
+  font-size: 16px;
   line-height: 145%;
   font-weight: 500;
-  letter-spacing: 0px;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
   text-decoration: none;
   transition: color 0.2s ease;
   position: relative;
@@ -476,7 +551,9 @@ body {
 
 .optik-call-icon-wrap._02 {
   background-color: #ffffff;
-  margin-left: -30px;
+  margin-left: -14px;
+  position: relative;
+  z-index: 1;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
@@ -484,8 +561,20 @@ body {
   background-color: #800020;
 }
 
+.optik-call-wrap:hover .optik-call-icon-wrap._02 {
+  background-color: #FFD700;
+}
+
+.optik-call-wrap:hover .optik-call-number {
+  color: #800020;
+}
+
 .optik-call-wrap:hover .optik-call-icon-wrap img {
   filter: brightness(0) invert(1);
+}
+
+.optik-call-wrap:hover .optik-call-icon-wrap._02 img {
+  filter: brightness(0);
 }
 
 .optik-call-text-wrap {
@@ -503,6 +592,7 @@ body {
 }
 
 .optik-call-number {
+  transition: color 0.2s ease;
   font-family: 'Urbanist', var(--font-urbanist), -apple-system, BlinkMacSystemFont, sans-serif;
   color: #000000;
   font-size: 16px;
@@ -513,4 +603,19 @@ body {
 
 
 
+
+
+/* Services marquee (CTA) */
+.marquee-track {
+  animation: marquee 38s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
 

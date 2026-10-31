@@ -3,13 +3,15 @@ import { Hero } from "@/components/sections/Hero";
 import { Introduction } from "@/components/sections/Introduction";
 import { Services } from "@/components/sections/Services";
 import { Projects } from "@/components/sections/Projects";
-import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
+import { Showcase } from "@/components/sections/Showcase";
 import { Cta } from "@/components/sections/Cta";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export default function HomePage() {
   return (
     <div className="flex flex-col w-full">
       {/* SECTION 1: HERO */}
+      <ScrollReveal />
       <Hero />
 
       {/* SECTION 2: COMPANY INTRODUCTION */}
@@ -18,11 +20,11 @@ export default function HomePage() {
       {/* SECTION 3: SERVICES */}
       <Services />
 
-      {/* SECTION 4: FEATURED PROJECTS */}
-      <Projects />
+      {/* SECTION 4: SHOWCASE */}
+      <Showcase />
 
-      {/* SECTION 5: WHY CHOOSE US */}
-      <WhyChooseUs />
+      {/* SECTION 5: FEATURED PROJECTS */}
+      <Projects />
 
       {/* SECTION 6: CALL TO ACTION */}
       <Cta />

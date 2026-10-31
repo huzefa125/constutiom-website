@@ -29,11 +29,6 @@ export const MAIN_NAV_ITEMS: NavItem[] = [
         description: "Sustainable CEB eco-housing, reinforced masonry and structural civil works.",
       },
       {
-        title: "Property Management",
-        href: "/#services",
-        description: "Facility stewardship, asset preservation, and operational lifecycle care.",
-      },
-      {
         title: "General Contracting",
         href: "/#services",
         description: "Turnkey project management, site logistics, and ISO 9001/COREN supervision.",

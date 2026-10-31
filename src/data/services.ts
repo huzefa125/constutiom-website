@@ -23,24 +23,8 @@ export const SERVICES_DATA: ServiceItem[] = [
       "Institutional, Commercial & Residential Construction",
       "Deep Foundation & Bored Pile Engineering",
     ],
-    image: "/images/projects/ceb-construction.jpg",
+    image: "/images/gallery/navy-barracks-atimbo/navy-barracks-atimbo-10.jpg",
     link: "/services#construction",
-  },
-  {
-    id: "property-management",
-    title: "Property Management",
-    category: "Asset Lifecycle & Preservation",
-    eyebrow: "LONG-TERM STEWARDSHIP",
-    description:
-      "Comprehensive facility stewardship, preventative structural maintenance, and estate asset optimization to safeguard property longevity and deliver sustainable real estate returns.",
-    details: [
-      "Facility Infrastructure Operations & Audits",
-      "Preventative Structural & MEP Maintenance",
-      "Estate & Gated Community Oversight",
-      "Energy & Thermal Performance Upgrades",
-    ],
-    image: "/images/projects/karu-estate.jpg",
-    link: "/services#property-management",
   },
   {
     id: "general-contracting",
@@ -55,8 +39,39 @@ export const SERVICES_DATA: ServiceItem[] = [
       "NEBOSH-Standard Occupational Health & Safety",
       "Subcontractor Coordination & Material Sourcing",
     ],
-    image: "/images/projects/ceb-technology.png",
+    image: "/images/gallery/navy-school-akpabuyo/navy-school-akpabuyo-01.jpg",
     link: "/services#general-contracting",
   },
+  {
+    id: "affordable-housing",
+    title: "Affordable Housing",
+    category: "Homes For Every Class Of Society",
+    eyebrow: "BUILT FOR EVERYONE",
+    description:
+      "Suitable, affordable homes in a sustainable environment, designed around locally available resources and Compressed Earth Brick (CEB) construction that significantly reduces building cost.",
+    details: [
+      "Modern CEB Home Plans & Designs",
+      "Locally Sourced, Low-Carbon Materials",
+      "Faster Build Times, Lower Cost Per Unit",
+      "Estate & Mass-Housing Delivery",
+    ],
+    image: "/images/gallery/navy-barracks-atimbo/navy-barracks-atimbo-12.jpg",
+    link: "/services#affordable-housing",
+  },
+  {
+    id: "civil-works",
+    title: "Civil Works & Renovation",
+    category: "Repair, Maintenance & Demolition",
+    eyebrow: "RESTORE & RENEW",
+    description:
+      "Civil construction services of every description, including repair, maintenance and demolition of existing works, delivered with the same disciplined engineering standards as our new builds.",
+    details: [
+      "Structural Repair & Rehabilitation",
+      "Building Renovation & Refurbishment",
+      "Planned & Preventative Maintenance",
+      "Safe Controlled Demolition",
+    ],
+    image: "/images/gallery/other-projects/other-projects-134.jpg",
+    link: "/services#civil-works",
+  },
 ];
-

@@ -1,14 +1,8 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter, Phudu, Urbanist } from "next/font/google";
+import { Inter, Phudu, Urbanist } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-serif",
-  display: "swap",
-});
 
 const inter = Inter({
   subsets: ["latin"],
@@ -61,7 +55,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${inter.variable} ${phudu.variable} ${urbanist.variable} scroll-smooth antialiased`}
+      className={`${inter.variable} ${phudu.variable} ${urbanist.variable} scroll-smooth antialiased`}
     >
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />

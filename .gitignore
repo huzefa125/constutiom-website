@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Image library imported from the client folder (only the images actually used on the site are committed)
+/public/images/gallery/
+/src/data/gallery.json

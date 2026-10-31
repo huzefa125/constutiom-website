@@ -16,7 +16,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     location: "Kuje, Abuja, Nigeria",
     description:
       "Large-scale defense residential quarters constructed with interlocking Compressed Earth Bricks (CEB), achieving superior thermal comfort and structural resilience.",
-    image: "/images/projects/kuje-barracks.jpg",
+    image: "/images/gallery/navy-barracks-kuje/navy-barracks-kuje-05.jpg",
     highlight: "CEB Interlocking Block Technology",
   },
   {
