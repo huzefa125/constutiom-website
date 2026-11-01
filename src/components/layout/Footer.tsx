@@ -7,29 +7,32 @@ import { BrandLogo } from "@/components/ui/BrandLogo";
 import { CurrentYear } from "@/components/ui/CurrentYear";
 
 const linkClass =
-  "font-serif text-[16px] font-semibold uppercase leading-none text-black transition-colors hover:text-[#800020]";
-const headingClass = "font-serif text-[24px] font-semibold uppercase leading-none text-black";
+  "font-[Urbanist] text-[14px] sm:text-[15px] font-semibold uppercase tracking-wider text-black transition-colors hover:text-[#800020]";
+const headingClass =
+  "font-heading text-[18px] sm:text-[20px] font-bold uppercase tracking-tight text-black";
 
 export function Footer() {
   const phone = COMPANY_DATA.contact.phone;
   const email = COMPANY_DATA.contact.email;
 
   return (
-    <footer className="relative overflow-hidden bg-[#f7f7f7]">
-      <div className="mx-auto w-full max-w-[1300px] px-[10px] py-[50px] sm:px-5 lg:py-[80px]">
-        <div className="flex flex-col gap-12 lg:flex-row lg:justify-between lg:gap-8">
+    <footer className="relative overflow-hidden bg-[#F7C290] border-t border-black/10">
+      <div className="mx-auto w-full max-w-[1300px] px-5 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24">
+        <div className="flex flex-col gap-12 lg:flex-row lg:justify-between lg:gap-8 items-start">
           {/* Left: link columns */}
-          <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-4 lg:gap-x-16">
-            <div className="flex flex-col gap-5">
+          <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-4 lg:gap-x-14 w-full max-w-[700px]">
+            {/* Visit */}
+            <div className="flex flex-col gap-4">
               <h4 className={headingClass}>Visit</h4>
-              <p className="max-w-[200px] font-[Urbanist] text-base font-medium leading-[162%] text-black/75">
+              <p className="max-w-[200px] font-[Urbanist] text-[14px] sm:text-[15px] font-medium leading-[160%] text-black/75">
                 {COMPANY_DATA.headquarters}
               </p>
             </div>
 
-            <div className="flex flex-col gap-5">
+            {/* Quick links */}
+            <div className="flex flex-col gap-4">
               <h4 className={headingClass}>Quick links</h4>
-              <ul className="flex flex-col gap-4">
+              <ul className="flex flex-col gap-3">
                 {MAIN_NAV_ITEMS.map((item) => (
                   <li key={item.title}>
                     <Link href={item.href} className={linkClass}>
@@ -40,10 +43,11 @@ export function Footer() {
               </ul>
             </div>
 
-            <div className="flex flex-col gap-5">
+            {/* Services */}
+            <div className="flex flex-col gap-4">
               <h4 className={headingClass}>Services</h4>
-              <ul className="flex flex-col gap-4">
-                {SERVICES_DATA.map((service) => (
+              <ul className="flex flex-col gap-3">
+                {SERVICES_DATA.slice(0, 4).map((service) => (
                   <li key={service.id}>
                     <Link href={service.link} className={linkClass}>
                       {service.title}
@@ -53,35 +57,60 @@ export function Footer() {
               </ul>
             </div>
 
-            <div className="flex flex-col gap-5">
+            {/* Connect */}
+            <div className="flex flex-col gap-4">
               <h4 className={headingClass}>Connect</h4>
-              <ul className="flex flex-col gap-4">
+              <ul className="flex flex-col gap-3">
                 <li>
-                  <a href={`tel:${phone.replace(/\s+/g, "")}`} className={linkClass}>
-                    Call us
+                  <a
+                    href="https://www.facebook.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={linkClass}
+                  >
+                    Facebook
                   </a>
                 </li>
                 <li>
-                  <a href={`mailto:${email}`} className={linkClass}>
-                    Email us
+                  <a
+                    href="https://www.linkedin.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={linkClass}
+                  >
+                    LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={`tel:${phone.replace(/\s+/g, "")}`}
+                    className={linkClass}
+                  >
+                    Direct Call
                   </a>
                 </li>
               </ul>
             </div>
           </div>
 
-          {/* Right: brand + contact */}
-          <div className="flex flex-col items-start gap-5 lg:items-start">
+          {/* Right: brand + contact info */}
+          <div className="flex flex-col items-start lg:items-end gap-3 text-left lg:text-right shrink-0">
             <BrandLogo size="md" />
-            <div className="flex flex-col gap-3 font-[Urbanist] text-base font-semibold text-black">
-              <a href={`tel:${phone.replace(/\s+/g, "")}`} className="transition-colors hover:text-[#800020]">
+            <div className="flex flex-col gap-1.5 font-heading font-bold text-[15px] sm:text-[16px] text-black uppercase mt-2">
+              <a
+                href={`tel:${phone.replace(/\s+/g, "")}`}
+                className="transition-colors hover:text-[#800020]"
+              >
                 {phone}
               </a>
-              <a href={`mailto:${email}`} className="uppercase transition-colors hover:text-[#800020]">
+              <a
+                href={`mailto:${email}`}
+                className="uppercase transition-colors hover:text-[#800020]"
+              >
                 {email}
               </a>
             </div>
-            <p className="pt-2 font-[Urbanist] text-base font-medium text-black/70">
+            <p className="pt-2 font-[Urbanist] text-xs sm:text-sm text-black/60">
               © <CurrentYear /> {COMPANY_DATA.shortName}, All Rights Reserved
             </p>
           </div>
