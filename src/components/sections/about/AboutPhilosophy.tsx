@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export function AboutPhilosophy() {
   return (
-    <section className="relative w-full bg-[#F7C290] pt-6 pb-20 sm:pb-28 lg:pb-36 px-5 sm:px-8 lg:px-12 overflow-hidden">
+    <section className="relative w-full bg-[#f7f7f7] pt-6 pb-20 sm:pb-28 lg:pb-36 px-5 sm:px-8 lg:px-12 overflow-hidden">
       <div className="max-w-[1300px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 xl:gap-10 items-end">
           {/* Left Column (5 cols): Tag, Title, Intro Paragraph, Stats Row */}

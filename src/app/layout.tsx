@@ -1,14 +1,8 @@
 import type { Metadata } from "next";
-import { Inter, Phudu, Urbanist } from "next/font/google";
+import { Phudu, Urbanist } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  display: "swap",
-});
 
 const phudu = Phudu({
   subsets: ["latin"],
@@ -56,7 +50,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${inter.variable} ${phudu.variable} ${urbanist.variable} scroll-smooth antialiased`}
+      className={`${phudu.variable} ${urbanist.variable} scroll-smooth antialiased`}
     >
       <body suppressHydrationWarning className="min-h-screen flex flex-col bg-[#F7C290] text-[#242424]">
         <Navbar />

@@ -41,7 +41,7 @@ export function Projects() {
 
         {/* Staggered two-column grid */}
         <div className="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 lg:gap-x-10 lg:gap-y-16">
-          {PROJECTS_DATA.map((project, index) => (
+          {PROJECTS_DATA.slice(0, 4).map((project, index) => (
             <Link
               key={project.id}
               href="/projects"

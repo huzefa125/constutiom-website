@@ -32,7 +32,7 @@ export function ContactFormSection() {
   };
 
   return (
-    <section className="relative w-full bg-[#F7C290]">
+    <section className="relative w-full bg-[#f7f7f7]">
       {/* 1. Full-bleed Sunset Curved Villa with Circular Glass Pool (Natural Aspect Ratio) */}
       <div className="w-full relative">
         <Image
@@ -48,10 +48,10 @@ export function ContactFormSection() {
 
       {/* 2. Overlaid Floating Form Card with Negative Top Margin (Matches Images 2 & 3) */}
       <div className="relative z-10 w-full max-w-[1300px] mx-auto px-5 sm:px-8 -mt-20 sm:-mt-28 md:-mt-36 lg:-mt-44 pb-20 sm:pb-28 lg:pb-36">
-        <div className="w-full max-w-[856px] mx-auto bg-[#F7C290] rounded-[8px] sm:rounded-[12px] p-8 sm:p-12 lg:p-16 shadow-[0_16px_40px_rgba(0,0,0,0.12)]">
+        <div className="w-full max-w-[856px] mx-auto bg-white rounded-[8px] sm:rounded-[12px] p-8 sm:p-12 lg:p-16 shadow-[0_16px_40px_rgba(0,0,0,0.08)]">
           {/* Header Tag */}
           <div className="flex items-center gap-2 mb-3">
-            <div className="h-1.5 w-1.5 rounded-full bg-black" />
+            <div className="h-2 w-2 rounded-full bg-[#800020]" />
             <span className="font-heading font-semibold text-xs sm:text-[13px] uppercase tracking-[2px] text-black">
               CONTACT FORM
             </span>

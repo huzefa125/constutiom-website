@@ -21,13 +21,13 @@ export function ContactOffices() {
   ];
 
   return (
-    <section className="relative w-full bg-[#F7C290] py-16 sm:py-20 lg:py-24 px-5 sm:px-8 lg:px-12">
+    <section className="relative w-full bg-[#f7f7f7] py-16 sm:py-20 lg:py-24 px-5 sm:px-8 lg:px-12">
       <div className="max-w-[1300px] w-full mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Title Column */}
           <div className="lg:col-span-6 flex flex-col items-start">
             <div className="flex items-center gap-2 mb-4">
-              <div className="h-1.5 w-1.5 rounded-full bg-black" />
+              <div className="h-2 w-2 rounded-full bg-[#800020]" />
               <span className="font-heading font-semibold text-xs sm:text-[13px] uppercase tracking-[2px] text-black">
                 GET TO KNOW US
               </span>

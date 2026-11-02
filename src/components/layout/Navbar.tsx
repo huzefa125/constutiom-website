@@ -48,7 +48,7 @@ export function Navbar() {
                           <Image src={service.image} alt="" fill sizes="56px" className="object-cover" />
                         </span>
                         <span className="flex flex-col gap-1">
-                          <span className="font-serif text-[16px] font-semibold uppercase leading-none text-black">
+                          <span className="font-[Urbanist] text-[15px] font-bold uppercase tracking-[0.04em] leading-none text-black">
                             {service.title}
                           </span>
                           <span className="font-[Urbanist] text-sm font-medium leading-tight text-black/55">
@@ -59,7 +59,7 @@ export function Navbar() {
                     ))}
                     <Link
                       href="/services"
-                      className="mt-1 flex items-center justify-between rounded-xl bg-[#800020] px-4 py-3 font-serif text-[15px] font-semibold uppercase text-white transition-colors hover:bg-[#FFD700] hover:text-[#800020]"
+                      className="mt-1 flex items-center justify-between rounded-xl bg-[#800020] px-4 py-3 font-[Urbanist] text-[14px] font-bold uppercase tracking-[0.06em] text-white transition-colors hover:bg-[#FFD700] hover:text-[#800020]"
                     >
                       View all services
                       <span aria-hidden="true">→</span>

@@ -57,8 +57,9 @@
   --color-warm-bg: #FAF9F6;
   --color-warm-border: #E9E5DF;
 
-  --font-serif: var(--font-serif);
-  --font-sans: var(--font-sans);
+  --font-heading: var(--font-phudu), 'Phudu', sans-serif;
+  --font-serif: var(--font-phudu), 'Phudu', sans-serif;
+  --font-sans: var(--font-urbanist), 'Urbanist', system-ui, sans-serif;
 }
 
 /* Display face used for all headings (replaces the old serif) */
@@ -75,14 +76,18 @@ h4.font-serif {
   line-height: 0.98;
 }
 
+.font-heading {
+  font-family: var(--font-phudu), 'Phudu', sans-serif;
+}
+
 .font-sans {
-  font-family: var(--font-sans), Inter, system-ui, -apple-system, sans-serif;
+  font-family: var(--font-urbanist), 'Urbanist', system-ui, sans-serif;
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), Inter, system-ui, -apple-system, sans-serif;
+  font-family: var(--font-urbanist), 'Urbanist', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -345,7 +350,7 @@ body {
 }
 
 .optik-hero-title {
-  font-family: var(--font-sans), 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-phudu), 'Phudu', sans-serif;
   font-size: clamp(60px, 11vw, 210px);
   line-height: 0.82;
   font-weight: 600;

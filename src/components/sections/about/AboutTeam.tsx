@@ -35,7 +35,7 @@ const TEAM_MEMBERS: TeamMemberItem[] = [
 
 export function AboutTeam() {
   return (
-    <section className="relative w-full bg-[#F7C290] pt-6 pb-24 sm:pb-32 lg:pb-40 px-5 sm:px-8 lg:px-12 overflow-hidden">
+    <section className="relative w-full bg-[#f7f7f7] pt-6 pb-24 sm:pb-32 lg:pb-40 px-5 sm:px-8 lg:px-12 overflow-hidden">
       <div className="max-w-[1300px] mx-auto">
         {/* Section Header */}
         <div className="flex items-center gap-2 mb-8 sm:mb-10">

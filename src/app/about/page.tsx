@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="flex flex-col w-full bg-[#F7C290]">
+    <div className="flex flex-col w-full bg-[#f7f7f7]">
       {/* 1. ABOUT HERO */}
       <AboutHero />
 
