@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { PROJECTS_DATA } from "@/data/projects";
@@ -21,7 +22,7 @@ export function ProjectsHero() {
             .timeline({ defaults: { ease: "power4.out" } })
             .from(".pj-title-line", { yPercent: 85, rotateX: -40, autoAlpha: 0, duration: 1.1, stagger: 0.15 })
             .from(".pj-desc", { y: 30, autoAlpha: 0, duration: 0.9 }, "-=0.7")
-            .from(".pj-meta", { y: 20, autoAlpha: 0, duration: 0.8, stagger: 0.1 }, "-=0.6")
+            .from(".pj-btn", { y: 20, scale: 0.95, autoAlpha: 0, duration: 0.8, ease: "back.out(1.5)" }, "-=0.6")
             .from(".pj-img-box", { x: 50, autoAlpha: 0, scale: 0.96, duration: 1.3, ease: "power3.out" }, 0.2);
         },
         root,
@@ -32,21 +33,16 @@ export function ProjectsHero() {
     }
   }, []);
 
-  const byCategory = PROJECTS_DATA.reduce<Record<string, number>>((acc, p) => {
-    acc[p.category] = (acc[p.category] ?? 0) + 1;
-    return acc;
-  }, {});
-
   return (
     <section
       ref={root}
-      className="relative w-full bg-[#F7C290] min-h-[92vh] flex flex-col justify-center pt-32 pb-16 sm:pt-36 sm:pb-20 lg:pt-40 lg:pb-24 px-5 sm:px-8 lg:px-12 overflow-hidden"
+      className="relative flex min-h-[92vh] w-full flex-col justify-center overflow-hidden bg-[#F7C290] px-5 pb-16 pt-32 sm:px-8 sm:pb-20 sm:pt-36 lg:px-12 lg:pb-24 lg:pt-40"
     >
-      <div className="max-w-[1300px] w-full mx-auto my-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-14 xl:gap-20 items-center">
+      <div className="mx-auto my-auto w-full max-w-[1300px]">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-14 xl:gap-20">
           <div className="flex flex-col items-start justify-center">
             <h1
-              className="font-heading font-bold uppercase tracking-tight leading-[0.88] select-none text-[52px] sm:text-[72px] md:text-[92px] lg:text-[104px] xl:text-[120px]"
+              className="select-none font-heading text-[52px] font-bold uppercase leading-[0.88] tracking-tight sm:text-[72px] md:text-[92px] lg:text-[104px] xl:text-[120px]"
               style={{ perspective: "1000px" }}
             >
               <span className="block overflow-hidden pb-1">
@@ -57,46 +53,51 @@ export function ProjectsHero() {
               </span>
             </h1>
 
-            <p className="pj-desc font-[Urbanist] text-[18px] sm:text-[20px] font-medium leading-[145%] text-black/80 max-w-[380px] sm:max-w-[440px] mt-7 sm:mt-9">
-              Barracks, schools, churches and homes. Every project here was built by our crews, in earth brick
-              and steel, and photographed on site.
+            <p className="pj-desc mb-8 mt-7 max-w-[380px] font-[Urbanist] text-[18px] font-medium leading-[145%] text-black/80 sm:mb-10 sm:mt-9 sm:max-w-[440px] sm:text-[20px]">
+              Barracks, schools, churches and homes. Every project here was built by our crews, in earth brick and
+              steel, and photographed on site.
             </p>
 
-            <div className="flex flex-wrap gap-2.5 mt-8 sm:mt-10">
-              <span className="pj-meta rounded-full bg-black px-4 py-2 font-[Urbanist] text-xs font-bold uppercase tracking-[0.14em] text-[#FCC995]">
-                {PROJECTS_DATA.length} projects
-              </span>
-              {Object.entries(byCategory).map(([cat, n]) => (
-                <span
-                  key={cat}
-                  className="pj-meta rounded-full border border-black/25 px-4 py-2 font-[Urbanist] text-xs font-bold uppercase tracking-[0.14em] text-black"
-                >
-                  {n} {cat}
-                </span>
-              ))}
+            <div className="pj-btn">
+              <div className="optik-theme-button-wrap">
+                <Link href="#project-intro" className="optik-btn-link-wrap group">
+                  <div className="optik-btn-text-wrap-02">
+                    <div className="optik-btn-text-box">
+                      <span className="optik-button-text">VIEW OUR WORK</span>
+                      <span className="optik-button-text">VIEW OUR WORK</span>
+                    </div>
+                    <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#FCC995] transition-colors group-hover:bg-[#FFD700]">
+                      <svg
+                        width="13"
+                        height="13"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#000000"
+                        strokeWidth="2.8"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="rotate-90 transition-transform duration-300 group-hover:translate-y-0.5"
+                      >
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                      </svg>
+                    </div>
+                  </div>
+                </Link>
+              </div>
             </div>
           </div>
 
-          <div className="pj-img-box w-full flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[580px] lg:max-w-[620px]">
-              <div className="relative w-full aspect-[4/3] sm:aspect-[1.15/1] rounded-[14px] md:rounded-[18px] overflow-hidden shadow-2xl bg-black/5 border border-black/10">
-                <Image
-                  src={featured.image}
-                  alt={featured.name}
-                  fill
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 620px"
-                  className="object-cover transition-transform duration-700 hover:scale-[1.03]"
-                />
-              </div>
-              <div className="absolute -bottom-5 left-5 sm:left-8 rounded-[10px] bg-black px-5 py-3 shadow-xl">
-                <div className="font-[Urbanist] text-[11px] font-bold uppercase tracking-[0.18em] text-[#FFD700]">
-                  On site
-                </div>
-                <div className="font-heading text-[16px] font-semibold uppercase leading-tight text-[#FCC995]">
-                  {featured.name}
-                </div>
-              </div>
+          <div className="pj-img-box flex w-full justify-center lg:justify-end">
+            <div className="relative aspect-[4/3] w-full max-w-[580px] overflow-hidden rounded-[14px] border border-black/10 bg-black/5 shadow-2xl sm:aspect-[1.15/1] md:rounded-[18px] lg:max-w-[620px]">
+              <Image
+                src={featured.image}
+                alt={featured.name}
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 620px"
+                className="object-cover transition-transform duration-700 hover:scale-[1.03]"
+              />
             </div>
           </div>
         </div>

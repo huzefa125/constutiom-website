@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ProjectsHero } from "@/components/sections/projects/ProjectsHero";
+import { ProjectsIntro } from "@/components/sections/projects/ProjectsIntro";
 import { ProjectsWorks } from "@/components/sections/projects/ProjectsWorks";
 import { ProjectsFeatured } from "@/components/sections/projects/ProjectsFeatured";
 import { Cta } from "@/components/sections/Cta";
@@ -14,6 +15,7 @@ export default function ProjectsPage() {
   return (
     <main className="flex min-h-screen w-full flex-col bg-[#f7f7f7]">
       <ProjectsHero />
+      <ProjectsIntro />
       <ProjectsWorks />
       <ProjectsFeatured />
       <Cta />
