@@ -3,6 +3,8 @@ import { Phudu, Urbanist } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { JsonLd } from "@/components/ui/JsonLd";
+import { DEFAULT_OG_IMAGE, ORGANIZATION_SCHEMA, SITE_URL, WEBSITE_SCHEMA } from "@/lib/seo";
 
 const phudu = Phudu({
   subsets: ["latin"],
@@ -17,27 +19,47 @@ const urbanist = Urbanist({
 });
 
 export const metadata: Metadata = {
-  title: "Ipile Earth Synergy Construction Limited | Engineering & Sustainable Infrastructure",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Affordable Homes & Construction Company in Nigeria | Ipile Earth Synergy",
+    template: "%s | Ipile Earth Synergy",
+  },
   description:
-    "Modern Nigerian construction company established in 2017, providing suitable and affordable homes in a sustainable environment using Compressed Earth Brick (CEB).",
+    "Ipile Earth Synergy Construction Limited builds affordable homes in Nigeria using Compressed Earth Brick (CEB). Construction, building maintenance, structural design and property management since 2017.",
   keywords: [
+    "construction company in Nigeria",
+    "affordable homes in Nigeria",
+    "compressed earth brick Nigeria",
+    "interlocking brick houses",
+    "building contractors Lagos Ogun",
+    "building maintenance company",
+    "property and facility management Nigeria",
     "Ipile Earth Synergy",
-    "Compressed Earth Bricks Nigeria",
-    "Affordable Homes Nigeria",
-    "Building Maintenance",
-    "Property and Facility Management",
-    "Green Building Technology",
-    "General Contracting Nigeria",
   ],
   authors: [{ name: "Ipile Earth Synergy Construction Limited" }],
+  creator: "Ipile Earth Synergy Construction Limited",
+  publisher: "Ipile Earth Synergy Construction Limited",
+  alternates: { canonical: "/" },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
+  },
   openGraph: {
-    title: "Ipile Earth Synergy Construction Limited",
+    title: "Ipile Earth Synergy Construction Limited | Affordable Homes in Nigeria",
     description:
       "Affordable, sustainable homes and construction services across Nigeria using Compressed Earth Brick (CEB).",
-    url: "https://www.ipileearth.com.ng",
+    url: SITE_URL,
     siteName: "Ipile Earth Synergy",
     locale: "en_NG",
     type: "website",
+    images: [{ url: DEFAULT_OG_IMAGE, alt: "Compressed Earth Brick homes built by Ipile Earth Synergy" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ipile Earth Synergy Construction Limited",
+    description: "Affordable, sustainable homes and construction services across Nigeria.",
+    images: [DEFAULT_OG_IMAGE],
   },
 };
 
@@ -48,11 +70,12 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="en-NG"
       suppressHydrationWarning
       className={`${phudu.variable} ${urbanist.variable} scroll-smooth antialiased`}
     >
       <body suppressHydrationWarning className="min-h-screen flex flex-col bg-[#F7C290] text-[#242424]">
+        <JsonLd data={[ORGANIZATION_SCHEMA, WEBSITE_SCHEMA]} />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

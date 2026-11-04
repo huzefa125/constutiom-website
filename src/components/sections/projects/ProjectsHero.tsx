@@ -36,7 +36,7 @@ export function ProjectsHero() {
   return (
     <section
       ref={root}
-      className="relative flex min-h-[92vh] w-full flex-col justify-center overflow-hidden bg-[#F7C290] px-5 pb-16 pt-32 sm:px-8 sm:pb-20 sm:pt-36 lg:px-12 lg:pb-24 lg:pt-40"
+      className="relative flex min-h-[760px] w-full flex-col justify-center overflow-hidden bg-[#F7C290] px-5 pb-16 pt-32 sm:px-8 sm:pb-20 sm:pt-36 lg:px-12 lg:pb-24 lg:pt-40"
     >
       <div className="mx-auto my-auto w-full max-w-[1300px]">
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-14 xl:gap-20">
@@ -96,7 +96,7 @@ export function ProjectsHero() {
                 fill
                 priority
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 620px"
-                className="object-cover transition-transform duration-700 hover:scale-[1.03]"
+                className="object-cover"
               />
             </div>
           </div>

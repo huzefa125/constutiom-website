@@ -1,24 +1,27 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { ProjectsHero } from "@/components/sections/projects/ProjectsHero";
 import { ProjectsIntro } from "@/components/sections/projects/ProjectsIntro";
 import { ProjectsWorks } from "@/components/sections/projects/ProjectsWorks";
 import { ProjectsFeatured } from "@/components/sections/projects/ProjectsFeatured";
 import { Cta } from "@/components/sections/Cta";
 
-export const metadata: Metadata = {
-  title: "Projects | Ipile Earth Synergy Construction Limited",
+export const metadata: Metadata = pageMetadata({
+  title: "Our Projects: Navy Barracks, Schools & Homes in Compressed Earth Brick",
   description:
-    "Navy barracks, schools, churches and residences built by Ipile Earth Synergy Construction Limited in Compressed Earth Brick, masonry and structural steel across Nigeria.",
-};
+    "Completed Nigerian Navy barracks, a school campus, churches and residences built by Ipile Earth Synergy in Compressed Earth Brick, masonry and structural steel.",
+  path: "/projects",
+  image: "/images/gallery/navy-barracks-atimbo/navy-barracks-atimbo-03.jpg",
+});
 
 export default function ProjectsPage() {
   return (
-    <main className="flex min-h-screen w-full flex-col bg-[#f7f7f7]">
+    <div className="flex w-full flex-col bg-[#f7f7f7]">
       <ProjectsHero />
       <ProjectsIntro />
       <ProjectsWorks />
       <ProjectsFeatured />
       <Cta />
-    </main>
+    </div>
   );
 }

@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { ContactHero } from "@/components/sections/contact/ContactHero";
 import { ContactOffices } from "@/components/sections/contact/ContactOffices";
 import { ContactFormSection } from "@/components/sections/contact/ContactFormSection";
 
-export const metadata: Metadata = {
-  title: "Contact Us | Ipile Earth Synergy Construction Limited",
+export const metadata: Metadata = pageMetadata({
+  title: "Contact Us: Redemption Camp, Lagos-Ibadan Expressway",
   description:
-    "Get in touch with Ipile Earth Synergy Construction Limited. Visit us at Redemption Camp, Lagos-Ibadan Expressway, or call +234 812 686 8754 for construction, building maintenance, design and property management.",
-};
+    "Visit Ipile Earth Synergy at Abba Father Estate, Redemption Camp, Lagos-Ibadan Expressway, or call +234 812 686 8754 for construction, building maintenance, design and property management.",
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

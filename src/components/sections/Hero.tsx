@@ -84,7 +84,7 @@ export function Hero() {
           </div>
 
           <div className="optik-hero-title-wrap pb-8 sm:pb-12 lg:pb-16">
-            <h1 className="optik-hero-title" aria-label="IPILE EARTH" style={{ perspective: 900 }}>
+            <h1 className="optik-hero-title" aria-label="Ipile Earth Synergy Construction Limited: affordable homes and building construction in Nigeria" style={{ perspective: 900 }}>
               {TITLE_LINES.map((word, w) => (
                 <span key={word.text} className={word.className} aria-hidden="true">
                   {word.text.split("").map((ch, i) => (
@@ -103,7 +103,7 @@ export function Hero() {
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="/images/hero/gemini-villa-feathered.png"
-        alt="Modern luxury two-story villa with warm timber louvers, floor-to-ceiling glass, and landscaped garden."
+        alt="Modern home designed and built by Ipile Earth Synergy Construction Limited"
         className="optik-hero-img hero-img-anim"
       />
     </section>

@@ -1,89 +1,57 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
 import { SERVICES_DATA } from "@/data/services";
 import { Cta } from "@/components/sections/Cta";
+import { ServicesIndex } from "@/components/sections/services/ServicesIndex";
+import { JsonLd } from "@/components/ui/JsonLd";
+import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Services | Ipile Earth Synergy Construction Limited",
+export const metadata: Metadata = pageMetadata({
+  title: "Construction, Building Maintenance & Property Management Services in Nigeria",
   description:
-    "Construction, building maintenance, structural design and development, property and facility management, and general contracts and procurement.",
-};
+    "Five service lines from one team: construction, building maintenance, structural design and development, property and facility management, and general contracts and procurement.",
+  path: "/services",
+});
 
 export default function ServicesPage() {
   return (
     <div className="flex w-full flex-col bg-[#f7f7f7]">
-      <section className="px-[10px] pb-[30px] pt-[130px] sm:px-5 lg:pb-[50px] lg:pt-[160px]">
+      <JsonLd data={breadcrumbSchema([{ name: "Home", path: "/" }, { name: "Services", path: "/services" }])} />
+
+      <section className="w-full bg-[#F7C290] px-5 pb-16 pt-32 sm:px-8 sm:pb-20 sm:pt-40 lg:px-12 lg:pb-24 lg:pt-48">
         <div className="mx-auto w-full max-w-[1300px]">
-          {/* Header */}
-          <div className="mb-10 flex flex-col gap-6 lg:mb-14 lg:flex-row lg:items-end lg:justify-between">
-            <div className="flex flex-col items-start gap-4">
-              <div className="flex items-center gap-[6px]">
-                <div className="h-2 w-2 rounded-full bg-black" />
-                <div className="font-[Urbanist] text-sm font-semibold uppercase leading-[150%] tracking-[1.92px] text-black">
-                  Our services
-                </div>
-              </div>
-              <h1 className="font-serif max-w-[760px] text-[38px] font-semibold uppercase leading-[0.98] text-black sm:text-[56px] lg:text-[72px] xl:text-[88px]">
-                Everything we <span className="text-[#800020]">build</span> and care for
-              </h1>
-            </div>
-            <p className="max-w-[440px] font-[Urbanist] text-lg font-medium leading-[145%] text-black/70">
+          <div className="flex items-center gap-[6px]">
+            <div className="h-2 w-2 rounded-full bg-black" />
+            <span className="font-[Urbanist] text-sm font-semibold uppercase tracking-[1.92px] text-black">
+              What we do
+            </span>
+          </div>
+          <h1 className="mt-6 font-heading text-[52px] font-bold uppercase leading-[0.88] tracking-tight text-black sm:text-[84px] md:text-[110px] lg:text-[140px]">
+            Our <span className="text-[#800020]">services</span>
+          </h1>
+          <div className="mt-10 flex flex-col gap-8 border-t border-black/20 pt-8 lg:flex-row lg:items-start lg:justify-between">
+            <p className="max-w-[520px] font-[Urbanist] text-lg font-medium leading-[150%] text-black/80 sm:text-xl">
               From new homes and institutions to repair and renovation, one accountable team takes your project from
               first sketch to handover.
             </p>
-          </div>
-
-          {/* Service cards */}
-          <div className="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 lg:gap-x-10 lg:gap-y-16">
-            {SERVICES_DATA.map((service, index) => (
-              <Link key={service.id} href={service.link} className="group block">
-                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[20px] bg-[#e9e9e9]">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 640px"
-                    className="object-cover transition-transform duration-[900ms] ease-out group-hover:scale-105"
-                  />
-                  <span className="absolute left-4 top-4 rounded-full bg-white/95 px-4 py-1.5 font-[Urbanist] text-xs font-bold uppercase tracking-[0.14em] text-[#800020]">
-                    {service.eyebrow}
-                  </span>
-                  <span
-                    aria-hidden="true"
-                    className="absolute right-4 top-4 flex h-12 w-12 -rotate-45 items-center justify-center rounded-full bg-[#FFD700] text-[#800020] opacity-0 transition-all duration-500 group-hover:rotate-0 group-hover:opacity-100"
-                  >
-                    <ArrowUpRight className="h-5 w-5" />
-                  </span>
+            <dl className="flex gap-10 sm:gap-14">
+              {[
+                ["05", "Service lines"],
+                ["2017", "Established"],
+                ["CEB", "Earth brick builds"],
+              ].map(([n, l]) => (
+                <div key={l}>
+                  <dt className="font-serif text-[34px] leading-none text-[#800020] sm:text-[44px]">{n}</dt>
+                  <dd className="mt-2 font-[Urbanist] text-xs font-bold uppercase tracking-[0.14em] text-black/60">
+                    {l}
+                  </dd>
                 </div>
-
-                <div className="mt-5 flex flex-col gap-3">
-                  <div className="flex items-start justify-between gap-4">
-                    <h2 className="font-serif text-[24px] uppercase leading-[0.98] text-black transition-colors group-hover:text-[#800020] sm:text-[28px] lg:text-[32px]">
-                      {service.title}
-                    </h2>
-                    <span className="font-serif text-[24px] leading-none text-black/25 lg:text-[28px]">
-                      0{index + 1}
-                    </span>
-                  </div>
-                  <span className="font-[Urbanist] text-sm font-semibold uppercase tracking-[0.14em] text-[#800020]">
-                    {service.category}
-                  </span>
-                  <p className="max-w-[560px] font-[Urbanist] text-base font-medium leading-[145%] text-black/65">
-                    {service.description}
-                  </p>
-                  <span className="mt-1 inline-flex w-fit items-center gap-2 border-b border-black pb-[2px] font-serif text-[16px] font-semibold uppercase leading-none transition-colors group-hover:border-[#800020] group-hover:text-[#800020]">
-                    Learn more
-                    <ArrowUpRight className="h-4 w-4" />
-                  </span>
-                </div>
-              </Link>
-            ))}
+              ))}
+            </dl>
           </div>
         </div>
       </section>
 
+      <ServicesIndex services={SERVICES_DATA} />
       <Cta />
     </div>
   );
