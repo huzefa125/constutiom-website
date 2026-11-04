@@ -111,26 +111,6 @@ export function Showcase() {
 
   return (
     <section ref={root} className="relative overflow-hidden bg-[#f7f7f7] py-[30px] lg:py-[50px]" aria-label="Project showcase">
-      {/* Arrows */}
-      <div className="relative z-20 flex items-center justify-center gap-4 pb-6">
-        <button
-          type="button"
-          onClick={() => manual(-1)}
-          aria-label="Previous project"
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-black/20 text-black transition-colors hover:border-[#800020] hover:bg-[#800020] hover:text-white"
-        >
-          <ArrowLeft className="h-5 w-5" />
-        </button>
-        <button
-          type="button"
-          onClick={() => manual(1)}
-          aria-label="Next project"
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-black/20 text-black transition-colors hover:border-[#FFD700] hover:bg-[#FFD700] hover:text-[#800020]"
-        >
-          <ArrowRight className="h-5 w-5" />
-        </button>
-      </div>
-
       <div className="relative flex h-[300px] items-center justify-center sm:h-[400px] lg:h-[480px]">
         {/* Giant scrolling text */}
         <div className="pointer-events-none absolute inset-0 flex items-center overflow-hidden" aria-hidden="true">
@@ -158,6 +138,26 @@ export function Showcase() {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Arrows */}
+      <div className="relative z-20 flex items-center justify-center gap-4 pt-6">
+        <button
+          type="button"
+          onClick={() => manual(-1)}
+          aria-label="Previous project"
+          className="flex h-11 w-11 items-center justify-center rounded-full border border-black/20 text-black transition-colors hover:border-[#800020] hover:bg-[#800020] hover:text-white"
+        >
+          <ArrowLeft className="h-5 w-5" />
+        </button>
+        <button
+          type="button"
+          onClick={() => manual(1)}
+          aria-label="Next project"
+          className="flex h-11 w-11 items-center justify-center rounded-full border border-black/20 text-black transition-colors hover:border-[#FFD700] hover:bg-[#FFD700] hover:text-[#800020]"
+        >
+          <ArrowRight className="h-5 w-5" />
+        </button>
       </div>
     </section>
   );
