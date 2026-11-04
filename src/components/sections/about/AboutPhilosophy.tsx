@@ -23,11 +23,11 @@ export function AboutPhilosophy() {
 
             {/* Authentic Company Intro text */}
             <p className="font-[Urbanist] text-[15px] sm:text-[17px] font-medium leading-[150%] text-black/80 max-w-[420px] mt-5 mb-8">
-              At Ipile Earth Synergy, we believe civil engineering and architecture must
-              serve communities, conserve resources, and endure for generations. Backed
-              by military-grade execution and Hydraform interlocking brick innovation, our
-              mission is to build resilient structures that remain structurally sound,
-              thermally efficient, and aesthetically dignified.
+              Ipile Earth Synergy Construction Limited aims to provide suitable and
+              affordable homes in a sustainable environment, using locally available
+              resources, for every class of society. We carry on construction and civil
+              construction services of every description, including repair, maintenance
+              and demolition of construction works.
             </p>
 
             {/* Authentic Stats Row */}
@@ -35,30 +35,30 @@ export function AboutPhilosophy() {
               {/* Stat 1 */}
               <div className="flex flex-col gap-1.5">
                 <span className="font-heading text-3xl sm:text-4xl lg:text-[42px] font-bold text-black leading-none">
-                  15+
+                  2017
                 </span>
                 <span className="font-[Urbanist] text-xs sm:text-sm font-medium text-black/75 max-w-[90px] leading-tight">
-                  Years of leadership & engineering
+                  Year established
                 </span>
               </div>
 
               {/* Stat 2 */}
               <div className="flex flex-col gap-1.5">
                 <span className="font-heading text-3xl sm:text-4xl lg:text-[42px] font-bold text-black leading-none">
-                  40%
+                  04
                 </span>
                 <span className="font-[Urbanist] text-xs sm:text-sm font-medium text-black/75 max-w-[85px] leading-tight">
-                  Thermal cooling efficiency
+                  Core values
                 </span>
               </div>
 
               {/* Stat 3 */}
               <div className="flex flex-col gap-1.5">
                 <span className="font-heading text-3xl sm:text-4xl lg:text-[42px] font-bold text-black leading-none">
-                  50%
+                  05
                 </span>
                 <span className="font-[Urbanist] text-xs sm:text-sm font-medium text-black/75 max-w-[95px] leading-tight">
-                  Cement & carbon reduction
+                  Service lines
                 </span>
               </div>
             </div>
@@ -89,13 +89,20 @@ export function AboutPhilosophy() {
               />
             </div>
 
-            <p className="font-[Urbanist] text-[14px] sm:text-[15px] font-medium leading-[150%] text-black/80 max-w-[340px]">
-              Under the executive direction of Rear Admiral James Oladapo (Rtd) mni, our
-              operations are driven by military precision, COREN-certified engineering
-              standards, and innovative interlocking brick technology. Every foundation we
-              pour and every wall we build delivers structural longevity and environmental
-              stewardship across Nigeria.
-            </p>
+            <div className="flex max-w-[340px] flex-col gap-4 font-[Urbanist] text-[14px] sm:text-[15px] font-medium leading-[150%] text-black/80">
+              <p>
+                <span className="block text-xs font-bold uppercase tracking-[0.18em] text-[#800020]">Mission</span>
+                To become the leading provider of affordable homes in Nigeria.
+              </p>
+              <p>
+                <span className="block text-xs font-bold uppercase tracking-[0.18em] text-[#800020]">Vision</span>
+                Provide suitable and affordable homes in a sustainable environment for every class of society.
+              </p>
+              <p>
+                <span className="block text-xs font-bold uppercase tracking-[0.18em] text-[#800020]">Core values</span>
+                Innovation · Speed · Cost Effectiveness · Teamwork
+              </p>
+            </div>
           </div>
         </div>
       </div>

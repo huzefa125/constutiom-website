@@ -23,8 +23,8 @@ export function Introduction() {
             </h2>
 
             <p className="mb-3 mt-2 max-w-[411px] font-[Urbanist] text-lg font-medium leading-[145%] text-black/70">
-              {COMPANY_DATA.shortName} combines COREN-certified civil engineering with Hydraform Compressed Earth Brick
-              technology, delivering resilient, low-carbon buildings that are as functional as they are beautiful.
+              {COMPANY_DATA.shortName} is a modern construction company established in {COMPANY_DATA.founded}, building suitable and
+              affordable homes in a sustainable environment with Compressed Earth Brick and locally available resources.
             </p>
 
             <Link

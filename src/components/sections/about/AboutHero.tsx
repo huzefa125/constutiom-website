@@ -86,9 +86,9 @@ export function AboutHero() {
 
             {/* Authentic Company Description */}
             <p className="about-desc font-[Urbanist] text-[18px] sm:text-[20px] font-medium leading-[145%] text-black/80 max-w-[380px] sm:max-w-[420px] mt-7 sm:mt-9 mb-8 sm:mb-10">
-              A distinguished Nigerian civil engineering firm combining COREN-certified
-              standards with Hydraform Compressed Earth Brick technology to build sustainable,
-              enduring infrastructure.
+              A modern construction company established in 2017, providing suitable and
+              affordable homes in a sustainable environment using Compressed Earth Brick and
+              locally available resources.
             </p>
 
             {/* CTA Button */}

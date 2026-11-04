@@ -47,7 +47,7 @@ export function Footer() {
             <div className="flex flex-col gap-4">
               <h4 className={headingClass}>Services</h4>
               <ul className="flex flex-col gap-3">
-                {SERVICES_DATA.slice(0, 4).map((service) => (
+                {SERVICES_DATA.map((service) => (
                   <li key={service.id}>
                     <Link href={service.link} className={linkClass}>
                       {service.title}
@@ -97,17 +97,28 @@ export function Footer() {
           <div className="flex flex-col items-start lg:items-end gap-3 text-left lg:text-right shrink-0">
             <BrandLogo size="md" />
             <div className="flex flex-col gap-1.5 font-heading font-bold text-[15px] sm:text-[16px] text-black uppercase mt-2">
-              <a
-                href={`tel:${phone.replace(/\s+/g, "")}`}
-                className="transition-colors hover:text-[#800020]"
-              >
-                {phone}
-              </a>
+              {COMPANY_DATA.contact.phones.map((p) => (
+                <a
+                  key={p}
+                  href={`tel:${p.replace(/\s+/g, "")}`}
+                  className="transition-colors hover:text-[#800020]"
+                >
+                  {p}
+                </a>
+              ))}
               <a
                 href={`mailto:${email}`}
                 className="uppercase transition-colors hover:text-[#800020]"
               >
                 {email}
+              </a>
+              <a
+                href={`https://${COMPANY_DATA.contact.website}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="lowercase transition-colors hover:text-[#800020]"
+              >
+                {COMPANY_DATA.contact.website}
               </a>
             </div>
             <p className="pt-2 font-[Urbanist] text-xs sm:text-sm text-black/60">

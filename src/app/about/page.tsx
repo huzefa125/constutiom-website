@@ -8,7 +8,7 @@ import { AboutCta } from "@/components/sections/about/AboutCta";
 export const metadata: Metadata = {
   title: "About Our Firm | Ipile Earth Synergy Construction Limited",
   description:
-    "Discover Ipile Earth Synergy Construction Limited — pioneers in sustainable civil engineering, Hydraform Compressed Earth Brick masonry, and disciplined structural construction across Nigeria.",
+    "Ipile Earth Synergy Construction Limited, established in 2017, provides suitable and affordable homes in a sustainable environment using Compressed Earth Brick (CEB) and locally available resources.",
 };
 
 export default function AboutPage() {

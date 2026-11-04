@@ -77,7 +77,7 @@ export function Navbar() {
 
             {/* Right: Phone Us Contact Pill (Interlocking badges matching Optik) */}
             <div className="optik-header-right">
-              <a href="tel:+2348033142661" className="optik-call-wrap group">
+              <a href="tel:+2348126868754" className="optik-call-wrap group">
                 <div className="flex items-center">
                   <div className="optik-call-icon-wrap">
                     <Image
@@ -100,7 +100,7 @@ export function Navbar() {
                 </div>
                 <div className="optik-call-text-wrap">
                   <span className="optik-call-text">Phone Us</span>
-                  <span className="optik-call-number">+234 (0) 803 314 2661</span>
+                  <span className="optik-call-number">+234 812 686 8754</span>
                 </div>
               </a>
             </div>
@@ -187,7 +187,7 @@ export function Navbar() {
               </div>
 
               <div className="pt-4 border-t border-neutral-100">
-                <a href="tel:+2348033142661" className="flex items-center gap-3">
+                <a href="tel:+2348126868754" className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center text-white">
                     <Image
                       src="/images/hero/phn-icon.svg"
@@ -199,7 +199,7 @@ export function Navbar() {
                   </div>
                   <div>
                     <span className="block text-xs text-neutral-500">Phone Us</span>
-                    <span className="font-semibold text-sm text-black">+234 (0) 803 314 2661</span>
+                    <span className="font-semibold text-sm text-black">+234 812 686 8754</span>
                   </div>
                 </a>
               </div>

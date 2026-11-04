@@ -15,10 +15,14 @@ export interface CompanyInfo {
   vision: string;
   description: string;
   headquarters: string;
+  founded: string;
+  coreValues: string[];
   operationalRegions: string[];
   contact: {
     email: string;
     phone: string;
+    phones: string[];
+    website: string;
     address: string;
   };
   leadership: TeamMember[];
@@ -33,18 +37,20 @@ export const COMPANY_DATA: CompanyInfo = {
   name: "Ipile Earth Synergy Construction Limited",
   shortName: "Ipile Earth Synergy",
   tagline: "Sustainable Building Systems & Infrastructure Engineering",
-  mission:
-    "To deliver resilient, environmentally responsible, and high-precision civil engineering solutions, driving affordable and sustainable infrastructure development throughout Nigeria.",
-  vision:
-    "To stand as Nigeria's preeminent engineering and sustainable construction firm, recognized for integrity, structural longevity, and innovative earth-brick technology.",
+  mission: "To become the leading provider of affordable homes in Nigeria.",
+  vision: "Provide suitable and affordable homes in a sustainable environment for every class of society.",
   description:
-    "Ipile Earth Synergy Construction Limited is a distinguished Nigerian engineering, property management, and general contracting enterprise. Founded on the bedrock of disciplined military-grade execution, rigorous COREN-certified engineering standards, and cutting-edge Hydraform Compressed Earth Brick (CEB) technology, we transform visions into enduring landmarks.",
-  headquarters: "Abuja, Federal Capital Territory, Nigeria",
+    "Ipile Earth Synergy Construction Limited is a modern construction company established in 2017 that aims to provide suitable and affordable homes in a sustainable environment using locally available resources for every class of society. We offer modern construction plans and designs using Compressed Earth Brick (CEB), which reduces building cost significantly.",
+  headquarters: "Abba Father Estate off Estate 15, Estate 15, Redemption Camp, Lagos-Ibadan Expressway",
+  founded: "2017",
+  coreValues: ["Innovation", "Speed", "Cost Effectiveness", "Teamwork"],
   operationalRegions: ["Abuja (FCT)", "Cross River State", "Lagos State", "Nasarawa State"],
   contact: {
-    email: "info@ipileearth.com",
-    phone: "+234 803 700 8192",
-    address: "Federal Capital Territory, Abuja, Nigeria",
+    email: "ipileearth1@gmail.com",
+    phone: "+234 812 686 8754",
+    phones: ["+234 812 686 8754", "+234 808 932 1462"],
+    website: "www.ipileearth.com.ng",
+    address: "Abba Father Estate off Estate 15, Estate 15, Redemption Camp, Lagos-Ibadan Expressway",
   },
   leadership: [
     {
@@ -93,9 +99,9 @@ export const COMPANY_DATA: CompanyInfo = {
       description: "Reduction in ambient heat transfer with Compressed Earth Bricks",
     },
     {
-      label: "Structural Integrity",
-      value: "COREN",
-      description: "Strict certified engineering and ISO 9001 quality audits",
+      label: "Established",
+      value: "2017",
+      description: "Building affordable, sustainable homes across Nigeria",
     },
     {
       label: "Cement Reduction",

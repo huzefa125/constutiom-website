@@ -2,23 +2,7 @@ import * as React from "react";
 import { COMPANY_DATA } from "@/data/company";
 
 export function ContactOffices() {
-  const phone = COMPANY_DATA.contact.phone;
-  const email = COMPANY_DATA.contact.email;
-
-  const offices = [
-    {
-      city: "ABUJA (HQ)",
-      address: COMPANY_DATA.headquarters,
-      phone: phone,
-      email: email,
-    },
-    {
-      city: "CALABAR",
-      address: "Atimbo & Akpabuyo Operational Corridors, Calabar, Cross River State, Nigeria",
-      phone: phone,
-      email: "PROJECTS@IPILEARTH.COM",
-    },
-  ];
+  const { phones, email, website, address } = COMPANY_DATA.contact;
 
   return (
     <section className="relative w-full bg-[#f7f7f7] py-16 sm:py-20 lg:py-24 px-5 sm:px-8 lg:px-12">
@@ -34,44 +18,57 @@ export function ContactOffices() {
             </div>
 
             <h2 className="font-heading font-bold uppercase tracking-tight text-[36px] sm:text-[46px] md:text-[54px] leading-[0.98] text-black max-w-[480px]">
-              CONTACT US OUR
+              VISIT OUR
               <br />
-              OFFICES AROUND
+              OFFICE OR
               <br />
-              THE WORLD.
+              GET IN TOUCH.
             </h2>
           </div>
 
-          {/* Right Offices Column: 2 side-by-side columns matching Image 2 */}
+          {/* Right: office + contact details */}
           <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-12">
-            {offices.map((office) => (
-              <div key={office.city} className="flex flex-col">
-                <h3 className="font-heading font-bold text-xl sm:text-2xl text-black uppercase tracking-tight mb-2">
-                  {office.city}
-                </h3>
-                <p className="font-[Urbanist] text-[15px] sm:text-[16px] text-black/60 leading-[140%] mb-5 min-h-[44px]">
-                  {office.address}
-                </p>
+            <div className="flex flex-col">
+              <h3 className="font-heading font-bold text-xl sm:text-2xl text-black uppercase tracking-tight mb-2">
+                Office address
+              </h3>
+              <p className="font-[Urbanist] text-[15px] sm:text-[16px] text-black/60 leading-[140%] mb-5 min-h-[44px]">
+                {address}
+              </p>
+              <div className="w-full h-px bg-black/20 mb-5" />
+              <a
+                href={`https://${website}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-heading font-bold text-[15px] sm:text-[16px] text-black transition-colors hover:text-[#800020]"
+              >
+                {website}
+              </a>
+            </div>
 
-                {/* Thin horizontal divider line matching template */}
-                <div className="w-full h-px bg-black/20 mb-5" />
-
-                <div className="flex flex-col gap-1 font-heading font-bold text-[15px] sm:text-[16px] text-black uppercase">
+            <div className="flex flex-col">
+              <h3 className="font-heading font-bold text-xl sm:text-2xl text-black uppercase tracking-tight mb-2">
+                Phone &amp; email
+              </h3>
+              <p className="font-[Urbanist] text-[15px] sm:text-[16px] text-black/60 leading-[140%] mb-5 min-h-[44px]">
+                Call or write to us, we reply promptly.
+              </p>
+              <div className="w-full h-px bg-black/20 mb-5" />
+              <div className="flex flex-col gap-1 font-heading font-bold text-[15px] sm:text-[16px] text-black">
+                {phones.map((p) => (
                   <a
-                    href={`tel:${office.phone.replace(/\s+/g, "")}`}
+                    key={p}
+                    href={`tel:${p.replace(/\s+/g, "")}`}
                     className="hover:text-[#800020] transition-colors"
                   >
-                    {office.phone}
+                    {p}
                   </a>
-                  <a
-                    href={`mailto:${office.email}`}
-                    className="hover:text-[#800020] transition-colors"
-                  >
-                    {office.email}
-                  </a>
-                </div>
+                ))}
+                <a href={`mailto:${email}`} className="break-all hover:text-[#800020] transition-colors">
+                  {email}
+                </a>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </div>

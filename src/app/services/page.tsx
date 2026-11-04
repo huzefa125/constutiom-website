@@ -8,7 +8,7 @@ import { Cta } from "@/components/sections/Cta";
 export const metadata: Metadata = {
   title: "Services | Ipile Earth Synergy Construction Limited",
   description:
-    "Construction, general contracting, affordable housing and civil works delivered with Compressed Earth Brick technology and COREN-certified engineering.",
+    "Construction, building maintenance, structural design and development, property and facility management, and general contracts and procurement.",
 };
 
 export default function ServicesPage() {

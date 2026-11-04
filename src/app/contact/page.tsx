@@ -6,7 +6,7 @@ import { ContactFormSection } from "@/components/sections/contact/ContactFormSec
 export const metadata: Metadata = {
   title: "Contact Us | Ipile Earth Synergy Construction Limited",
   description:
-    "Get in touch with Ipile Earth Synergy Construction Limited. Contact our Abuja headquarters and regional engineering hubs for sustainable construction, compressed earth blocks, and civil engineering projects.",
+    "Get in touch with Ipile Earth Synergy Construction Limited. Visit us at Redemption Camp, Lagos-Ibadan Expressway, or call +234 812 686 8754 for construction, building maintenance, design and property management.",
 };
 
 export default function ContactPage() {

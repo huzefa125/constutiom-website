@@ -6,28 +6,28 @@ import { CountUp } from "@/components/ui/CountUp";
 export function WhyChooseUs() {
   const strengths = [
     {
-      icon: Award,
-      title: "Strategic Military & Executive Discipline",
+      icon: Compass,
+      title: "Innovation",
       description:
-        "Under the chairmanship of Rear Admiral James Oladapo (Rtd) mni, our operations are driven by rigorous organizational discipline, transparent scheduling, and strategic foresight.",
+        "Modern construction plans and designs using Compressed Earth Brick (CEB), built from locally available resources.",
     },
     {
-      icon: ShieldCheck,
-      title: "COREN & ISO 9001:2008 Registered Standards",
+      icon: Award,
+      title: "Speed",
       description:
-        "Every foundation, reinforced framework, and structural slab adheres strictly to Council for the Regulation of Engineering in Nigeria (COREN Reg. 42,512) and ISO quality assurance audits.",
+        "Interlocking earth bricks and well-planned site work keep projects moving from foundation to handover.",
     },
     {
       icon: Leaf,
-      title: "Hydraform Eco-Block Innovation",
+      title: "Cost Effectiveness",
       description:
-        "Certified by the Hydraform Academy (Boksburg, South Africa), our Compressed Earth Brick (CEB) system cuts cement dependency by up to 50% while lowering indoor ambient temperatures.",
+        "CEB reduces building cost significantly, so suitable and affordable homes reach every class of society.",
     },
     {
-      icon: Compass,
-      title: "Proven Major Infrastructure Track Record",
+      icon: ShieldCheck,
+      title: "Teamwork",
       description:
-        "From defense barracks for the Nigerian Navy in Abuja and Cross River to multi-story mission facilities and energy sector civil works, we deliver enduring durability.",
+        "Designers, engineers and site crews working as one team, accountable to you from first sketch to handover.",
     },
   ];
 
@@ -49,12 +49,11 @@ export function WhyChooseUs() {
               </div>
             </div>
             <h2 className="font-serif max-w-[700px] text-[30px] uppercase leading-[0.98] text-white sm:text-[36px] lg:text-[46px] xl:text-[56px]">
-              The standard behind <span className="text-[#FFD700]">every</span> structure
+              Four values behind <span className="text-[#FFD700]">every</span> structure
             </h2>
           </div>
           <p className="max-w-[440px] font-[Urbanist] text-lg font-medium leading-[145%] text-white/70">
-            Engineering excellence is measured by quiet certainty: structural resilience, environmental stewardship and
-            absolute fidelity to contractual timelines.
+            Our mission is to become the leading provider of affordable homes in Nigeria, guided by four core values.
           </p>
         </div>
 
@@ -81,10 +80,10 @@ export function WhyChooseUs() {
                 </div>
                 <div>
                   <span className="block font-serif text-lg font-semibold uppercase leading-none">
-                    Certified quality standards
+                    Our core values
                   </span>
                   <span className="mt-1 block font-[Urbanist] text-sm font-medium text-black/60">
-                    Abuja • Cross River • Lagos
+                    Innovation • Speed • Cost • Teamwork
                   </span>
                 </div>
               </div>

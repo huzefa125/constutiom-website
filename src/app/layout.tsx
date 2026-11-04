@@ -19,22 +19,22 @@ const urbanist = Urbanist({
 export const metadata: Metadata = {
   title: "Ipile Earth Synergy Construction Limited | Engineering & Sustainable Infrastructure",
   description:
-    "Distinguished Nigerian civil engineering, property management, and general contracting company. Leaders in Compressed Earth Brick (CEB) sustainable construction.",
+    "Modern Nigerian construction company established in 2017, providing suitable and affordable homes in a sustainable environment using Compressed Earth Brick (CEB).",
   keywords: [
     "Ipile Earth Synergy",
     "Compressed Earth Bricks Nigeria",
-    "Hydraform Sustainable Housing",
-    "Abuja Civil Engineering",
-    "Nigerian Navy Barracks Construction",
+    "Affordable Homes Nigeria",
+    "Building Maintenance",
+    "Property and Facility Management",
     "Green Building Technology",
-    "General Contracting Abuja",
+    "General Contracting Nigeria",
   ],
   authors: [{ name: "Ipile Earth Synergy Construction Limited" }],
   openGraph: {
     title: "Ipile Earth Synergy Construction Limited",
     description:
-      "Distinguished Nigerian engineering and sustainable infrastructure firm specializing in Compressed Earth Brick (CEB) technology.",
-    url: "https://ipileearth.com",
+      "Affordable, sustainable homes and construction services across Nigeria using Compressed Earth Brick (CEB).",
+    url: "https://www.ipileearth.com.ng",
     siteName: "Ipile Earth Synergy",
     locale: "en_NG",
     type: "website",

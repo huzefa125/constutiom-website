@@ -23,23 +23,23 @@ export const SERVICES_DATA: ServiceItem[] = [
   {
     id: "construction",
     title: "Construction Services",
-    category: "Sustainable & Civil Engineering",
+    category: "Civil, Building & Public Works",
     eyebrow: "PRECISION EXECUTION",
     description:
-      "Specialized in sustainable building methodologies, including Hydraform Compressed Earth Brick (CEB) interlocking systems, reinforced concrete superstructures, and turnkey commercial developments.",
+      "Civil construction services of every description, building contracting, infrastructure and public works, plus the supply of building materials and equipment.",
     overview:
-      "From foundations to finishes, we build residential, commercial and institutional structures that balance strength, speed and cost. Our teams combine COREN-certified engineering with Hydraform Compressed Earth Brick technology, so every building is durable, thermally comfortable and kinder to the environment.",
+      "We are authorised to carry out construction operations in line with our Memorandum of Association: from civil works and general building contracting to residential and commercial buildings, roads and drainage, and the supply of the materials and equipment that go into them.",
     details: [
-      "Compressed Earth Brick (CEB) Eco-Housing",
-      "Reinforced Concrete Frameworks & Foundations",
-      "Institutional, Commercial & Residential Construction",
-      "Deep Foundation & Bored Pile Engineering",
+      "Civil Construction: construction, repair, maintenance and demolition of works",
+      "Building Contracting: structural development and general building contractor functions",
+      "Infrastructure & Public Works: residential and commercial buildings, complexes, halls, culverts, roads, highways, borehole drilling and sewage systems",
+      "Materials & Equipment: manufacture, supply, import, export and dealing in building materials, equipment and builders' requisites",
     ],
     process: [
       { title: "Site assessment", text: "Soil, access and services are reviewed so the design fits the ground it will stand on." },
-      { title: "Foundations & structure", text: "Engineer-designed foundations and reinforced frameworks set out and checked at every stage." },
-      { title: "Walling & superstructure", text: "CEB walling and concrete elements go up to programme with continuous quality checks." },
-      { title: "Finishing & handover", text: "Services, finishes and a full snag inspection before the keys are handed over." },
+      { title: "Foundations & structure", text: "Foundations and frameworks are set out and checked at every stage." },
+      { title: "Walling & superstructure", text: "Compressed Earth Brick walling and structural elements go up to programme." },
+      { title: "Finishing & handover", text: "Services, finishes and a full snag inspection before handover." },
     ],
     image: `${G}/navy-barracks-atimbo/navy-barracks-atimbo-10.jpg`,
     gallery: [
@@ -50,81 +50,23 @@ export const SERVICES_DATA: ServiceItem[] = [
     link: "/services/construction",
   },
   {
-    id: "general-contracting",
-    title: "General Contracting",
-    category: "Full-Scale Project Management",
-    eyebrow: "RIGOROUS OVERSIGHT",
-    description:
-      "End-to-end procurement, site logistics, safety compliance, and disciplined engineering project management under ISO 9001 and COREN oversight guidelines.",
-    overview:
-      "One accountable partner for the whole job. We manage procurement, subcontractors, site logistics and safety so your project stays on programme and on budget, under ISO 9001 quality systems and COREN engineering oversight.",
-    details: [
-      "Turnkey Design-Build Project Delivery",
-      "Quality Assurance & Inspection Test Plans (ITP)",
-      "NEBOSH-Standard Occupational Health & Safety",
-      "Subcontractor Coordination & Material Sourcing",
-    ],
-    process: [
-      { title: "Planning & procurement", text: "Scope, programme and material sourcing are agreed before work starts on site." },
-      { title: "Mobilisation", text: "Site set-up, logistics and safety plans are put in place and briefed to every crew." },
-      { title: "Controlled delivery", text: "Inspection test plans and regular reporting keep quality and progress visible." },
-      { title: "Close-out", text: "Final inspections, documentation and a clean, orderly handover." },
-    ],
-    image: `${G}/navy-school-akpabuyo/navy-school-akpabuyo-01.jpg`,
-    gallery: [
-      `${G}/navy-barracks-kuje/navy-barracks-kuje-03.jpg`,
-      `${G}/navy-barracks-atimbo/navy-barracks-atimbo-10.jpg`,
-      `${G}/navy-barracks-kuje/navy-barracks-kuje-05.jpg`,
-    ],
-    link: "/services/general-contracting",
-  },
-  {
-    id: "affordable-housing",
-    title: "Affordable Housing",
-    category: "Homes For Every Class Of Society",
-    eyebrow: "BUILT FOR EVERYONE",
-    description:
-      "Suitable, affordable homes in a sustainable environment, designed around locally available resources and Compressed Earth Brick (CEB) construction that significantly reduces building cost.",
-    overview:
-      "Our mission is to become the leading provider of affordable homes in Nigeria. By pressing Compressed Earth Bricks from locally available soil, we cut material and transport costs, build faster and deliver comfortable homes for every class of society.",
-    details: [
-      "Modern CEB Home Plans & Designs",
-      "Locally Sourced, Low-Carbon Materials",
-      "Faster Build Times, Lower Cost Per Unit",
-      "Estate & Mass-Housing Delivery",
-    ],
-    process: [
-      { title: "Plan & design", text: "Home plans chosen or tailored to your budget, family size and plot." },
-      { title: "Make the bricks", text: "Bricks are pressed on or near site from local soil, reducing cost and haulage." },
-      { title: "Build", text: "Interlocking blocks go up quickly with less cement and less waste." },
-      { title: "Handover", text: "Finished homes or whole estates delivered ready to live in." },
-    ],
-    image: `${G}/navy-barracks-atimbo/navy-barracks-atimbo-12.jpg`,
-    gallery: [
-      `${G}/navy-barracks-kuje/navy-barracks-kuje-03.jpg`,
-      `${G}/navy-barracks-atimbo/navy-barracks-atimbo-09.jpg`,
-      `${G}/navy-barracks-kuje/navy-barracks-kuje-06.jpg`,
-    ],
-    link: "/services/affordable-housing",
-  },
-  {
-    id: "civil-works",
-    title: "Civil Works & Renovation",
-    category: "Repair, Maintenance & Demolition",
+    id: "building-maintenance",
+    title: "Building Maintenance",
+    category: "Renovation, Repair & Property Enhancement",
     eyebrow: "RESTORE & RENEW",
     description:
-      "Civil construction services of every description, including repair, maintenance and demolition of existing works, delivered with the same disciplined engineering standards as our new builds.",
+      "Building maintenance and allied property enhancement services, including renovation, structural repairs, refurbishment, finishing and decorative works.",
     overview:
-      "Existing buildings and infrastructure need care too. We repair, maintain, refurbish and, where needed, safely demolish construction works, applying the same engineering discipline we bring to new builds.",
+      "Existing buildings need care too. We provide maintenance of all kinds, from renovation and structural repair to interior and exterior finishing, so properties stay safe, comfortable and presentable.",
     details: [
-      "Structural Repair & Rehabilitation",
-      "Building Renovation & Refurbishment",
-      "Planned & Preventative Maintenance",
-      "Safe Controlled Demolition",
+      "Comprehensive Maintenance: renovation, structural repairs and property refurbishment",
+      "Interior & Exterior Decoration and Painting",
+      "Marble & Tile Installation, Plumbing",
+      "Interlocking Paving, Fencing, Furnishing and Allied Works",
     ],
     process: [
       { title: "Survey", text: "A close inspection identifies defects, risks and the right scope of work." },
-      { title: "Method & plan", text: "A clear repair, renovation or demolition method statement with safety controls." },
+      { title: "Method & plan", text: "A clear repair or renovation plan with safety controls." },
       { title: "Execution", text: "Skilled crews carry out the work with minimum disruption to occupants." },
       { title: "Inspection & care", text: "Final checks and, if you wish, a planned maintenance schedule." },
     ],
@@ -134,7 +76,94 @@ export const SERVICES_DATA: ServiceItem[] = [
       `${G}/navy-barracks-atimbo/navy-barracks-atimbo-10.jpg`,
       `${G}/navy-barracks-kuje/navy-barracks-kuje-03.jpg`,
     ],
-    link: "/services/civil-works",
+    link: "/services/building-maintenance",
+  },
+  {
+    id: "structural-design",
+    title: "Structural Design & Development",
+    category: "Design, Planning & Consultancy",
+    eyebrow: "DESIGN-LED BUILDING",
+    description:
+      "Structural design, project development and engineering consultancy: we draft, plan, design and project-manage construction and structural engineering projects.",
+    overview:
+      "We offer modern construction plans and designs using Compressed Earth Brick (CEB), which reduces building cost significantly, and act as primary building contractor and developer for new builds, structural adaptations and full site developments.",
+    details: [
+      "Design & Planning: draft, plan, design and project-manage all types of construction and structural engineering projects",
+      "Turnkey Development: primary building contractor and developer for new construction and structural adaptations",
+      "Comprehensive Site Developments",
+      "Modern CEB Home Plans & Designs",
+    ],
+    process: [
+      { title: "Brief & plan", text: "Plans chosen or tailored to your budget, family size and plot." },
+      { title: "Design", text: "Structural and architectural design using locally available resources." },
+      { title: "Develop", text: "Project-managed delivery from foundation to completion." },
+      { title: "Handover", text: "Finished homes or developments delivered ready to use." },
+    ],
+    image: `${G}/navy-barracks-atimbo/navy-barracks-atimbo-12.jpg`,
+    gallery: [
+      `${G}/navy-barracks-kuje/navy-barracks-kuje-03.jpg`,
+      `${G}/navy-barracks-atimbo/navy-barracks-atimbo-09.jpg`,
+      `${G}/navy-barracks-kuje/navy-barracks-kuje-06.jpg`,
+    ],
+    link: "/services/structural-design",
+  },
+  {
+    id: "property-facility-management",
+    title: "Property & Facility Management",
+    category: "Real Estate & Facilities",
+    eyebrow: "LONG-TERM CARE",
+    description:
+      "Real estate and property management services, including facility management, property development, estate management, agency and brokerage.",
+    overview:
+      "From office and commercial to residential and industrial properties, we manage the day-to-day running of facilities and engage in property development and real estate investment within Nigeria and internationally.",
+    details: [
+      "Facility Management: cleaning, routine maintenance and operational management for office, commercial, residential and industrial properties",
+      "Real Estate & Property Development",
+      "Estate Management, Real Estate Agency and Property Brokerage",
+      "Real Estate Investments, Nigeria and Internationally",
+    ],
+    process: [
+      { title: "Assess", text: "We review the property, its condition and how it is used." },
+      { title: "Plan", text: "A management and maintenance plan is agreed with you." },
+      { title: "Operate", text: "Routine upkeep and operations are carried out and reported on." },
+      { title: "Improve", text: "We recommend upgrades and development opportunities over time." },
+    ],
+    image: `${G}/navy-school-akpabuyo/navy-school-akpabuyo-01.jpg`,
+    gallery: [
+      `${G}/navy-barracks-kuje/navy-barracks-kuje-03.jpg`,
+      `${G}/navy-barracks-atimbo/navy-barracks-atimbo-10.jpg`,
+      `${G}/navy-barracks-kuje/navy-barracks-kuje-05.jpg`,
+    ],
+    link: "/services/property-facility-management",
+  },
+  {
+    id: "general-contracts-procurement",
+    title: "General Contracts & Procurement",
+    category: "Trade, Logistics & Supply",
+    eyebrow: "ONE ACCOUNTABLE PARTNER",
+    description:
+      "General commercial, trade and procurement operations: general contracting, importation and exportation, logistics, product supply, marketing, sales and distribution.",
+    overview:
+      "We also act as commission agents, manufacturers' representatives and general suppliers of construction equipment, building requisites and raw materials, so your project is supplied as well as built.",
+    details: [
+      "General Merchandise & Logistics: general contracting, international trading, importation, exportation, procurement and distribution",
+      "Representation & Supply: commission agent and manufacturers' representative",
+      "Supply of Construction Equipment and Building Requisites",
+      "Raw Materials Supply",
+    ],
+    process: [
+      { title: "Scope", text: "Requirements and quantities are agreed before sourcing begins." },
+      { title: "Source", text: "We procure from trusted manufacturers and suppliers." },
+      { title: "Deliver", text: "Logistics are coordinated to site on time." },
+      { title: "Support", text: "After-delivery follow-up and repeat supply as needed." },
+    ],
+    image: `${G}/navy-barracks-kuje/navy-barracks-kuje-06.jpg`,
+    gallery: [
+      `${G}/navy-barracks-kuje/navy-barracks-kuje-03.jpg`,
+      `${G}/navy-barracks-atimbo/navy-barracks-atimbo-10.jpg`,
+      `${G}/navy-barracks-kuje/navy-barracks-kuje-05.jpg`,
+    ],
+    link: "/services/general-contracts-procurement",
   },
 ];
 
