@@ -71,7 +71,7 @@ export function Projects() {
                   <h3 className="font-serif text-[24px] uppercase leading-[0.98] text-black transition-colors group-hover:text-[#800020] sm:text-[28px] lg:text-[32px]">
                     {project.name}
                   </h3>
-                  <span className="font-serif text-[24px] leading-none text-black/25 lg:text-[28px]">
+                  <span className="font-serif text-[24px] leading-none text-black/60 lg:text-[28px]">
                     0{index + 1}
                   </span>
                 </div>

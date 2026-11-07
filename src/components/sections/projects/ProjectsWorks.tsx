@@ -57,14 +57,13 @@ export function ProjectsWorks() {
               <div className="mb-4 font-[Urbanist] text-xs font-bold uppercase tracking-[0.18em] text-black/50">
                 Filter
               </div>
-              <ul className="flex flex-wrap gap-2 lg:flex-col lg:gap-0" role="tablist" aria-label="Filter projects">
+              <ul className="flex flex-wrap gap-2 lg:flex-col lg:gap-0" aria-label="Filter projects">
                 {FILTERS.map((f) => {
                   const active = filter === f;
                   return (
                     <li key={f} className="lg:border-t lg:border-black/15 lg:last:border-b">
                       <button
-                        role="tab"
-                        aria-selected={active}
+                        aria-pressed={active}
                         onClick={() => {
                           setFilter(f);
                           setPage(1);
@@ -77,7 +76,7 @@ export function ProjectsWorks() {
                         }`}
                       >
                         <span>{f}</span>
-                        <span className={active ? "text-[#FFD700] lg:text-[#800020]" : "text-black/35"}>
+                        <span className={active ? "text-[#FFD700] lg:text-[#800020]" : "text-black/60"}>
                           {String(count(f)).padStart(2, "0")}
                         </span>
                       </button>
@@ -208,7 +207,7 @@ export function ProjectsWorks() {
                       onClick={() => goTo(n)}
                       aria-current={n === page ? "page" : undefined}
                       className={`cursor-pointer transition-colors ${
-                        n === page ? "text-[#800020] underline underline-offset-4" : "text-black/40 hover:text-black"
+                        n === page ? "text-[#800020] underline underline-offset-4" : "text-black/60 hover:text-black"
                       }`}
                     >
                       {n}

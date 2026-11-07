@@ -19,6 +19,7 @@ export function AboutHero() {
               <span className="block overflow-hidden pb-1">
                 <span className="hero-title-line block text-black">ABOUT</span>
               </span>
+              {" "}
               <span className="block overflow-hidden pt-1">
                 <span className="hero-title-line block text-[#800020]" style={{ "--i": 1 } as React.CSSProperties}>OUR FIRM</span>
               </span>

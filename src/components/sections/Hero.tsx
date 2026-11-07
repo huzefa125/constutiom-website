@@ -50,7 +50,7 @@ export function Hero() {
 
           <div className="optik-hero-title-wrap pb-8 sm:pb-12 lg:pb-16">
             <h1 className="optik-hero-title" style={{ perspective: 900 }}>
-              <span className="sr-only">Ipile Earth Synergy: affordable homes and building construction in Nigeria</span>
+              <span className="sr-only">Ipile Earth Synergy: affordable homes and building construction in Nigeria </span>
               {TITLE_LINES.map((word, w) => (
                 <span key={word.text} className={word.className} aria-hidden="true">
                   {word.text.split("").map((ch, i) => (

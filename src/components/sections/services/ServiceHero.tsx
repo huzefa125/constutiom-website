@@ -58,6 +58,7 @@ export function ServiceHero({ lines, description, image, imageAlt, ctaLabel, cta
               <span className="block overflow-hidden pb-1">
                 <span className="hero-title-line block text-black">{lines[0]}</span>
               </span>
+              {" "}
               <span className="block overflow-hidden pt-1">
                 <span className="hero-title-line block text-[#800020]" style={{ "--i": 1 } as React.CSSProperties}>{lines[1]}</span>
               </span>
