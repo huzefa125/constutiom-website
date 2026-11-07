@@ -32,7 +32,7 @@ export function ContactFormSection() {
   };
 
   return (
-    <section className="relative w-full bg-[#f7f7f7]">
+    <section id="contact-form" className="relative w-full scroll-mt-8 bg-[#f7f7f7]">
       {/* 1. Full-bleed Sunset Curved Villa with Circular Glass Pool (Natural Aspect Ratio) */}
       <div className="w-full relative">
         <Image
