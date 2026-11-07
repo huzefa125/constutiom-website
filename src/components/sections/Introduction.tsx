@@ -23,8 +23,15 @@ export function Introduction() {
             </h2>
 
             <p className="mb-3 mt-2 max-w-[411px] font-[Urbanist] text-lg font-medium leading-[145%] text-black/70">
-              {COMPANY_DATA.shortName} is a modern construction company established in {COMPANY_DATA.founded}, building suitable and
-              affordable homes in a sustainable environment with Compressed Earth Brick and locally available resources.
+              {COMPANY_DATA.shortName} is a modern construction company established in {COMPANY_DATA.founded}, building{" "}
+              <Link href="/affordable-housing-nigeria" className="text-[#800020] underline underline-offset-4">
+                affordable homes in Nigeria
+              </Link>{" "}
+              in a sustainable environment with{" "}
+              <Link href="/compressed-earth-bricks" className="text-[#800020] underline underline-offset-4">
+                Compressed Earth Brick
+              </Link>{" "}
+              and locally available resources.
             </p>
 
             <Link

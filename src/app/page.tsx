@@ -10,9 +10,9 @@ import { Cta } from "@/components/sections/Cta";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Affordable Homes & Construction Company in Nigeria",
+  title: "Affordable Homes & Construction in Nigeria",
   description:
-    "Ipile Earth Synergy builds suitable, affordable homes in Nigeria with Compressed Earth Brick (CEB). Construction, building maintenance, design and property management. Call +234 812 686 8754.",
+    "Affordable homes and construction in Nigeria. Ipile Earth Synergy builds with Compressed Earth Brick, saving 30–40% on walling cost. Call +234 812 686 8754.",
   path: "/",
 });
 

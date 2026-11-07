@@ -1,8 +1,6 @@
-"use client";
-
 import * as React from "react";
 import Link from "next/link";
-import { gsap } from "gsap";
+import Image from "next/image";
 
 const TITLE_LINES = [
   { text: "IPILE", className: "optik-title-ipile" },
@@ -10,49 +8,16 @@ const TITLE_LINES = [
 ];
 
 export function Hero() {
-  const root = React.useRef<HTMLElement>(null);
-
-  React.useEffect(() => {
-    const mm = gsap.matchMedia();
-
-    mm.add("(prefers-reduced-motion: no-preference)", () => {
-      const tl = gsap.timeline({ defaults: { ease: "power4.out" } });
-
-      tl.from(".hero-img-anim", { x: 120, autoAlpha: 0, scale: 0.94, duration: 1.4, ease: "power3.out" }, 0)
-        // 3D flip-in for each title letter
-        .from(
-          ".hero-char",
-          {
-            yPercent: 110,
-            rotateX: -80,
-            autoAlpha: 0,
-            transformOrigin: "50% 100%",
-            duration: 1,
-            stagger: 0.06,
-          },
-          0.2,
-        )
-        .from(".hero-line", { y: 30, autoAlpha: 0, duration: 0.8, stagger: 0.12 }, 0.6)
-        .from(".hero-btn", { y: 24, scale: 0.9, autoAlpha: 0, duration: 0.8, ease: "back.out(1.6)" }, 1);
-    }, root);
-
-    return () => mm.revert();
-  }, []);
-
   return (
-    <section className="optik-hero" ref={root}>
+    <section className="optik-hero">
       <div className="optik-container">
         <div className="optik-hero-row">
           <div className="optik-hero-middle my-auto flex flex-col items-start gap-7">
-            <p className="optik-hero-text" aria-label="From concept to completion, we specialize in blending creativity with functionality.">
-              {["From concept to", "completion, we specialize", "in blending creativity with", "functionality."].map((line) => (
-                <span key={line} className="hero-line block" aria-hidden="true">
-                  {line}
-                </span>
-              ))}
+            <p className="optik-hero-text hero-rise">
+              Affordable homes and quality construction across Nigeria, built with Compressed Earth Brick to cost less.
             </p>
 
-            <div className="optik-hero-btn-wrap hero-btn">
+            <div className="optik-hero-btn-wrap hero-rise" style={{ "--d": "0.5s" } as React.CSSProperties}>
               <div className="optik-theme-button-wrap">
                 <Link href="/#projects" className="optik-btn-link-wrap group">
                   <div className="optik-btn-text-wrap-02">
@@ -84,11 +49,16 @@ export function Hero() {
           </div>
 
           <div className="optik-hero-title-wrap pb-8 sm:pb-12 lg:pb-16">
-            <h1 className="optik-hero-title" aria-label="Ipile Earth Synergy Construction Limited: affordable homes and building construction in Nigeria" style={{ perspective: 900 }}>
+            <h1 className="optik-hero-title" style={{ perspective: 900 }}>
+              <span className="sr-only">Ipile Earth Synergy: affordable homes and building construction in Nigeria</span>
               {TITLE_LINES.map((word, w) => (
                 <span key={word.text} className={word.className} aria-hidden="true">
                   {word.text.split("").map((ch, i) => (
-                    <span key={i} className="inline-block overflow-visible hero-char">
+                    <span
+                      key={i}
+                      className="inline-block overflow-visible hero-char"
+                      style={{ "--i": w * 5 + i } as React.CSSProperties}
+                    >
                       {ch}
                     </span>
                   ))}
@@ -100,11 +70,14 @@ export function Hero() {
         </div>
       </div>
 
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/images/hero/gemini-villa-feathered.png"
+      <Image
+        src="/images/hero/hero-villa.webp"
         alt="Modern home designed and built by Ipile Earth Synergy Construction Limited"
-        className="optik-hero-img hero-img-anim"
+        width={1000}
+        height={830}
+        preload
+        sizes="(max-width: 767px) 100vw, (max-width: 1023px) 66vw, 52vw"
+        className="optik-hero-img hero-slide"
       />
     </section>
   );

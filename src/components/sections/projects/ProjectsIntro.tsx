@@ -2,8 +2,7 @@
 
 import * as React from "react";
 import Image from "next/image";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { whenActive } from "@/lib/gsap";
 
 const STATEMENT =
   "On every site we show how earth brick, masonry and structural steel come together, from the first foundation to the last coat of finish, so you can see the quality and bring your own project to life.";
@@ -16,45 +15,48 @@ export function ProjectsIntro() {
   const root = React.useRef<HTMLElement>(null);
 
   React.useEffect(() => {
-    if (!root.current) return;
-    gsap.registerPlugin(ScrollTrigger);
-    const mm = gsap.matchMedia();
-    mm.add(
-      "(prefers-reduced-motion: no-preference)",
-      () => {
-        // words light up one by one as the section scrolls through the viewport
-        gsap.fromTo(
-          ".pj-word",
-          { opacity: 0.15 },
-          {
-            opacity: 1,
-            ease: "none",
-            stagger: 0.1,
-            scrollTrigger: {
-              trigger: ".pj-statement",
-              start: "top 80%",
-              end: "bottom 45%",
-              scrub: 0.5,
+    const el = root.current;
+    if (!el) return;
+
+    return whenActive(({ gsap }) => {
+      const mm = gsap.matchMedia();
+      mm.add(
+        "(prefers-reduced-motion: no-preference)",
+        () => {
+          // words light up one by one as the section scrolls through the viewport
+          gsap.fromTo(
+            ".pj-word",
+            { opacity: 0.15 },
+            {
+              opacity: 1,
+              ease: "none",
+              stagger: 0.1,
+              scrollTrigger: {
+                trigger: ".pj-statement",
+                start: "top 80%",
+                end: "bottom 45%",
+                scrub: 0.5,
+              },
             },
-          },
-        );
-        gsap.from(".pj-second", {
-          y: 40,
-          autoAlpha: 0,
-          duration: 0.9,
-          ease: "power3.out",
-          scrollTrigger: { trigger: ".pj-second", start: "top 88%" },
-        });
-        gsap.from(".pj-intro-img", {
-          clipPath: "inset(0 0 100% 0)",
-          duration: 1.2,
-          ease: "power3.out",
-          scrollTrigger: { trigger: ".pj-intro-img", start: "top 85%" },
-        });
-      },
-      root,
-    );
-    return () => mm.revert();
+          );
+          gsap.from(".pj-second", {
+            y: 40,
+            autoAlpha: 0,
+            duration: 0.9,
+            ease: "power3.out",
+            scrollTrigger: { trigger: ".pj-second", start: "top 88%" },
+          });
+          gsap.from(".pj-intro-img", {
+            clipPath: "inset(0 0 100% 0)",
+            duration: 1.2,
+            ease: "power3.out",
+            scrollTrigger: { trigger: ".pj-intro-img", start: "top 85%" },
+          });
+        },
+        el,
+      );
+      return () => mm.revert();
+    });
   }, []);
 
   return (

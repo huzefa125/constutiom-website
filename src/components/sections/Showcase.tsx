@@ -3,7 +3,7 @@
 import * as React from "react";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { gsap } from "gsap";
+import { whenActive, type GsapLib } from "@/lib/gsap";
 
 const CARDS = [
   { src: "/images/gallery/navy-barracks-kuje/navy-barracks-kuje-06.jpg", alt: "Compressed Earth Brick building, Kuje" },
@@ -24,6 +24,7 @@ const MARQUEE_TEXT = "Construction & Infrastructure";
 
 export function Showcase() {
   const root = React.useRef<HTMLElement>(null);
+  const gsapRef = React.useRef<GsapLib["gsap"] | null>(null);
   const cardRefs = React.useRef<(HTMLDivElement | null)[]>([]);
   const order = React.useRef<number[]>(CARDS.map((_, i) => i)); // order[depth] = card index
   const busy = React.useRef(false);
@@ -31,6 +32,8 @@ export function Showcase() {
   const timer = React.useRef<ReturnType<typeof setInterval> | null>(null);
 
   const place = React.useCallback((animated: boolean) => {
+    const gsap = gsapRef.current;
+    if (!gsap) return;
     order.current.forEach((cardIndex, depth) => {
       const el = cardRefs.current[cardIndex];
       if (!el) return;
@@ -46,7 +49,8 @@ export function Showcase() {
 
   const go = React.useCallback(
     (dir: 1 | -1) => {
-      if (busy.current) return;
+      const gsap = gsapRef.current;
+      if (busy.current || !gsap) return;
       busy.current = true;
       const o = order.current;
 
@@ -87,9 +91,13 @@ export function Showcase() {
   }, [go]);
 
   React.useEffect(() => {
-    place(false);
-    restartTimer();
+    const stop = whenActive(({ gsap }) => {
+      gsapRef.current = gsap;
+      place(false);
+      restartTimer();
+    });
     return () => {
+      stop();
       if (timer.current) clearInterval(timer.current);
     };
   }, [place, restartTimer]);
@@ -132,6 +140,10 @@ export function Showcase() {
                 cardRefs.current[i] = el;
               }}
               onClick={() => manual(1)}
+              style={{
+                zIndex: CARDS.length - i,
+                transform: `translate(${POSES[i].x}px, ${POSES[i].y}px) rotate(${POSES[i].rotate}deg) scale(${POSES[i].scale})`,
+              }}
               className="absolute inset-0 cursor-pointer overflow-hidden rounded-[10px] bg-[#e9e9e9] shadow-[0_24px_50px_-20px_rgba(0,0,0,0.45)] will-change-transform"
             >
               <Image src={card.src} alt={card.alt} fill sizes="270px" className="object-cover" />

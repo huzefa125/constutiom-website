@@ -2,20 +2,25 @@ import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/seo";
 import { SERVICES_DATA } from "@/data/services";
 
+/** Update when page content changes. A date that changes on every build tells search engines nothing. */
+const LAST_UPDATED = new Date("2026-11-07");
+
+const page = (path: string, priority: number, images?: string[]): MetadataRoute.Sitemap[number] => ({
+  url: `${SITE_URL}${path}`,
+  lastModified: LAST_UPDATED,
+  priority,
+  images: images?.map((image) => `${SITE_URL}${image}`),
+});
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
-  const pages: MetadataRoute.Sitemap = [
-    { url: SITE_URL, lastModified: now, changeFrequency: "monthly", priority: 1 },
-    { url: `${SITE_URL}/about`, lastModified: now, changeFrequency: "yearly", priority: 0.7 },
-    { url: `${SITE_URL}/services`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${SITE_URL}/projects`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${SITE_URL}/contact`, lastModified: now, changeFrequency: "yearly", priority: 0.7 },
+  return [
+    page("/", 1),
+    page("/affordable-housing-nigeria", 0.9, ["/images/service-photos/property-facility-management-1.webp"]),
+    page("/compressed-earth-bricks", 0.9, ["/images/service-photos/general-contracts-procurement-1.webp"]),
+    page("/services", 0.9),
+    ...SERVICES_DATA.map((s) => page(s.link, 0.8, [s.image, ...s.gallery.map((photo) => photo.src)])),
+    page("/projects", 0.8),
+    page("/about", 0.7),
+    page("/contact", 0.7),
   ];
-  const services: MetadataRoute.Sitemap = SERVICES_DATA.map((s) => ({
-    url: `${SITE_URL}/services/${s.id}`,
-    lastModified: now,
-    changeFrequency: "monthly",
-    priority: 0.8,
-  }));
-  return [...pages, ...services];
 }

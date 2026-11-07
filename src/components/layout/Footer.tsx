@@ -20,10 +20,10 @@ export function Footer() {
       <div className="mx-auto w-full max-w-[1300px] px-5 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24">
         <div className="flex flex-col gap-12 lg:flex-row lg:justify-between lg:gap-8 items-start">
           {/* Left: link columns */}
-          <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-4 lg:gap-x-14 w-full max-w-[700px]">
+          <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 lg:grid-cols-5 lg:gap-x-10 w-full max-w-[860px]">
             {/* Visit */}
             <div className="flex flex-col gap-4">
-              <h4 className={headingClass}>Visit</h4>
+              <h2 className={headingClass}>Visit</h2>
               <p className="max-w-[200px] font-[Urbanist] text-[14px] sm:text-[15px] font-medium leading-[160%] text-black/75">
                 {COMPANY_DATA.headquarters}
               </p>
@@ -31,7 +31,7 @@ export function Footer() {
 
             {/* Quick links */}
             <div className="flex flex-col gap-4">
-              <h4 className={headingClass}>Quick links</h4>
+              <h2 className={headingClass}>Quick links</h2>
               <ul className="flex flex-col gap-3">
                 {MAIN_NAV_ITEMS.map((item) => (
                   <li key={item.title}>
@@ -43,9 +43,26 @@ export function Footer() {
               </ul>
             </div>
 
+            {/* Guides */}
+            <div className="flex flex-col gap-4">
+              <h2 className={headingClass}>Guides</h2>
+              <ul className="flex flex-col gap-3">
+                <li>
+                  <Link href="/affordable-housing-nigeria" className={linkClass}>
+                    Affordable Housing in Nigeria
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/compressed-earth-bricks" className={linkClass}>
+                    Compressed Earth Bricks
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
             {/* Services */}
             <div className="flex flex-col gap-4">
-              <h4 className={headingClass}>Services</h4>
+              <h2 className={headingClass}>Services</h2>
               <ul className="flex flex-col gap-3">
                 {SERVICES_DATA.map((service) => (
                   <li key={service.id}>
@@ -59,28 +76,8 @@ export function Footer() {
 
             {/* Connect */}
             <div className="flex flex-col gap-4">
-              <h4 className={headingClass}>Connect</h4>
+              <h2 className={headingClass}>Connect</h2>
               <ul className="flex flex-col gap-3">
-                <li>
-                  <a
-                    href="https://www.facebook.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={linkClass}
-                  >
-                    Facebook
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.linkedin.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={linkClass}
-                  >
-                    LinkedIn
-                  </a>
-                </li>
                 <li>
                   <a
                     href={`tel:${phone.replace(/\s+/g, "")}`}

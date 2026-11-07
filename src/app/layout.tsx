@@ -21,8 +21,8 @@ const urbanist = Urbanist({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Affordable Homes & Construction Company in Nigeria | Ipile Earth Synergy",
-    template: "%s | Ipile Earth Synergy",
+    default: "Affordable Homes & Construction in Nigeria | Ipile Earth",
+    template: "%s | Ipile Earth",
   },
   description:
     "Ipile Earth Synergy Construction Limited builds affordable homes in Nigeria using Compressed Earth Brick (CEB). Construction, building maintenance, structural design and property management since 2017.",
@@ -72,6 +72,7 @@ export default function RootLayout({
     <html
       lang="en-NG"
       suppressHydrationWarning
+      data-scroll-behavior="smooth"
       className={`${phudu.variable} ${urbanist.variable} scroll-smooth antialiased`}
     >
       <body suppressHydrationWarning className="min-h-screen flex flex-col bg-[#F7C290] text-[#242424]">

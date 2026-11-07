@@ -1,5 +1,6 @@
 import * as React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export function AboutPhilosophy() {
   return (
@@ -23,9 +24,15 @@ export function AboutPhilosophy() {
 
             {/* Authentic Company Intro text */}
             <p className="font-[Urbanist] text-[15px] sm:text-[17px] font-medium leading-[150%] text-black/80 max-w-[420px] mt-5 mb-8">
-              Ipile Earth Synergy Construction Limited aims to provide suitable and
-              affordable homes in a sustainable environment, using locally available
-              resources, for every class of society. We carry on construction and civil
+              Ipile Earth Synergy Construction Limited aims to provide suitable and{" "}
+              <Link href="/affordable-housing-nigeria" className="text-[#800020] underline underline-offset-4">
+                affordable homes
+              </Link>{" "}
+              in a sustainable environment, using{" "}
+              <Link href="/compressed-earth-bricks" className="text-[#800020] underline underline-offset-4">
+                locally available resources
+              </Link>
+              , for every class of society. We carry on construction and civil
               construction services of every description, including repair, maintenance
               and demolition of construction works.
             </p>
@@ -66,43 +73,40 @@ export function AboutPhilosophy() {
 
           {/* Center Column (4 cols): Signature CEB Modern Complex Architecture */}
           <div className="lg:col-span-4 w-full flex justify-center lg:justify-start">
-            <div className="relative w-full aspect-[3/4] max-w-[420px] rounded-[12px] md:rounded-[14px] overflow-hidden shadow-xl bg-black/5 border border-black/10">
-              <Image
-                src="/images/about/about-philosophy-ceb-complex.webp"
-                alt="Impressive modern multi-unit Compressed Earth Brick residential complex with white balconies, textured terracotta walls, and palm trees in twilight"
-                fill
-                sizes="(max-width: 1024px) 100vw, 420px"
-                className="object-cover transition-transform duration-700 hover:scale-[1.03]"
-              />
+            <div className="relative w-full aspect-[3/4] max-w-[420px]">
+              <div className="relative h-full w-full rounded-[14px] overflow-hidden shadow-2xl bg-black/5">
+                <Image
+                  src="/images/about/about-philosophy-terrace.jpg"
+                  alt="Completed Compressed Earth Brick terrace of homes with a paved interlocking road and landscaped kerbs"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 420px"
+                  className="object-cover object-center transition-transform duration-700 hover:scale-[1.03]"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
+              </div>
             </div>
           </div>
 
-          {/* Right Column (3 cols): Tactile CEB Craftsmanship Detail */}
-          <div className="lg:col-span-3 flex flex-col items-start justify-end gap-6 w-full">
-            <div className="relative w-full max-w-[210px] aspect-[4/3] rounded-[10px] md:rounded-[12px] overflow-hidden shadow-lg bg-black/5 border border-black/10">
-              <Image
-                src="/images/about/about-philosophy-ceb-craft.webp"
-                alt="High-detail architectural macro close-up of Hydraform interlocking earth bricks meeting a crisp white window frame in warm sunlight"
-                fill
-                sizes="210px"
-                className="object-cover transition-transform duration-700 hover:scale-[1.03]"
-              />
-            </div>
-
-            <div className="flex max-w-[340px] flex-col gap-4 font-[Urbanist] text-[14px] sm:text-[15px] font-medium leading-[150%] text-black/80">
-              <p>
-                <span className="block text-xs font-bold uppercase tracking-[0.18em] text-[#800020]">Mission</span>
-                To become the leading provider of affordable homes in Nigeria.
-              </p>
-              <p>
-                <span className="block text-xs font-bold uppercase tracking-[0.18em] text-[#800020]">Vision</span>
-                Provide suitable and affordable homes in a sustainable environment for every class of society.
-              </p>
-              <p>
-                <span className="block text-xs font-bold uppercase tracking-[0.18em] text-[#800020]">Core values</span>
-                Innovation · Speed · Cost Effectiveness · Teamwork
-              </p>
-            </div>
+          {/* Right Column (3 cols): Mission, Vision, Core Values */}
+          <div className="lg:col-span-3 flex w-full flex-col justify-end divide-y divide-black/10 lg:pl-4">
+            {[
+              { label: "Mission", text: "To become the leading provider of affordable homes in Nigeria." },
+              {
+                label: "Vision",
+                text: "Provide suitable and affordable homes in a sustainable environment for every class of society.",
+              },
+              { label: "Core Values", text: "Innovation · Speed · Cost Effectiveness · Teamwork" },
+            ].map((item) => (
+              <div key={item.label} className="py-5 first:pt-0 last:pb-0">
+                <h3 className="flex items-center gap-3 font-heading text-[30px] sm:text-[34px] font-bold uppercase leading-none text-[#800020]">
+                  <span aria-hidden className="h-[3px] w-8 bg-[#800020]" />
+                  {item.label}
+                </h3>
+                <p className="mt-3 font-[Urbanist] text-[17px] sm:text-[18px] font-medium leading-[150%] text-black/85">
+                  {item.text}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

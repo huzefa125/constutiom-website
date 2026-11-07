@@ -61,7 +61,7 @@ export function Services() {
                 <div className="flex items-center gap-4 px-5 py-5 sm:gap-6 lg:px-8 lg:py-6">
                   <span
                     className={`font-serif text-[26px] leading-none transition-colors duration-500 lg:text-[34px] ${
-                      isActive ? "text-[#800020]" : "text-black/30"
+                      isActive ? "text-[#800020]" : "text-black/60"
                     }`}
                   >
                     0{index + 1}

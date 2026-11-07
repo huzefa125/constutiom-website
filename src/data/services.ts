@@ -3,6 +3,11 @@ export interface ServiceProcessStep {
   text: string;
 }
 
+export interface ServicePhoto {
+  src: string;
+  caption: string;
+}
+
 export interface ServiceItem {
   id: string;
   title: string;
@@ -13,11 +18,18 @@ export interface ServiceItem {
   details: string[];
   process: ServiceProcessStep[];
   image: string;
-  gallery: string[];
+  imageAlt: string;
+  overviewImage: string;
+  overviewAlt: string;
+  gallery: ServicePhoto[];
   link: string;
+  seoTitle: string;
+  seoDescription: string;
+  related: string[];
+  projects: string[];
 }
 
-const G = "/images/gallery";
+const S = "/images/service-photos";
 
 export const SERVICES_DATA: ServiceItem[] = [
   {
@@ -41,13 +53,21 @@ export const SERVICES_DATA: ServiceItem[] = [
       { title: "Walling & superstructure", text: "Compressed Earth Brick walling and structural elements go up to programme." },
       { title: "Finishing & handover", text: "Services, finishes and a full snag inspection before handover." },
     ],
-    image: `${G}/navy-barracks-atimbo/navy-barracks-atimbo-10.jpg`,
+    image: `${S}/construction-hero.webp`,
+    imageAlt: "Ipile crew in orange overalls laying Compressed Earth Brick walls on site",
+    overviewImage: `${S}/construction-overview.webp`,
+    overviewAlt: "Bricklayers on wooden trestles raising earth-brick walls",
     gallery: [
-      `${G}/navy-barracks-atimbo/navy-barracks-atimbo-09.jpg`,
-      `${G}/navy-barracks-kuje/navy-barracks-kuje-06.jpg`,
-      `${G}/navy-barracks-kuje/navy-barracks-kuje-05.jpg`,
+      { src: `${S}/construction-1.webp`, caption: "Roof trusses going up on an earth-brick shell" },
+      { src: `${S}/construction-2.webp`, caption: "Roof tiles being fixed by our crew" },
+      { src: `${S}/construction-3.webp`, caption: "A completed terrace of earth-brick homes" },
     ],
     link: "/services/construction",
+    seoTitle: "Building Construction Company in Nigeria",
+    seoDescription:
+      "Building construction company in Nigeria. Homes, estates, institutions, roads and civil works built with Compressed Earth Brick by one accountable team.",
+    related: ["structural-design", "building-maintenance"],
+    projects: ["navy-barracks-kuje", "navy-barracks-atimbo"],
   },
   {
     id: "building-maintenance",
@@ -70,13 +90,21 @@ export const SERVICES_DATA: ServiceItem[] = [
       { title: "Execution", text: "Skilled crews carry out the work with minimum disruption to occupants." },
       { title: "Inspection & care", text: "Final checks and, if you wish, a planned maintenance schedule." },
     ],
-    image: `${G}/other-projects/other-projects-134.jpg`,
+    image: `${S}/building-maintenance-hero.webp`,
+    imageAlt: "Worker on a ladder at the entrance of a two-storey home at Brickville Court",
+    overviewImage: `${S}/building-maintenance-overview.webp`,
+    overviewAlt: "Painter in blue overalls with a roller at a freshly painted yellow wall",
     gallery: [
-      `${G}/navy-barracks-kuje/navy-barracks-kuje-06.jpg`,
-      `${G}/navy-barracks-atimbo/navy-barracks-atimbo-10.jpg`,
-      `${G}/navy-barracks-kuje/navy-barracks-kuje-03.jpg`,
+      { src: `${S}/building-maintenance-1.webp`, caption: "Polished tile flooring in a finished hall" },
+      { src: `${S}/building-maintenance-2.webp`, caption: "Wall tiling and fitted kitchen cabinets" },
+      { src: `${S}/building-maintenance-3.webp`, caption: "Interlocking paving being laid between homes" },
     ],
     link: "/services/building-maintenance",
+    seoTitle: "Building Maintenance Company in Nigeria",
+    seoDescription:
+      "Building maintenance services in Nigeria: renovation, structural repairs, painting, tiling, plumbing, interlocking paving and fencing for any property.",
+    related: ["property-facility-management", "construction"],
+    projects: ["brickville-court", "rccg-mission-house"],
   },
   {
     id: "structural-design",
@@ -99,13 +127,21 @@ export const SERVICES_DATA: ServiceItem[] = [
       { title: "Develop", text: "Project-managed delivery from foundation to completion." },
       { title: "Handover", text: "Finished homes or developments delivered ready to use." },
     ],
-    image: `${G}/navy-barracks-atimbo/navy-barracks-atimbo-12.jpg`,
+    image: `${S}/structural-design-hero.webp`,
+    imageAlt: "Two engineers in high-visibility vests reviewing a drawing together",
+    overviewImage: `${S}/structural-design-overview.webp`,
+    overviewAlt: "Structural drawings on a drafting board",
     gallery: [
-      `${G}/navy-barracks-kuje/navy-barracks-kuje-03.jpg`,
-      `${G}/navy-barracks-atimbo/navy-barracks-atimbo-09.jpg`,
-      `${G}/navy-barracks-kuje/navy-barracks-kuje-06.jpg`,
+      { src: `${S}/structural-design-1.webp`, caption: "A window opening framed in earth-brick walling" },
+      { src: `${S}/structural-design-2.webp`, caption: "Crew on scaffolding as the roof structure goes up" },
+      { src: `${S}/structural-design-3.webp`, caption: "Aerial view of a completed housing development" },
     ],
     link: "/services/structural-design",
+    seoTitle: "Structural Design & Building Plans in Nigeria",
+    seoDescription:
+      "Structural design and building plans in Nigeria. We draft, design and project-manage new builds, modern CEB home plans and full site developments.",
+    related: ["construction", "general-contracts-procurement"],
+    projects: ["navy-school-akpabuyo", "karu-housing-development"],
   },
   {
     id: "property-facility-management",
@@ -128,13 +164,21 @@ export const SERVICES_DATA: ServiceItem[] = [
       { title: "Operate", text: "Routine upkeep and operations are carried out and reported on." },
       { title: "Improve", text: "We recommend upgrades and development opportunities over time." },
     ],
-    image: `${G}/navy-school-akpabuyo/navy-school-akpabuyo-01.jpg`,
+    image: `${S}/property-facility-management-hero.webp`,
+    imageAlt: "Keys left in the lock of an open front door",
+    overviewImage: `${S}/property-facility-management-overview.webp`,
+    overviewAlt: "Mop cleaning a polished wooden floor",
     gallery: [
-      `${G}/navy-barracks-kuje/navy-barracks-kuje-03.jpg`,
-      `${G}/navy-barracks-atimbo/navy-barracks-atimbo-10.jpg`,
-      `${G}/navy-barracks-kuje/navy-barracks-kuje-05.jpg`,
+      { src: `${S}/property-facility-management-1.webp`, caption: "Aerial view of a housing estate built by Ipile" },
+      { src: `${S}/property-facility-management-2.webp`, caption: "Exterior lighting and paved access at dusk" },
+      { src: `${S}/property-facility-management-3.webp`, caption: "A finished interior, ready to occupy" },
     ],
     link: "/services/property-facility-management",
+    seoTitle: "Property & Facility Management in Nigeria",
+    seoDescription:
+      "Property and facility management in Nigeria: cleaning, routine maintenance, estate management and agency for offices, homes and industrial sites.",
+    related: ["building-maintenance", "structural-design"],
+    projects: ["brickville-court", "rccg-multipurpose-pavilion"],
   },
   {
     id: "general-contracts-procurement",
@@ -157,16 +201,26 @@ export const SERVICES_DATA: ServiceItem[] = [
       { title: "Deliver", text: "Logistics are coordinated to site on time." },
       { title: "Support", text: "After-delivery follow-up and repeat supply as needed." },
     ],
-    image: `${G}/navy-barracks-kuje/navy-barracks-kuje-06.jpg`,
+    image: `${S}/general-contracts-procurement-hero.webp`,
+    imageAlt: "Wheel loader and tipper truck working on a building site",
+    overviewImage: `${S}/general-contracts-procurement-overview.webp`,
+    overviewAlt: "Truck loaded with bags of cement",
     gallery: [
-      `${G}/navy-barracks-kuje/navy-barracks-kuje-03.jpg`,
-      `${G}/navy-barracks-atimbo/navy-barracks-atimbo-10.jpg`,
-      `${G}/navy-barracks-kuje/navy-barracks-kuje-05.jpg`,
+      { src: `${S}/general-contracts-procurement-1.webp`, caption: "Earth bricks being cured on site" },
+      { src: `${S}/general-contracts-procurement-2.webp`, caption: "A grader levelling ground for access roads" },
+      { src: `${S}/general-contracts-procurement-3.webp`, caption: "Bricks stacked and ready for the walls" },
     ],
     link: "/services/general-contracts-procurement",
+    seoTitle: "General Contractor & Building Supplies Nigeria",
+    seoDescription:
+      "General contractor and building materials supplier in Nigeria: procurement, logistics, construction equipment, raw materials and builders' requisites.",
+    related: ["construction", "building-maintenance"],
+    projects: ["navy-barracks-atimbo", "rccg-multipurpose-pavilion"],
   },
 ];
 
 export function getServiceById(id: string) {
   return SERVICES_DATA.find((service) => service.id === id);
 }
+
+

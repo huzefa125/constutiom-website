@@ -25,9 +25,7 @@ export function BrandLogo({
       ? "h-8 md:h-9"
       : "h-9 sm:h-10 md:h-11";
 
-  const logoSrc = isDark
-    ? "/logos/ipile-official-full-logo-dark.png"
-    : "/logos/ipile-official-full-logo-transparent.png";
+  const logoSrc = isDark ? "/logos/ipile-logo-dark.webp" : "/logos/ipile-logo.webp";
 
   return (
     <Link
@@ -40,7 +38,7 @@ export function BrandLogo({
         alt="Ipile Earth Synergy Construction Limited"
         width={462}
         height={88}
-        priority={priority}
+        loading={priority ? "eager" : "lazy"}
         unoptimized
         className={`${heightClass} w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]`}
       />
