@@ -14,7 +14,7 @@ type Props = {
   ctaHref: string;
   crumbs?: Crumb[];
   /** Long service names use a smaller title size. */
-  compact?: boolean;
+  compact?: boolean | "small";
   children?: React.ReactNode;
 };
 
@@ -49,7 +49,9 @@ export function ServiceHero({ lines, description, image, imageAlt, ctaLabel, cta
 
             <h1
               className={`select-none font-heading font-bold uppercase tracking-tight ${
-                compact
+                compact === "small"
+                  ? "text-[32px] leading-[0.96] sm:text-[44px] lg:text-[50px] xl:text-[56px]"
+                  : compact
                   ? "text-[40px] leading-[0.94] sm:text-[56px] lg:text-[64px] xl:text-[72px]"
                   : "text-[52px] leading-[0.88] sm:text-[72px] md:text-[92px] lg:text-[104px] xl:text-[120px]"
               }`}

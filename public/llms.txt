@@ -16,6 +16,9 @@ Website: https://www.ipileearth.com.ng
 
 - [Affordable housing in Nigeria](https://www.ipileearth.com.ng/affordable-housing-nigeria): how we make low-cost homes, what goes into them, and what we have delivered
 - [Compressed Earth Bricks](https://www.ipileearth.com.ng/compressed-earth-bricks): how CEB are made, their benefits and where they have been used
+- [Cost of building a house in Nigeria (2026)](https://www.ipileearth.com.ng/guides/cost-of-building-a-house-in-nigeria): published price ranges, cost per square metre and a worked example
+- [Compressed earth bricks vs sandcrete vs burnt bricks](https://www.ipileearth.com.ng/guides/compressed-earth-bricks-vs-sandcrete-vs-burnt-bricks): strength, cost, speed and thermal comparison with sources
+- [How to build with interlocking earth bricks](https://www.ipileearth.com.ng/guides/how-to-build-with-interlocking-earth-bricks): step-by-step guide
 - [Services](https://www.ipileearth.com.ng/services): all five service lines
 - [Projects](https://www.ipileearth.com.ng/projects): completed barracks, schools, churches and homes
 - [About](https://www.ipileearth.com.ng/about): mission, vision, values and leadership

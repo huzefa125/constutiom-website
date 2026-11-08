@@ -18,6 +18,7 @@ export const metadata: Metadata = pageMetadata({
     "Compressed Earth Bricks (CEB) in Nigeria: how interlocking earth bricks are made, why they save 30–40% of walling cost, and where we have built with them.",
   path: PATH,
   image: IMAGE,
+  article: { published: "2026-11-07", modified: "2026-11-08" },
 });
 
 const BENEFITS = [
@@ -49,7 +50,7 @@ const FAQS = [
   },
   {
     q: "How much can I save with interlocking bricks in Nigeria?",
-    a: "Using CEB reduces the cost of housing by 30–40% of the total walling cost per unit. The saving on your project depends on its design, so contact us for a quote.",
+    a: "Using CEB reduces the cost of housing by 30–40% of the total walling cost per unit, which is Ipile’s own figure. Walls are about 15–23% of a typical budget, so on a ₦25 million house that is roughly ₦1.1–2.3 million. Independent Nigerian studies report smaller wall savings of about 4–12%.",
   },
   {
     q: "Are earth bricks strong enough for a house?",
@@ -147,7 +148,8 @@ export default function CompressedEarthBricksPage() {
         links={[
           { href: "/affordable-housing-nigeria", title: "Affordable housing in Nigeria", text: "How CEB brings the cost of a quality home down." },
           { href: "/services/construction", title: "Building construction", text: "Our crews build with CEB from foundation to handover." },
-          { href: "/services/general-contracts-procurement", title: "Materials supply", text: "Building materials, equipment and builders' requisites." },
+          { href: "/guides/compressed-earth-bricks-vs-sandcrete-vs-burnt-bricks", title: "Earth bricks vs sandcrete vs burnt bricks", text: "Strength, cost, speed and thermal performance compared, with sources." },
+          { href: "/guides/how-to-build-with-interlocking-earth-bricks", title: "How to build with interlocking bricks", text: "A step-by-step guide from soil test to finished wall." },
         ]}
       />
 

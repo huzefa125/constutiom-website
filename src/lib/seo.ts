@@ -12,10 +12,12 @@ interface PageMetaInput {
   path: string;
   image?: string;
   keywords?: string[];
+  /** Set for guides and articles: switches Open Graph to the article type and adds dates. */
+  article?: { published: string; modified: string };
 }
 
 /** Per-page metadata with canonical URL, Open Graph and Twitter card. */
-export function pageMetadata({ title, description, path, image = DEFAULT_OG_IMAGE, keywords }: PageMetaInput): Metadata {
+export function pageMetadata({ title, description, path, image = DEFAULT_OG_IMAGE, keywords, article }: PageMetaInput): Metadata {
   const url = `${SITE_URL}${path}`;
   const fullTitle = `${title} | ${TITLE_SUFFIX}`;
   return {
@@ -29,8 +31,10 @@ export function pageMetadata({ title, description, path, image = DEFAULT_OG_IMAG
       url,
       siteName: SITE_NAME,
       locale: "en_NG",
-      type: "website",
       images: [{ url: image, alt: title }],
+      ...(article
+        ? { type: "article" as const, publishedTime: article.published, modifiedTime: article.modified, authors: [SITE_NAME] }
+        : { type: "website" as const }),
     },
     twitter: {
       card: "summary_large_image",

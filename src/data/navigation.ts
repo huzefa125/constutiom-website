@@ -17,7 +17,7 @@ export const MAIN_NAV_ITEMS: NavItem[] = [
   },
   {
     title: "About Us",
-    href: "/#about",
+    href: "/about",
   },
   {
     title: "Services",
@@ -25,28 +25,28 @@ export const MAIN_NAV_ITEMS: NavItem[] = [
   },
   {
     title: "Projects",
-    href: "/#projects",
+    href: "/projects",
     dropdown: [
       {
         title: "Residential Developments",
-        href: "/#projects",
+        href: "/projects",
         description: "High-performance homes and defense quarters with earth brick insulation.",
       },
       {
         title: "Commercial & Institutional",
-        href: "/#projects",
+        href: "/projects",
         description: "Multi-purpose pavilions, auditoriums, and community complexes.",
       },
       {
         title: "Infrastructure Projects",
-        href: "/#projects",
+        href: "/projects",
         description: "Military barracks, educational facilities, and civil foundations.",
       },
     ],
   },
   {
     title: "Contact",
-    href: "/#contact",
+    href: "/contact",
   },
 ];
 

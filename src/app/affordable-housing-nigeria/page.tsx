@@ -17,6 +17,7 @@ export const metadata: Metadata = pageMetadata({
     "Affordable housing in Nigeria built with Compressed Earth Brick. Save 30–40% on walling cost per unit with low-cost homes for every class of society.",
   path: PATH,
   image: IMAGE,
+  article: { published: "2026-11-07", modified: "2026-11-08" },
 });
 
 const COST_CUTS = [
@@ -64,7 +65,7 @@ const FAQS = [
   },
   {
     q: "How much does an affordable house cost?",
-    a: "It depends on the design, size and location, so we price each project individually. Send us your plan or budget through the contact page for a quote.",
+    a: "Published 2026 estimates put a two-bedroom house at about ₦20–40 million and a three-bedroom in Lagos at ₦11–60 million, depending on finish, excluding land. On a ₦25 million house, Ipile’s 30–40% walling saving is roughly ₦1.1–2.3 million. Our cost guide shows the arithmetic and sources.",
   },
   {
     q: "Do you work with mortgage banks and organisations?",
@@ -223,6 +224,7 @@ export default function AffordableHousingPage() {
           { href: "/services/construction", title: "Building construction", text: "See how we build from foundation to handover." },
           { href: "/services/structural-design", title: "Modern CEB home plans", text: "Plans tailored to your budget, family size and plot." },
           { href: "/compressed-earth-bricks", title: "Compressed Earth Bricks", text: "How our bricks are made and why they cost less." },
+          { href: "/guides/cost-of-building-a-house-in-nigeria", title: "Cost of building a house in Nigeria", text: "Published 2026 price ranges and a worked example, with sources." },
         ]}
       />
 

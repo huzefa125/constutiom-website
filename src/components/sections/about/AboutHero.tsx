@@ -13,11 +13,15 @@ export function AboutHero() {
           <div className="flex flex-col items-start justify-center">
             {/* Title: ABOUT OUR FIRM (Dual-color brand identity) */}
             <h1
-              className="font-heading font-bold uppercase tracking-tight leading-[0.88] select-none text-[40px] sm:text-[56px] lg:text-[64px] xl:text-[72px]"
+              className="font-heading font-bold uppercase tracking-tight leading-[0.9] select-none text-[34px] sm:text-[46px] lg:text-[52px] xl:text-[58px]"
               style={{ perspective: "1000px" }}
             >
+              <span className="block pb-3 font-[Urbanist] text-[15px] font-semibold tracking-[0.16em] text-black/70 sm:text-[17px]">
+                About Ipile Earth Synergy:
+              </span>
+              {" "}
               <span className="block overflow-hidden pb-1">
-                <span className="hero-title-line block text-black">AFFORDABLE HOME</span>
+                <span className="hero-title-line block text-black">COMPRESSED EARTH BRICK</span>
               </span>
               {" "}
               <span className="block overflow-hidden pt-1">

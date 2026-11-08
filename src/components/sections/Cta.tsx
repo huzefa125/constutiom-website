@@ -27,8 +27,8 @@ export function Cta() {
           </p>
 
           <div className="mt-2 flex flex-col items-center gap-6 sm:flex-row sm:gap-10">
-            <a
-              href={`mailto:${COMPANY_DATA.contact.email}`}
+            <Link
+              href="/contact#contact-form"
               className="group relative flex h-[150px] w-[150px] items-center justify-center rounded-full bg-[#800020] text-center font-serif text-[18px] font-semibold uppercase leading-none text-white transition-all duration-500 hover:scale-105 hover:bg-[#FFD700] hover:text-[#800020] lg:h-[180px] lg:w-[180px]"
             >
               <span className="flex flex-col items-center gap-2">
@@ -37,7 +37,7 @@ export function Cta() {
                 touch
                 <ArrowUpRight className="h-6 w-6 transition-transform duration-500 group-hover:rotate-45" />
               </span>
-            </a>
+            </Link>
 
             <div className="flex flex-col items-center gap-2 font-[Urbanist] text-xl font-semibold text-black sm:items-start">
               <a

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { COMPANY_DATA } from "@/data/company";
 import { SERVICES_DATA } from "@/data/services";
 import { LOCATIONS_DATA } from "@/data/locations";
+import { GUIDES_DATA } from "@/data/guides";
 import { MAIN_NAV_ITEMS } from "@/data/navigation";
 import { BrandLogo } from "@/components/ui/BrandLogo";
 import { CurrentYear } from "@/components/ui/CurrentYear";
@@ -58,6 +59,13 @@ export function Footer() {
                     Compressed Earth Bricks
                   </Link>
                 </li>
+                {GUIDES_DATA.map((guide) => (
+                  <li key={guide.slug}>
+                    <Link href={`/guides/${guide.slug}`} className={linkClass}>
+                      {guide.short}
+                    </Link>
+                  </li>
+                ))}
                 {LOCATIONS_DATA.map((location) => (
                   <li key={location.slug}>
                     <Link href={`/locations/${location.slug}`} className={linkClass}>
