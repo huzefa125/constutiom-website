@@ -275,6 +275,10 @@ export const BUILD_GUIDE: GuideItem = {
   ],
   faqs: [
     {
+      q: "How long does it take to build a house with earth bricks?",
+      a: "Pressing the blocks for a typical small house takes about 4.4 machine-days at field rates, according to UNHCR, before curing time. Ipile’s own figure is that a building is usually delivered within six weeks. Your schedule depends on crew size, curing, weather and design, so ask for a programme.",
+    },
+    {
       q: "Do interlocking bricks need mortar?",
       a: "Less than conventional blocks. Hydraform’s system lays the first course, corners and junctions in mortar and dry stacks the rest, but the Auroville code says dry-stacked interlocking masonry is not advisable and uses a five millimetre mortar joint. The right answer depends on the block and the engineer’s detail.",
     },

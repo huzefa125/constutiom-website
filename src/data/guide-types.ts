@@ -34,6 +34,8 @@ export interface GuideItem {
   imageAlt: string;
   published: string;
   updated: string;
+  /** Set only after this person has actually reviewed the guide. */
+  reviewedBy?: { name: string; credential: string };
   blocks: GuideBlock[];
   faqs: FaqItem[];
   sources: GuideSource[];

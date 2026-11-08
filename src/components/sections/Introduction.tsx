@@ -19,19 +19,19 @@ export function Introduction() {
             </div>
 
             <h2 className="font-serif max-w-[600px] text-[30px] uppercase leading-[0.98] text-black sm:text-[36px] lg:max-w-[520px] lg:text-[46px] xl:text-[56px]">
-              Experts in sustainable <span className="whitespace-nowrap">earth-brick</span> building!
+              Who builds sustainable <span className="whitespace-nowrap">earth-brick</span> homes in Nigeria?
             </h2>
 
             <p className="mb-3 mt-2 max-w-[411px] font-[Urbanist] text-lg font-medium leading-[145%] text-black/70">
-              {COMPANY_DATA.shortName} is a modern construction company established in {COMPANY_DATA.founded}, building{" "}
+              {COMPANY_DATA.shortName} is a Nigerian construction company, established in {COMPANY_DATA.founded}, that builds{" "}
               <Link href="/affordable-housing-nigeria" className="text-[#800020] underline underline-offset-4">
                 affordable homes in Nigeria
               </Link>{" "}
-              in a sustainable environment with{" "}
+              with{" "}
               <Link href="/compressed-earth-bricks" className="text-[#800020] underline underline-offset-4">
                 Compressed Earth Brick
               </Link>{" "}
-              and locally available resources.
+              and locally available resources. Our work includes 100 housing units for the Nigerian Navy at Kuje, Abuja, and homes at Redemption Camp in Ogun State.
             </p>
 
             <Link

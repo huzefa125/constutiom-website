@@ -141,8 +141,8 @@ export default async function ServiceDetailPage({ params }: Props) {
       {/* Scope of work */}
       <section className="w-full px-5 pb-20 sm:px-8 sm:pb-28 lg:px-12 lg:pb-36">
         <div className="mx-auto w-full max-w-[1300px]">
-          <SectionHeading eyebrow="Scope of work">
-            What&apos;s <span className="text-[#800020]">included</span>
+          <SectionHeading eyebrow="Scope of work" answer={content.scopeAnswer}>
+            What does {service.title} <span className="text-[#800020]">include</span>?
           </SectionHeading>
           <ul className="mt-10 lg:mt-12">
             {content.scope.map((item, i) => (
@@ -183,8 +183,8 @@ export default async function ServiceDetailPage({ params }: Props) {
         />
       </section>
 
-      <ServicesDelivery eyebrow="How we work" steps={service.process}>
-        Our <span className="text-[#800020]">process</span>
+      <ServicesDelivery eyebrow="How we work" steps={service.process} answer={content.processAnswer}>
+        How does {service.title} <span className="text-[#800020]">work</span>?
       </ServicesDelivery>
 
       <ServiceFaq

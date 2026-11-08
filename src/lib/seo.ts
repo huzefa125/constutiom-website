@@ -165,7 +165,7 @@ export function personSchema(person: { name: string; role: string }) {
   };
 }
 
-export function articleSchema(article: { headline: string; description: string; path: string; image: string; datePublished: string; dateModified: string }) {
+export function articleSchema(article: { headline: string; description: string; path: string; image: string; datePublished: string; dateModified: string; reviewedBy?: { name: string; credential: string } }) {
   return {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -178,6 +178,9 @@ export function articleSchema(article: { headline: string; description: string; 
     author: { "@id": `${SITE_URL}/#organization` },
     publisher: { "@id": `${SITE_URL}/#organization` },
     inLanguage: "en-NG",
+    ...(article.reviewedBy
+      ? { reviewedBy: { "@type": "Person", name: article.reviewedBy.name, jobTitle: article.reviewedBy.credential, worksFor: { "@id": `${SITE_URL}/#organization` } } }
+      : {}),
   };
 }
 

@@ -48,8 +48,11 @@ export default function ServicesPage() {
 
       <section id="service-lines" className="w-full scroll-mt-8 bg-[#f7f7f7]">
         <div className="mx-auto w-full max-w-[1300px] px-5 sm:px-8 lg:px-0">
-          <SectionHeading eyebrow="Five service lines">
-            Everything your build <span className="text-[#800020]">needs</span>
+          <SectionHeading
+            eyebrow="Five service lines"
+            answer="Ipile Earth Synergy offers five services: building construction, building maintenance, structural design and development, property and facility management, and general contracts and procurement. One team can take a project from design through construction to long-term care, so you deal with a single accountable company throughout."
+          >
+            What services does Ipile Earth Synergy <span className="text-[#800020]">offer</span>?
           </SectionHeading>
           <nav aria-label="Jump to a service" className="mt-6 flex flex-wrap gap-2">
             {SERVICES_DATA.map((s) => (

@@ -45,3 +45,35 @@ These terms have clear search demand. They need real figures from Ipile, so they
 - Register in Google Search Console and Bing Webmaster Tools, then submit `/sitemap.xml`
 - Earn links from Nigerian press, housing bodies and partners. The Navy projects are a strong story for this
 - Collect client reviews
+
+## AEO: where each question is answered
+
+Every question below is a visible heading with a 40-60 word answer directly underneath, and the page carries matching FAQ markup.
+
+| Question people ask | Answered on |
+| --- | --- |
+| How much does it cost to build a house in Nigeria? | `/guides/cost-of-building-a-house-in-nigeria` |
+| How much does it cost per square metre? | same guide |
+| How much can earth bricks save on a house? | same guide, with a worked example |
+| What is the cheapest way to build a house in Nigeria? | same guide, FAQ |
+| Which is better: earth bricks, sandcrete blocks or burnt bricks? | `/guides/compressed-earth-bricks-vs-sandcrete-vs-burnt-bricks` |
+| How strong are earth bricks compared with sandcrete? | same guide |
+| What are the steps to build with interlocking earth bricks? | `/guides/how-to-build-with-interlocking-earth-bricks` |
+| How long does it take to build a house with earth bricks? | same guide, FAQ |
+| How are Compressed Earth Bricks made? | `/compressed-earth-bricks` and `/services` |
+| How does Ipile make housing affordable in Nigeria? | `/affordable-housing-nigeria` |
+| Who builds homes in Abuja, Cross River State and Ogun State? | `/locations/abuja`, `/locations/cross-river`, `/locations/ogun` |
+| What services does Ipile Earth Synergy offer? | `/services` |
+| What does each service include, and how does it work? | each page under `/services/` |
+
+### Monthly check, once the site is live
+
+1. Type each question above into Google, ChatGPT, Perplexity and Gemini and note whether Ipile is cited.
+2. In Search Console, filter queries starting with how, what, cost or price, and watch impressions and position.
+3. For any answer that is close to winning, tighten the 40-60 word block, add a table, or add a source.
+
+### Not yet possible
+
+- A named technical reviewer on the guides. Support is built in (`reviewedBy` on a guide). Set it only after the engineer has actually reviewed the guide.
+- Social profile links for `sameAs`, and a Google Business Profile.
+- Price questions such as "interlocking bricks price in Nigeria", until Ipile supplies its own prices.

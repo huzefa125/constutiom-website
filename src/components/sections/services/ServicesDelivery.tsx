@@ -25,20 +25,24 @@ const DELIVERY: DeliveryStep[] = [
 export function ServicesDelivery({
   eyebrow = "How we deliver",
   steps = DELIVERY,
+  answer = "We start with a full briefing and the available funding, then design the project and assign a planning officer, quantity surveyor and site engineer. Progress is tracked through regular reports with cost control charts, and work follows Federal Ministry of Works quality standards, with qualified personnel in charge of site safety.",
   children = (
     <>
-      You always know where your <span className="text-[#800020]">project stands</span>
+      How does Ipile <span className="text-[#800020]">deliver a project</span>?
     </>
   ),
 }: {
   eyebrow?: string;
   steps?: DeliveryStep[];
+  answer?: string;
   children?: React.ReactNode;
 }) {
   return (
     <section className="w-full bg-[#f7f7f7] px-5 py-20 sm:px-8 sm:py-28 lg:px-12 lg:py-36">
       <div className="mx-auto w-full max-w-[1300px]">
-        <SectionHeading eyebrow={eyebrow}>{children}</SectionHeading>
+        <SectionHeading eyebrow={eyebrow} answer={answer}>
+          {children}
+        </SectionHeading>
         <ol className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:mt-14 lg:grid-cols-4 lg:gap-8">
           {steps.map((step, i) => (
             <li key={step.title} className="flex flex-col gap-3 border-t border-black/10 pt-5">

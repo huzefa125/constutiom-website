@@ -2,6 +2,10 @@ import type { FaqItem } from "@/components/sections/services/ServiceFaq";
 
 export interface ServiceContent {
   heading: string;
+  /** 40 to 60 words answering "What does this service include?". */
+  scopeAnswer: string;
+  /** 40 to 60 words answering "How does this service work?". */
+  processAnswer: string;
   intro: string[];
   sections: { title: string; text: string }[];
   scope: { title: string; text: string }[];
@@ -12,6 +16,10 @@ export interface ServiceContent {
 /** Long-form copy for each service page. Facts come from the company profile and team profile. */
 export const SERVICE_CONTENT: Record<string, ServiceContent> = {
   construction: {
+    scopeAnswer:
+      "Construction Services covers civil construction, building contracting, infrastructure and public works, and the supply of materials and equipment. That means homes, estates, halls and complexes, plus culverts, roads, highways, borehole drilling and sewage works, along with the repair, maintenance and demolition of construction works, all carried out by one contractor.",
+    processAnswer:
+      "A construction project follows four stages. We assess the site, then set out and build the foundations and structure, raise the walls and superstructure in Compressed Earth Brick or other masonry, and finish services and finishes. We inspect the work with you before handover. Foundations and frameworks are checked at every stage.",
     heading: "A building construction company you can hold to account",
     intro: [
       "Ipile Earth Synergy Construction Limited is an indigenous Nigerian construction company, registered with the Corporate Affairs Commission. We build homes, housing estates, halls and complexes, and we carry out civil works such as culverts, roads, borehole drilling and sewage systems.",
@@ -73,6 +81,10 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
   },
 
   "building-maintenance": {
+    scopeAnswer:
+      "Building Maintenance covers comprehensive maintenance, renovation, structural repairs and property refurbishment, interior and exterior decoration and painting, marble and tile installation, plumbing, interlocking paving, fencing and furnishing. One team handles the whole job, so you do not have to manage several separate contractors for a single property.",
+    processAnswer:
+      "Maintenance work starts with a close survey that identifies defects and risks. We then agree a repair or renovation plan with safety controls, carry out the work with minimum disruption to occupants, and finish with a final inspection. If you wish, we can set up a planned maintenance schedule to catch small problems early.",
     heading: "Building maintenance and renovation services in Nigeria",
     intro: [
       "A building only keeps its value if it is looked after. Ipile Earth Synergy provides building maintenance services of all kinds, from a single repair to a full renovation, for homes, offices, estates and institutions.",
@@ -130,6 +142,10 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
   },
 
   "structural-design": {
+    scopeAnswer:
+      "Structural Design and Development covers drafting, planning, design and project management for construction and structural engineering projects. We act as primary building contractor and developer for new builds and structural adaptations, prepare comprehensive site developments, and offer modern Compressed Earth Brick home plans and designs that reduce building cost.",
+    processAnswer:
+      "Design work begins with a brief and a plan chosen or tailored to your budget, family size and plot. Structural and architectural design follows, using locally available resources. We then manage the build from foundation to completion and hand over a finished home or development that is ready to use.",
     heading: "Structural design and building plans in Nigeria",
     intro: [
       "Good building starts on paper. Ipile Earth Synergy drafts, plans, designs and project-manages all types of construction and structural engineering projects, from a single family home to a complete site development.",
@@ -183,6 +199,10 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
   },
 
   "property-facility-management": {
+    scopeAnswer:
+      "Property and Facility Management covers facility management, including cleaning, routine maintenance and operations for office, commercial, residential and industrial properties. It also covers real estate and property development, estate management, real estate agency and brokerage, and real estate investment in Nigeria and internationally, so one company can run a property from day to day.",
+    processAnswer:
+      "We begin by assessing the property, its condition and how it is used. A management and maintenance plan is then agreed with you. Routine upkeep and operations are carried out and reported on, and over time we recommend upgrades and development opportunities that protect the value of the property.",
     heading: "Property and facility management in Nigeria",
     intro: [
       "Owning a property is one job. Keeping it clean, safe, occupied and earning is another. Ipile Earth Synergy manages the day-to-day running of office, commercial, residential and industrial properties, so owners do not have to.",
@@ -240,6 +260,10 @@ export const SERVICE_CONTENT: Record<string, ServiceContent> = {
   },
 
   "general-contracts-procurement": {
+    scopeAnswer:
+      "General Contracts and Procurement covers general contracting, trading, importation and exportation, logistics, procurement, marketing, sales and distribution. We act as commission agent and manufacturers’ representative, and supply construction equipment, building requisites and raw materials, so a project can be supplied as well as built by the same company.",
+    processAnswer:
+      "We agree your requirements and quantities before any sourcing begins, then procure from trusted manufacturers and suppliers. Logistics are coordinated so materials reach site on time, and we follow up after delivery, including repeat supply when you need it. This keeps materials moving so that your build does not stop.",
     heading: "General contractor and building materials supplier in Nigeria",
     intro: [
       "A project stops when materials stop. Ipile Earth Synergy handles general contracts, procurement and supply, so the right materials and equipment reach your site when they are needed.",

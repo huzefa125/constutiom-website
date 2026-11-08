@@ -58,6 +58,7 @@ export default async function GuidePage({ params }: Props) {
             image: guide.image,
             datePublished: guide.published,
             dateModified: guide.updated,
+            reviewedBy: guide.reviewedBy,
           }),
         ]}
       />
@@ -83,6 +84,12 @@ export default async function GuidePage({ params }: Props) {
                 Published <time dateTime={guide.published}>{fmt(guide.published)}</time>
                 <br />
                 Last updated <time dateTime={guide.updated}>{fmt(guide.updated)}</time>
+                {guide.reviewedBy && (
+                  <>
+                    <br />
+                    Reviewed by {guide.reviewedBy.name}, {guide.reviewedBy.credential}
+                  </>
+                )}
               </p>
               <nav aria-label="In this guide" className="mt-6 border-t border-black/10 pt-5">
                 <p className="font-[Urbanist] text-xs font-semibold uppercase tracking-[2px] text-[#800020]">In this guide</p>
