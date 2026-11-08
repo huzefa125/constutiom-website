@@ -13,13 +13,13 @@ export function Hero() {
       <div className="optik-container">
         <div className="optik-hero-row">
           <div className="optik-hero-middle my-auto flex flex-col items-start gap-7">
-            <p className="optik-hero-text hero-rise">
+            <h1 className="optik-hero-text hero-rise">
               Affordable homes and quality construction across Nigeria, built with Compressed Earth Brick to cost less.
-            </p>
+            </h1>
 
             <div className="optik-hero-btn-wrap hero-rise" style={{ "--d": "0.5s" } as React.CSSProperties}>
               <div className="optik-theme-button-wrap">
-                <Link href="/#projects" className="optik-btn-link-wrap group">
+                <Link href="/projects" className="optik-btn-link-wrap group">
                   <div className="optik-btn-text-wrap-02">
                     <div className="optik-btn-text-box">
                       <span className="optik-button-text">EXPLORE OUR WORK</span>
@@ -49,10 +49,9 @@ export function Hero() {
           </div>
 
           <div className="optik-hero-title-wrap pb-8 sm:pb-12 lg:pb-16">
-            <h1 className="optik-hero-title" style={{ perspective: 900 }}>
-              <span className="sr-only">Ipile Earth Synergy: affordable homes and building construction in Nigeria </span>
+            <div className="optik-hero-title" aria-hidden="true" style={{ perspective: 900 }}>
               {TITLE_LINES.map((word, w) => (
-                <span key={word.text} className={word.className} aria-hidden="true">
+                <span key={word.text} className={word.className}>
                   {word.text.split("").map((ch, i) => (
                     <span
                       key={i}
@@ -65,7 +64,7 @@ export function Hero() {
                   {w === 0 ? "\u00A0" : null}
                 </span>
               ))}
-            </h1>
+            </div>
           </div>
         </div>
       </div>

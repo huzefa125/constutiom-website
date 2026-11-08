@@ -41,7 +41,7 @@ export function pageMetadata({ title, description, path, image = DEFAULT_OG_IMAG
   };
 }
 
-const { phones, email, address } = COMPANY_DATA.contact;
+const { phones, email } = COMPANY_DATA.contact;
 
 /** Sitewide organisation node, referenced by @id from every other schema node. */
 export const ORGANIZATION_SCHEMA = {
@@ -51,7 +51,8 @@ export const ORGANIZATION_SCHEMA = {
   name: COMPANY_DATA.name,
   legalName: COMPANY_DATA.name,
   alternateName: [SITE_NAME, "Ipile Earth"],
-  identifier: { "@type": "PropertyValue", propertyID: "CAC RC Number", value: "1461757" },
+  identifier: { "@type": "PropertyValue", propertyID: "CAC RC Number", value: COMPANY_DATA.cacNumber },
+  ...(COMPANY_DATA.social.length ? { sameAs: COMPANY_DATA.social.map((link) => link.url) } : {}),
   url: SITE_URL,
   logo: `${SITE_URL}/logos/ipile-official-full-logo-transparent.png`,
   image: `${SITE_URL}${DEFAULT_OG_IMAGE}`,
@@ -70,7 +71,8 @@ export const ORGANIZATION_SCHEMA = {
   })),
   address: {
     "@type": "PostalAddress",
-    streetAddress: address,
+    streetAddress: "Abba Father Estate off Estate 15, Redemption Camp, Lagos-Ibadan Expressway",
+    addressLocality: "Redemption Camp",
     addressRegion: "Ogun State",
     addressCountry: "NG",
   },
@@ -156,6 +158,22 @@ export function personSchema(person: { name: string; role: string }) {
     name: person.name,
     jobTitle: person.role,
     worksFor: { "@id": `${SITE_URL}/#organization` },
+  };
+}
+
+export function articleSchema(article: { headline: string; description: string; path: string; image: string; datePublished: string; dateModified: string }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.headline,
+    description: article.description,
+    image: `${SITE_URL}${article.image}`,
+    mainEntityOfPage: `${SITE_URL}${article.path}`,
+    datePublished: article.datePublished,
+    dateModified: article.dateModified,
+    author: { "@id": `${SITE_URL}/#organization` },
+    publisher: { "@id": `${SITE_URL}/#organization` },
+    inLanguage: "en-NG",
   };
 }
 

@@ -22,8 +22,13 @@ export function ServicesCeb() {
         </div>
         <div className="lg:col-span-6">
           <SectionHeading eyebrow="Our signature product">
-            What makes our <span className="text-[#800020]">bricks</span> different
+            How are our <span className="text-[#800020]">Compressed Earth Bricks</span> made?
           </SectionHeading>
+          <p className="mt-6 font-[Urbanist] text-[17px] font-medium leading-[150%] text-black/80">
+            Compressed Earth Bricks are made from laterite soil, stabilised with a small percentage of cement and water, then
+            manually compressed at high pressure into uniform blocks. They use very little energy to produce, rely on locally
+            available soil, and cut the total walling cost of a building by 30–40%.
+          </p>
           <ol className="mt-8 border-t border-black/10">
             {STEPS.map(([title, text], i) => (
               <li key={title} className="grid grid-cols-[40px_1fr] gap-x-2 border-b border-black/10 py-5">

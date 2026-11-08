@@ -7,7 +7,7 @@ import { ServiceFaq } from "@/components/sections/services/ServiceFaq";
 import { ServiceHero } from "@/components/sections/services/ServiceHero";
 import { ServicesCeb } from "@/components/sections/services/ServicesCeb";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
+import { articleSchema, breadcrumbSchema, pageMetadata } from "@/lib/seo";
 
 const PATH = "/compressed-earth-bricks";
 const IMAGE = "/images/service-photos/general-contracts-procurement-1.webp";
@@ -61,10 +61,20 @@ export default function CompressedEarthBricksPage() {
   return (
     <div className="flex w-full flex-col bg-[#f7f7f7]">
       <JsonLd
-        data={breadcrumbSchema([
-          { name: "Home", path: "/" },
-          { name: "Compressed Earth Bricks", path: PATH },
-        ])}
+        data={[
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Compressed Earth Bricks", path: PATH },
+          ]),
+          articleSchema({
+            headline: "Compressed Earth Bricks in Nigeria: CEB Homes",
+            description: "How Compressed Earth Bricks are made, why they save 30-40% of walling cost, and where Ipile has built with them.",
+            path: PATH,
+            image: IMAGE,
+            datePublished: "2026-11-07",
+            dateModified: "2026-11-08",
+          }),
+        ]}
       />
 
       <ServiceHero
@@ -74,7 +84,7 @@ export default function CompressedEarthBricksPage() {
         image={IMAGE}
         imageAlt="Compressed Earth Bricks being cured on site by the Ipile Earth Synergy crew"
         ctaLabel="REQUEST A QUOTE"
-        ctaHref="#contact"
+        ctaHref="/contact#contact-form"
         crumbs={[{ name: "Home", href: "/" }, { name: "Compressed Earth Bricks" }]}
       />
 
@@ -83,8 +93,17 @@ export default function CompressedEarthBricksPage() {
       <section className="w-full px-5 pb-20 sm:px-8 sm:pb-28 lg:px-12 lg:pb-36">
         <div className="mx-auto w-full max-w-[1300px]">
           <SectionHeading eyebrow="Why build with CEB">
-            Six benefits of <span className="text-[#800020]">earth brick</span>
+            What are the benefits of building with <span className="text-[#800020]">CEB</span>?
           </SectionHeading>
+          <p className="mt-6 max-w-[760px] font-[Urbanist] text-[20px] font-medium leading-[1.4] text-black/80 sm:text-[24px]">
+            Compressed Earth Bricks lower walling cost by 30–40%, are fire resistant, reduce or remove the need for mortar, and
+            help regulate indoor humidity. Because they use local materials, they also create local jobs and keep shipping costs
+            down. Materials are also easily sourced, which speeds up delivery.
+          </p>
+          <p className="mt-5 font-[Urbanist] text-sm font-semibold text-black/60">
+            Published <time dateTime="2026-11-07">7 November 2026</time> · Last updated{" "}
+            <time dateTime="2026-11-08">8 November 2026</time>
+          </p>
           <ul className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:mt-14 lg:grid-cols-3 lg:gap-8">
             {BENEFITS.map((benefit) => (
               <li key={benefit.title} className="flex flex-col gap-3 border-t border-black/10 pt-5">
@@ -101,22 +120,22 @@ export default function CompressedEarthBricksPage() {
       <section className="w-full px-5 pb-20 sm:px-8 sm:pb-28 lg:px-12 lg:pb-36">
         <div className="mx-auto w-full max-w-[1300px]">
           <SectionHeading eyebrow="Tested and trusted">
-            Where we have <span className="text-[#800020]">built with CEB</span>
+            Where has Ipile <span className="text-[#800020]">built with CEB</span>?
           </SectionHeading>
           <p className="mt-6 max-w-[760px] font-[Urbanist] text-[20px] font-medium leading-[1.4] text-black/80 sm:text-[24px]">
-            Our bricks are a registered trademark, proven on{" "}
-            <Link href="/projects#navy-barracks-kuje" className="text-[#800020] underline underline-offset-4">
+            Our bricks are a registered trademark. We have used them for{" "}
+            <Link href="/locations/abuja" className="text-[#800020] underline underline-offset-4">
               100 housing units at Nigerian Navy Barracks, Kuje
             </Link>
             , the{" "}
-            <Link href="/projects#navy-barracks-atimbo" className="text-[#800020] underline underline-offset-4">
+            <Link href="/locations/cross-river" className="text-[#800020] underline underline-offset-4">
               Navy Barracks at Atimbo
             </Link>{" "}
             and the{" "}
             <Link href="/projects#navy-school-akpabuyo" className="text-[#800020] underline underline-offset-4">
               Navy School at Akpabuyo
             </Link>
-            .
+            , as well as bungalows at RCCG. These projects show CEB working at barracks, school and residential scale.
           </p>
         </div>
       </section>

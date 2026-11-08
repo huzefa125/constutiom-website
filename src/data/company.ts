@@ -18,6 +18,10 @@ export interface CompanyInfo {
   founded: string;
   coreValues: string[];
   operationalRegions: string[];
+  /** CAC registration number, shown in the footer and used in schema. */
+  cacNumber: string;
+  /** Real profile URLs only. Empty until the client supplies them. Feeds the footer and schema sameAs. */
+  social: { name: string; url: string }[];
   contact: {
     email: string;
     phone: string;
@@ -45,12 +49,14 @@ export const COMPANY_DATA: CompanyInfo = {
   founded: "2017",
   coreValues: ["Innovation", "Speed", "Cost Effectiveness", "Teamwork"],
   operationalRegions: ["Abuja (FCT)", "Cross River State", "Lagos State", "Nasarawa State"],
+  cacNumber: "1461757",
+  social: [],
   contact: {
     email: "ipileearth1@gmail.com",
     phone: "+234 812 686 8754",
     phones: ["+234 812 686 8754", "+234 808 932 1462"],
     website: "www.ipileearth.com.ng",
-    address: "Abba Father Estate off Estate 15, Estate 15, Redemption Camp, Lagos-Ibadan Expressway",
+    address: "Abba Father Estate off Estate 15, Estate 15, Redemption Camp, Lagos-Ibadan Expressway, Ogun State, Nigeria",
   },
   leadership: [
     {
@@ -110,4 +116,3 @@ export const COMPANY_DATA: CompanyInfo = {
     },
   ],
 };
-

@@ -2,6 +2,7 @@ import * as React from "react";
 import Link from "next/link";
 import { COMPANY_DATA } from "@/data/company";
 import { SERVICES_DATA } from "@/data/services";
+import { LOCATIONS_DATA } from "@/data/locations";
 import { MAIN_NAV_ITEMS } from "@/data/navigation";
 import { BrandLogo } from "@/components/ui/BrandLogo";
 import { CurrentYear } from "@/components/ui/CurrentYear";
@@ -57,6 +58,13 @@ export function Footer() {
                     Compressed Earth Bricks
                   </Link>
                 </li>
+                {LOCATIONS_DATA.map((location) => (
+                  <li key={location.slug}>
+                    <Link href={`/locations/${location.slug}`} className={linkClass}>
+                      Building in {location.place}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
@@ -86,6 +94,13 @@ export function Footer() {
                     Direct Call
                   </a>
                 </li>
+                {COMPANY_DATA.social.map((link) => (
+                  <li key={link.url}>
+                    <a href={link.url} target="_blank" rel="noopener noreferrer me" className={linkClass}>
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -120,6 +135,8 @@ export function Footer() {
             </div>
             <p className="pt-2 font-[Urbanist] text-xs sm:text-sm text-black/60">
               © <CurrentYear /> {COMPANY_DATA.shortName}, All Rights Reserved
+              <br />
+              CAC RC No. {COMPANY_DATA.cacNumber}
             </p>
           </div>
         </div>

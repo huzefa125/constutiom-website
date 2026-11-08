@@ -3,6 +3,7 @@ import { COMPANY_DATA } from "@/data/company";
 
 export function ContactOffices() {
   const { phones, email, website, address } = COMPANY_DATA.contact;
+  const mapQuery = encodeURIComponent("Redemption Camp, Lagos-Ibadan Expressway, Ogun State, Nigeria");
 
   return (
     <section className="relative w-full bg-[#f7f7f7] py-16 sm:py-20 lg:py-24 px-5 sm:px-8 lg:px-12">
@@ -36,6 +37,9 @@ export function ContactOffices() {
                 {address}
               </p>
               <div className="w-full h-px bg-black/20 mb-5" />
+              <p className="mb-3 font-[Urbanist] text-sm font-semibold text-black/70">
+                CAC RC No. {COMPANY_DATA.cacNumber}
+              </p>
               <a
                 href={`https://${website}`}
                 target="_blank"
@@ -70,6 +74,16 @@ export function ContactOffices() {
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="mt-12 overflow-hidden rounded-[14px] border border-black/10 bg-[#e9e9e9] lg:mt-16">
+          <iframe
+            title="Map showing the Ipile Earth Synergy office at Redemption Camp, Ogun State"
+            src={`https://www.google.com/maps?q=${mapQuery}&output=embed`}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="h-[320px] w-full border-0 sm:h-[400px]"
+          />
         </div>
       </div>
     </section>

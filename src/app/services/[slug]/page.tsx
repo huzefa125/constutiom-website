@@ -87,7 +87,7 @@ export default async function ServiceDetailPage({ params }: Props) {
         image={service.image}
         imageAlt={service.imageAlt}
         ctaLabel="REQUEST A QUOTE"
-        ctaHref="#contact"
+        ctaHref="/contact#contact-form"
         crumbs={[{ name: "Home", href: "/" }, { name: "Services", href: "/services" }, { name: service.title }]}
       >
         <a href={phoneHref} className="font-[Urbanist] text-base font-semibold text-black transition-colors hover:text-[#800020]">

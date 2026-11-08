@@ -130,6 +130,7 @@ export function ProjectsWorks() {
                     <h3 className="font-heading text-[22px] font-semibold uppercase leading-[1] text-black sm:text-[28px]">
                       {p.name}
                     </h3>
+                    {" "}
                     <button
                       type="button"
                       onClick={() => setOpenId(open ? null : p.id)}
@@ -150,8 +151,8 @@ export function ProjectsWorks() {
                       <div key={k}>
                         <dt className="font-[Urbanist] text-[11px] font-bold uppercase tracking-[0.18em] text-[#800020]">
                           {k}
-                        </dt>
-                        <dd className="mt-1 font-[Urbanist] text-[15px] font-semibold text-black">{v}</dd>
+                        </dt>{" "}
+                        <dd className="mt-1 font-[Urbanist] text-[15px] font-semibold text-black">{v}</dd>{" "}
                       </div>
                     ))}
                   </dl>

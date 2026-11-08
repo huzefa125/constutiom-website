@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/sections/services/SectionHeading";
 import { ServiceFaq } from "@/components/sections/services/ServiceFaq";
 import { ServiceHero } from "@/components/sections/services/ServiceHero";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { breadcrumbSchema, pageMetadata } from "@/lib/seo";
+import { articleSchema, breadcrumbSchema, pageMetadata } from "@/lib/seo";
 
 const PATH = "/affordable-housing-nigeria";
 const IMAGE = "/images/service-photos/property-facility-management-1.webp";
@@ -76,10 +76,20 @@ export default function AffordableHousingPage() {
   return (
     <div className="flex w-full flex-col bg-[#f7f7f7]">
       <JsonLd
-        data={breadcrumbSchema([
-          { name: "Home", path: "/" },
-          { name: "Affordable Housing in Nigeria", path: PATH },
-        ])}
+        data={[
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Affordable Housing in Nigeria", path: PATH },
+          ]),
+          articleSchema({
+            headline: "Affordable Housing in Nigeria: Low-Cost Homes",
+            description: "How Ipile Earth Synergy builds affordable housing in Nigeria with Compressed Earth Brick.",
+            path: PATH,
+            image: IMAGE,
+            datePublished: "2026-11-07",
+            dateModified: "2026-11-08",
+          }),
+        ]}
       />
 
       <ServiceHero
@@ -89,22 +99,26 @@ export default function AffordableHousingPage() {
         image={IMAGE}
         imageAlt="Aerial view of an affordable housing estate built by Ipile Earth Synergy in Nigeria"
         ctaLabel="REQUEST A QUOTE"
-        ctaHref="#contact"
+        ctaHref="/contact#contact-form"
         crumbs={[{ name: "Home", href: "/" }, { name: "Affordable Housing in Nigeria" }]}
       />
 
       <section className="w-full px-5 py-20 sm:px-8 sm:py-28 lg:px-12 lg:py-36">
         <div className="mx-auto w-full max-w-[1300px]">
           <SectionHeading eyebrow="How we keep costs down">
-            Low-cost housing <span className="text-[#800020]">without low standards</span>
+            How does Ipile make housing <span className="text-[#800020]">affordable in Nigeria</span>?
           </SectionHeading>
           <p className="mt-6 max-w-[760px] font-[Urbanist] text-[20px] font-medium leading-[1.4] text-black/80 sm:text-[24px]">
-            Ipile Earth Synergy makes housing affordable by changing how homes are built. Using{" "}
+            We change how homes are built. Our{" "}
             <Link href="/compressed-earth-bricks" className="text-[#800020] underline underline-offset-4">
               Compressed Earth Bricks
             </Link>{" "}
-            reduces the cost of housing by 30–40% of the total walling cost per unit, without reducing the quality of
-            the finished home.
+            reduce the cost of housing by 30–40% of the total walling cost per unit. They use locally available laterite soil and
+            less mortar, so more of your budget goes into the finished home.
+          </p>
+          <p className="mt-5 font-[Urbanist] text-sm font-semibold text-black/60">
+            Published <time dateTime="2026-11-07">7 November 2026</time> · Last updated{" "}
+            <time dateTime="2026-11-08">8 November 2026</time>
           </p>
           <ul className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:mt-14 lg:grid-cols-4 lg:gap-8">
             {COST_CUTS.map((item, i) => (
@@ -124,11 +138,12 @@ export default function AffordableHousingPage() {
         <div className="mx-auto grid w-full max-w-[1300px] grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <SectionHeading eyebrow="Homes for every budget">
-              Designs for <span className="text-[#800020]">every class of society</span>
+              What types of <span className="text-[#800020]">affordable home</span> do you build?
             </SectionHeading>
             <p className="mt-6 font-[Urbanist] text-[17px] font-medium leading-[150%] text-black/75">
-              We design and build to the requirement of our customers. At Redemption Camp on the Lagos-Ibadan Expressway
-              we have delivered four levels of home, so the same quality of construction reaches different budgets.
+              We design and build to each client&apos;s requirements, from basic to luxury homes. At Redemption Camp on
+              the Lagos-Ibadan Expressway we have delivered luxury, deluxe, standard and basic apartments, so the same quality
+              of construction reaches different budgets and different families.
             </p>
             <ul className="mt-6 border-t border-black/10">
               {HOME_TYPES.map((type) => (
@@ -156,13 +171,18 @@ export default function AffordableHousingPage() {
       <section className="w-full px-5 pb-20 sm:px-8 sm:pb-28 lg:px-12 lg:pb-36">
         <div className="mx-auto w-full max-w-[1300px]">
           <SectionHeading eyebrow="Proven at scale">
-            Affordable housing we have <span className="text-[#800020]">already delivered</span>
+            What affordable housing has Ipile <span className="text-[#800020]">already delivered</span>?
           </SectionHeading>
+          <p className="mt-6 max-w-[760px] font-[Urbanist] text-[20px] font-medium leading-[1.4] text-black/80 sm:text-[24px]">
+            Our largest project is 100 units for the Nigerian Navy at Kuje, Abuja: 20 two-bedroom, 30 three-bedroom, 20
+            single-room and 30 studio apartments. The Navy then awarded us a repeat contract at Atimbo, Calabar, in Cross River
+            State, after seeing the completed Kuje work.
+          </p>
           <div className="mt-10 grid grid-cols-1 gap-10 lg:mt-12 lg:grid-cols-3 lg:gap-8">
             <div className="border-t border-black/10 pt-5">
               <h3 className="font-heading text-[20px] font-bold uppercase leading-[1.05] text-black sm:text-[22px]">
-                <Link href="/projects#navy-barracks-kuje" className="transition-colors hover:text-[#800020]">
-                  Nigerian Navy Barracks, Kuje
+                <Link href="/locations/abuja" className="transition-colors hover:text-[#800020]">
+                  Nigerian Navy Barracks, Kuje, Abuja
                 </Link>
               </h3>
               <p className="mt-3 font-[Urbanist] text-base font-medium leading-[150%] text-black/70">
@@ -172,7 +192,7 @@ export default function AffordableHousingPage() {
             </div>
             <div className="border-t border-black/10 pt-5">
               <h3 className="font-heading text-[20px] font-bold uppercase leading-[1.05] text-black sm:text-[22px]">
-                <Link href="/projects#navy-barracks-atimbo" className="transition-colors hover:text-[#800020]">
+                <Link href="/locations/cross-river" className="transition-colors hover:text-[#800020]">
                   Navy Barracks, Atimbo, Calabar
                 </Link>
               </h3>
@@ -182,8 +202,8 @@ export default function AffordableHousingPage() {
             </div>
             <div className="border-t border-black/10 pt-5">
               <h3 className="font-heading text-[20px] font-bold uppercase leading-[1.05] text-black sm:text-[22px]">
-                <Link href="/projects" className="transition-colors hover:text-[#800020]">
-                  Redemption Camp homes
+                <Link href="/locations/ogun" className="transition-colors hover:text-[#800020]">
+                  Redemption Camp homes, Ogun State
                 </Link>
               </h3>
               <p className="mt-3 font-[Urbanist] text-base font-medium leading-[150%] text-black/70">

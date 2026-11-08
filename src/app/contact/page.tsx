@@ -10,6 +10,7 @@ export const metadata: Metadata = pageMetadata({
   description:
     "Contact Ipile Earth Synergy for affordable homes and construction in Nigeria. Visit us at Redemption Camp, Lagos-Ibadan Expressway, or call +234 812 686 8754.",
   path: "/contact",
+  image: "/images/contact/contact-hero-featured.webp",
 });
 
 export default function ContactPage() {

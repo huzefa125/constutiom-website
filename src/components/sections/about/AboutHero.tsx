@@ -13,15 +13,15 @@ export function AboutHero() {
           <div className="flex flex-col items-start justify-center">
             {/* Title: ABOUT OUR FIRM (Dual-color brand identity) */}
             <h1
-              className="font-heading font-bold uppercase tracking-tight leading-[0.88] select-none text-[52px] sm:text-[72px] md:text-[92px] lg:text-[104px] xl:text-[120px]"
+              className="font-heading font-bold uppercase tracking-tight leading-[0.88] select-none text-[40px] sm:text-[56px] lg:text-[64px] xl:text-[72px]"
               style={{ perspective: "1000px" }}
             >
               <span className="block overflow-hidden pb-1">
-                <span className="hero-title-line block text-black">ABOUT</span>
+                <span className="hero-title-line block text-black">AFFORDABLE HOME</span>
               </span>
               {" "}
               <span className="block overflow-hidden pt-1">
-                <span className="hero-title-line block text-[#800020]" style={{ "--i": 1 } as React.CSSProperties}>OUR FIRM</span>
+                <span className="hero-title-line block text-[#800020]" style={{ "--i": 1 } as React.CSSProperties}>BUILDERS IN NIGERIA</span>
               </span>
             </h1>
 

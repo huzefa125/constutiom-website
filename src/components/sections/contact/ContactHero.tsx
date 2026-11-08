@@ -7,7 +7,8 @@ export function ContactHero() {
 
   return (
     <ServiceHero
-      lines={["CONNECT", "WITH US"]}
+      lines={["CONTACT A BUILDER", "IN NIGERIA"]}
+      compact
       description="Tell us about your project. Call us, visit our office at Redemption Camp, or send a message and we will reply promptly."
       image="/images/contact/contact-hero-featured.webp"
       imageAlt="Modern geometric architectural pavilion with triangular glowing glass windows"

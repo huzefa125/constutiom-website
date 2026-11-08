@@ -14,15 +14,15 @@ export function ProjectsHero() {
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-14 xl:gap-20">
           <div className="flex flex-col items-start justify-center">
             <h1
-              className="select-none font-heading text-[52px] font-bold uppercase leading-[0.88] tracking-tight sm:text-[72px] md:text-[92px] lg:text-[104px] xl:text-[120px]"
+              className="select-none font-heading text-[40px] font-bold uppercase leading-[0.94] tracking-tight sm:text-[56px] lg:text-[64px] xl:text-[72px]"
               style={{ perspective: "1000px" }}
             >
               <span className="block overflow-hidden pb-1">
-                <span className="hero-title-line block text-black">BUILT</span>
+                <span className="hero-title-line block text-black">CONSTRUCTION PROJECTS</span>
               </span>
               {" "}
               <span className="block overflow-hidden pt-1">
-                <span className="hero-title-line block text-[#800020]" style={{ "--i": 1 } as React.CSSProperties}>ON SITE</span>
+                <span className="hero-title-line block text-[#800020]" style={{ "--i": 1 } as React.CSSProperties}>ACROSS NIGERIA</span>
               </span>
             </h1>
 

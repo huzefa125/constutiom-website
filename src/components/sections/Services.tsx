@@ -8,6 +8,34 @@ import { SERVICES_DATA } from "@/data/services";
 
 export function Services() {
   const [active, setActive] = React.useState(0);
+  const rows = React.useRef<(HTMLElement | null)[]>([]);
+  const frame = React.useRef(0);
+
+  /**
+   * Opening a row collapses the one above it, which would drag the clicked row up the screen.
+   * While the panels animate, keep the clicked row fixed in the viewport by cancelling the drift each frame.
+   */
+  const open = React.useCallback(
+    (index: number) => {
+      if (index === active) return;
+      const row = rows.current[index];
+      setActive(index);
+      if (!row) return;
+
+      cancelAnimationFrame(frame.current);
+      const startTop = row.getBoundingClientRect().top;
+      const startedAt = performance.now();
+      const hold = (now: number) => {
+        const drift = row.getBoundingClientRect().top - startTop;
+        if (Math.abs(drift) > 0.5) window.scrollTo({ top: window.scrollY + drift, behavior: "instant" });
+        if (now - startedAt < 850) frame.current = requestAnimationFrame(hold);
+      };
+      frame.current = requestAnimationFrame(hold);
+    },
+    [active],
+  );
+
+  React.useEffect(() => () => cancelAnimationFrame(frame.current), []);
 
   return (
     <section id="services" className="bg-[#f7f7f7] px-[10px] py-[30px] sm:px-5 lg:py-[50px]">
@@ -32,7 +60,7 @@ export function Services() {
               from first sketch to handover.
             </p>
             <Link
-              href="/#contact"
+              href="/contact#contact-form"
               className="group flex items-center gap-[10px] border-b border-black pb-[2px] transition-colors hover:border-[#800020] hover:text-[#800020]"
             >
               <span className="font-serif text-[16px] font-semibold uppercase leading-none lg:text-[18px]">
@@ -44,15 +72,17 @@ export function Services() {
         </div>
 
         {/* Accordion rows: image stays contained at a sharp size instead of stretched full-bleed */}
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 [overflow-anchor:none]">
           {SERVICES_DATA.map((service, index) => {
             const isActive = active === index;
             return (
               <article
                 key={service.id}
-                onMouseEnter={() => setActive(index)}
-                onFocusCapture={() => setActive(index)}
-                onClick={() => setActive(index)}
+                ref={(el) => {
+                  rows.current[index] = el;
+                }}
+                onFocusCapture={() => open(index)}
+                onClick={() => open(index)}
                 className={`group overflow-hidden rounded-[20px] border bg-white transition-colors duration-500 ${
                   isActive ? "border-[#800020]/30 shadow-[0_18px_40px_-24px_rgba(128,0,32,0.35)]" : "border-black/10"
                 }`}

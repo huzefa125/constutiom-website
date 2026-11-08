@@ -18,6 +18,7 @@ export const metadata: Metadata = pageMetadata({
   description:
     "Construction and building services in Nigeria: home building, maintenance, structural design, property and facility management, and materials supply.",
   path: "/services",
+  image: "/images/service-photos/services-hero.webp",
 });
 
 export default function ServicesPage() {
@@ -34,7 +35,8 @@ export default function ServicesPage() {
       />
 
       <ServiceHero
-        lines={["OUR", "SERVICES"]}
+        lines={["CONSTRUCTION SERVICES", "IN NIGERIA"]}
+        compact
         description="From new homes and institutions to repair and renovation, one accountable team takes your project from first sketch to handover."
         image="/images/service-photos/services-hero.webp"
         imageAlt="Completed Compressed Earth Brick homes along a paved estate road"
