@@ -213,7 +213,7 @@ export const BUILD_GUIDE: GuideItem = {
       id: "roof-water",
       text: "Step 10: How do you protect earth walls from water?",
       answer:
-        "Keep water off and out of the walls. Use a raised plinth of at least 25 centimetres, a damp-proof course, and roof overhangs, which Auroville’s code puts at 50 centimetres and its website at 25 centimetres at minimum, better 50. Fit gutters, drain water away from the foundations, and repair leaking pipes quickly. Moisture aggravated the damage on one earth-block campus.",
+        "Keep water off and out of the walls. Use a raised plinth of at least 25 centimetres, a damp-proof course and generous roof overhangs: Auroville’s code says 50 centimetres. Fit gutters, drain water away from the foundations, and repair leaks quickly, because moisture aggravated damage on one earth-brick campus.",
     },
     {
       type: "p",

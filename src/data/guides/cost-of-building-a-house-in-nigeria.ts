@@ -77,7 +77,7 @@ export const COST_GUIDE: GuideItem = {
       id: "per-square-metre",
       text: "How much does it cost per square metre?",
       answer:
-        "For Lagos in the second quarter of 2026, Ownkey puts structure and finishes at ₦65,000–90,000 per square metre for basic work, ₦95,000–140,000 for standard and ₦160,000 to over ₦220,000 for premium.",
+        "For Lagos in the second quarter of 2026, Ownkey puts structure and finishes at ₦65,000–90,000 per square metre for basic work, ₦95,000–140,000 for standard and ₦160,000 to over ₦220,000 for premium. Multiply by your floor area for a first estimate, then add roofing, services and external works.",
     },
     {
       type: "table",
