@@ -16,9 +16,17 @@ import { breadcrumbSchema, itemListSchema, pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   title: "Construction & Building Services in Nigeria",
   description:
-    "Construction and building services in Nigeria: home building, maintenance, structural design, property and facility management, and materials supply.",
+    "An African construction company delivering low cost construction in Nigeria: low cost housing, homes under 20 million naira, structural design, maintenance, and materials supply.",
   path: "/services",
   image: "/images/service-photos/services-hero.webp",
+  keywords: [
+    "Low cost construction in Nigeria",
+    "African construction company",
+    "low cost housing",
+    "House under 20 million naira",
+    "building construction services Nigeria",
+    "affordable homes builder",
+  ],
 });
 
 export default function ServicesPage() {

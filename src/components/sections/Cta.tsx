@@ -2,6 +2,7 @@ import * as React from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { COMPANY_DATA } from "@/data/company";
+import { CallWhatsAppRow } from "@/components/ui/PhoneActions";
 
 export function Cta() {
   return (
@@ -40,12 +41,24 @@ export function Cta() {
             </Link>
 
             <div className="flex flex-col items-center gap-2 font-[Urbanist] text-xl font-semibold text-black sm:items-start">
-              <a
-                href={`tel:${COMPANY_DATA.contact.phone.replace(/\s+/g, "")}`}
-                className="border-b border-black/30 transition-colors hover:border-[#800020] hover:text-[#800020]"
-              >
-                {COMPANY_DATA.contact.phone}
-              </a>
+              <CallWhatsAppRow
+                number={COMPANY_DATA.contact.phone}
+                size="md"
+                align="center"
+                className="sm:justify-start"
+                showCall={true}
+                showWhatsApp={false}
+                numberClassName="border-b border-black/30 transition-colors hover:border-[#800020] hover:text-[#800020]"
+              />
+              <CallWhatsAppRow
+                number={COMPANY_DATA.contact.whatsappPhone}
+                size="md"
+                align="center"
+                className="sm:justify-start"
+                showCall={false}
+                showWhatsApp={true}
+                numberClassName="border-b border-black/30 transition-colors hover:border-[#800020] hover:text-[#800020]"
+              />
               <a
                 href={`mailto:${COMPANY_DATA.contact.email}`}
                 className="border-b border-black/30 transition-colors hover:border-[#800020] hover:text-[#800020]"

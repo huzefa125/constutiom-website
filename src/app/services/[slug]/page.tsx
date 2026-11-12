@@ -16,6 +16,7 @@ import { ServiceHero } from "@/components/sections/services/ServiceHero";
 import { ServicesDelivery } from "@/components/sections/services/ServicesDelivery";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { StickyCard002 } from "@/components/ui/skiper-ui/skiper17";
+import { HeroContactNumbers } from "@/components/ui/PhoneActions";
 import { breadcrumbSchema, pageMetadata, serviceSchema } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -65,7 +66,6 @@ export default async function ServiceDetailPage({ params }: Props) {
     },
   ];
   const relatedProjects = service.projects.flatMap((id) => PROJECTS_DATA.filter((p) => p.id === id));
-  const phoneHref = `tel:${COMPANY_DATA.contact.phone.replace(/\s+/g, "")}`;
 
   return (
     <div className="flex w-full flex-col bg-[#f7f7f7]">
@@ -90,9 +90,7 @@ export default async function ServiceDetailPage({ params }: Props) {
         ctaHref="/contact#contact-form"
         crumbs={[{ name: "Home", href: "/" }, { name: "Services", href: "/services" }, { name: service.title }]}
       >
-        <a href={phoneHref} className="font-[Urbanist] text-base font-semibold text-black transition-colors hover:text-[#800020]">
-          {COMPANY_DATA.contact.phone}
-        </a>
+        <HeroContactNumbers />
       </ServiceHero>
 
       {/* Overview */}

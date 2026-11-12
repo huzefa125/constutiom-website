@@ -1,6 +1,7 @@
 import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { COMPANY_DATA } from "@/data/company";
 
 export function AboutPhilosophy() {
   return (
@@ -90,14 +91,10 @@ export function AboutPhilosophy() {
           {/* Right Column (3 cols): Mission, Vision, Core Values */}
           <div className="lg:col-span-3 flex w-full flex-col justify-end divide-y divide-black/10 lg:pl-4">
             {[
-              { label: "Mission", text: "To become the leading provider of affordable homes in Nigeria." },
-              {
-                label: "Vision",
-                text: "Provide suitable and affordable homes in a sustainable environment for every class of society.",
-              },
-              { label: "Core Values", text: "Innovation · Speed · Cost Effectiveness · Teamwork" },
+              { label: "Mission", text: COMPANY_DATA.mission },
+              { label: "Vision", text: COMPANY_DATA.vision },
             ].map((item) => (
-              <div key={item.label} className="py-5 first:pt-0 last:pb-0">
+              <div key={item.label} className="py-5 first:pt-0">
                 <h3 className="flex items-center gap-3 font-heading text-[30px] sm:text-[34px] font-bold uppercase leading-none text-[#800020]">
                   <span aria-hidden className="h-[3px] w-8 bg-[#800020]" />
                   {item.label}
@@ -107,6 +104,17 @@ export function AboutPhilosophy() {
                 </p>
               </div>
             ))}
+            <div className="pt-5">
+              <h3 className="flex items-center gap-3 font-heading text-[30px] sm:text-[34px] font-bold uppercase leading-none text-[#800020]">
+                <span aria-hidden className="h-[3px] w-8 bg-[#800020]" />
+                Core Values
+              </h3>
+              <ul className="mt-3 flex flex-col gap-1.5 font-[Urbanist] text-[17px] sm:text-[18px] font-medium leading-[150%] text-black/85">
+                {COMPANY_DATA.coreValues.map((value) => (
+                  <li key={value}>{value}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>

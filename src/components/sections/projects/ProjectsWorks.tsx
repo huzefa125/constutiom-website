@@ -57,11 +57,11 @@ export function ProjectsWorks() {
               <div className="mb-4 font-[Urbanist] text-xs font-bold uppercase tracking-[0.18em] text-black/50">
                 Filter
               </div>
-              <ul className="flex flex-wrap gap-2 lg:flex-col lg:gap-0" aria-label="Filter projects">
+              <ul className="flex flex-wrap gap-2 lg:flex-col lg:gap-1" aria-label="Filter projects">
                 {FILTERS.map((f) => {
                   const active = filter === f;
                   return (
-                    <li key={f} className="lg:border-t lg:border-black/15 lg:last:border-b">
+                    <li key={f}>
                       <button
                         aria-pressed={active}
                         onClick={() => {
@@ -69,10 +69,10 @@ export function ProjectsWorks() {
                           setPage(1);
                           setOpenId(null);
                         }}
-                        className={`flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border px-4 py-2 font-[Urbanist] text-xs font-bold uppercase tracking-[0.14em] transition-colors lg:rounded-none lg:border-0 lg:px-0 lg:py-3.5 ${
+                        className={`flex w-full cursor-pointer items-center justify-between gap-3 rounded-full border px-4 py-2 font-[Urbanist] text-xs font-bold uppercase tracking-[0.14em] transition-colors lg:rounded-lg lg:border-0 lg:px-3 lg:py-2.5 ${
                           active
-                            ? "border-[#800020] bg-[#800020] text-white lg:bg-transparent lg:text-[#800020]"
-                            : "border-black/20 text-black hover:border-[#800020] hover:text-[#800020]"
+                            ? "border-[#800020] bg-[#800020] text-white lg:bg-[#800020]/10 lg:text-[#800020]"
+                            : "border-black/20 text-black hover:border-[#800020] hover:text-[#800020] lg:hover:bg-black/5"
                         }`}
                       >
                         <span>{f}</span>
@@ -98,7 +98,7 @@ export function ProjectsWorks() {
                 ["Location", p.location],
               ];
               return (
-                <article key={p.id} id={p.id} className="scroll-mt-28 border-b border-black/15 py-8 first:pt-0 sm:py-10">
+                <article key={p.id} id={p.id} className="scroll-mt-28 py-8 first:pt-0 sm:py-10">
                   <div className="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-12">
                     <div
                       className={`relative aspect-[16/11] overflow-hidden rounded-[14px] bg-[#e9e9e9] ${
@@ -135,7 +135,7 @@ export function ProjectsWorks() {
                       type="button"
                       onClick={() => setOpenId(open ? null : p.id)}
                       aria-expanded={open}
-                      className="group flex shrink-0 cursor-pointer items-center gap-2 border-b border-black pb-[2px] font-[Urbanist] text-xs font-bold uppercase tracking-[0.14em] text-black transition-colors hover:border-[#800020] hover:text-[#800020]"
+                      className="group flex shrink-0 cursor-pointer items-center gap-2 font-[Urbanist] text-xs font-bold uppercase tracking-[0.14em] text-black transition-colors hover:text-[#800020]"
                     >
                       {open ? "Close" : "View detail"}
                       {open ? (
@@ -208,7 +208,7 @@ export function ProjectsWorks() {
                       onClick={() => goTo(n)}
                       aria-current={n === page ? "page" : undefined}
                       className={`cursor-pointer transition-colors ${
-                        n === page ? "text-[#800020] underline underline-offset-4" : "text-black/60 hover:text-black"
+                        n === page ? "text-[#800020] font-black" : "text-black/60 hover:text-black"
                       }`}
                     >
                       {n}

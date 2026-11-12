@@ -62,7 +62,7 @@ export function WhyChooseUs() {
           <div className="lg:col-span-5">
             <div className="relative h-[380px] w-full overflow-hidden rounded-[20px] bg-black/30 sm:h-[460px] lg:h-full lg:min-h-[520px]">
               <Image
-                src="/images/gallery/navy-barracks-atimbo/navy-barracks-atimbo-09.jpg"
+                src="/images/projects/navy-barracks-atimbo/navy-barracks-atimbo-03.webp"
                 alt="Aerial view of completed Compressed Earth Brick bungalows"
                 fill
                 sizes="(max-width: 1024px) 100vw, 520px"

@@ -54,7 +54,7 @@ export function Introduction() {
             <div className="relative flex w-full min-w-0 items-end justify-start gap-6 lg:flex-1">
               <div className="relative hidden aspect-[182/227] w-full max-w-[182px] overflow-hidden rounded-lg lg:block">
                 <Image
-                  src="/images/gallery/navy-barracks-kuje/navy-barracks-kuje-03.jpg"
+                  src="/images/projects/navy-barracks-kuje/navy-barracks-kuje-01.webp"
                   alt="Compressed Earth Brick bungalow with palm, Kuje, Abuja"
                   fill
                   sizes="182px"
@@ -63,7 +63,7 @@ export function Introduction() {
               </div>
               <div className="relative h-[300px] w-full overflow-hidden rounded-lg lg:aspect-[2/3] lg:h-auto lg:max-w-[332px]">
                 <Image
-                  src="/images/gallery/navy-barracks-kuje/navy-barracks-kuje-06.jpg"
+                  src="/images/projects/navy-barracks-kuje/navy-barracks-kuje-05.webp"
                   alt="Compressed Earth Brick barracks, Kuje, Abuja"
                   fill
                   sizes="(max-width: 1024px) 100vw, 332px"

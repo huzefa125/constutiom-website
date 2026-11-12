@@ -92,9 +92,17 @@ export function HoverExpand_001({
               >
                 <div className="min-w-0">
                   {item.title && (
-                    <h3 className="font-heading text-[24px] font-bold uppercase leading-[0.98] text-white sm:text-[30px] lg:text-[34px]">
-                      {item.title}
-                    </h3>
+                    item.href ? (
+                      <Link href={item.href} className="group/title block">
+                        <h3 className="font-heading text-[24px] font-bold uppercase leading-[0.98] text-white transition-colors group-hover/title:text-[#FFD700] sm:text-[30px] lg:text-[34px]">
+                          {item.title}
+                        </h3>
+                      </Link>
+                    ) : (
+                      <h3 className="font-heading text-[24px] font-bold uppercase leading-[0.98] text-white sm:text-[30px] lg:text-[34px]">
+                        {item.title}
+                      </h3>
+                    )
                   )}
                 </div>
                 {item.href && (

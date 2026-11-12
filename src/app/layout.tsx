@@ -3,6 +3,7 @@ import { Phudu, Urbanist } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { TimedPopupForm } from "@/components/ui/TimedPopupForm";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { DEFAULT_OG_IMAGE, ORGANIZATION_SCHEMA, SITE_URL, WEBSITE_SCHEMA } from "@/lib/seo";
 
@@ -27,6 +28,10 @@ export const metadata: Metadata = {
   description:
     "Ipile Earth Synergy Construction Limited builds affordable homes in Nigeria using Compressed Earth Brick (CEB). Construction, building maintenance, structural design and property management since 2017.",
   keywords: [
+    "Low cost construction in Nigeria",
+    "African construction company",
+    "low cost housing",
+    "House under 20 million naira",
     "construction company in Nigeria",
     "affordable homes in Nigeria",
     "compressed earth brick Nigeria",
@@ -80,6 +85,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
+        <TimedPopupForm />
       </body>
     </html>
   );

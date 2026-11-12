@@ -32,7 +32,7 @@ export const LOCATIONS_DATA: LocationItem[] = [
     heroLines: ["Construction Company", "in Abuja"],
     heroText:
       "Homes, estates and institutional housing in Abuja (FCT), built with Compressed Earth Brick and delivered by our own crews.",
-    image: "/images/gallery/navy-barracks-kuje/navy-barracks-kuje-05.jpg",
+    image: "/images/projects/navy-barracks-kuje/navy-barracks-kuje-01.webp",
     imageAlt: "Completed Compressed Earth Brick bungalows at Nigerian Navy Barracks, Kuje, Abuja",
     answer:
       "Ipile Earth Synergy is a Nigerian construction company that has built in Abuja since its first major contract: 100 housing units for the Nigerian Navy at Kuje Area Council. We build homes, estates and institutional buildings in Compressed Earth Brick, and we also handle design, maintenance and procurement.",
@@ -68,7 +68,7 @@ export const LOCATIONS_DATA: LocationItem[] = [
     heroLines: ["Construction Company", "in Cross River"],
     heroText:
       "Barracks, housing and a school campus in Cross River State, built with Compressed Earth Brick for a wet coastal climate.",
-    image: "/images/gallery/navy-barracks-atimbo/navy-barracks-atimbo-03.jpg",
+    image: "/images/projects/navy-barracks-atimbo/navy-barracks-atimbo-01.webp",
     imageAlt: "Rows of Compressed Earth Brick quarters with blue roofs at Navy Barracks, Atimbo, Cross River State",
     answer:
       "Ipile Earth Synergy has built in Cross River State for the Nigerian Navy: housing units at Atimbo barracks in Calabar, and a school campus at Akpabuyo. Both projects use our Compressed Earth Bricks, and the Atimbo contract was a repeat award after the Navy saw our completed work at Kuje.",

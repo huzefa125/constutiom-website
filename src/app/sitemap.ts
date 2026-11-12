@@ -5,7 +5,7 @@ import { LOCATIONS_DATA } from "@/data/locations";
 import { GUIDES_DATA } from "@/data/guides";
 
 /** Update when page content changes. A date that changes on every build tells search engines nothing. */
-const LAST_UPDATED = new Date("2026-11-07");
+const LAST_UPDATED = new Date("2026-11-12");
 
 const page = (path: string, priority: number, images?: string[]): MetadataRoute.Sitemap[number] => ({
   url: `${SITE_URL}${path}`,
@@ -26,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...LOCATIONS_DATA.map((l) => page(`/locations/${l.slug}`, 0.8, [l.image])),
     page("/projects", 0.8),
     page("/about", 0.7),
+    page("/press", 0.5),
     page("/contact", 0.7),
   ];
 }

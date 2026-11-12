@@ -11,9 +11,18 @@ import { RelatedLinks } from "@/components/sections/services/RelatedLinks";
 export const metadata: Metadata = pageMetadata({
   title: "Our Construction Projects Across Nigeria",
   description:
-    "Construction projects across Nigeria: Navy barracks, a school campus, churches and homes built by Ipile Earth Synergy in Compressed Earth Brick and steel.",
+    "An African construction company pioneering low cost construction in Nigeria. Explore defense quarters, campuses and low cost housing, including residential developments and houses under 20 million naira.",
   path: "/projects",
-  image: "/images/gallery/navy-barracks-atimbo/navy-barracks-atimbo-03.jpg",
+  image: "/images/projects/navy-barracks-atimbo/navy-barracks-atimbo-01.webp",
+  keywords: [
+    "Low cost construction in Nigeria",
+    "African construction company",
+    "low cost housing",
+    "House under 20 million naira",
+    "construction projects across Nigeria",
+    "CEB building projects",
+    "sustainable housing Nigeria",
+  ],
 });
 
 export default function ProjectsPage() {

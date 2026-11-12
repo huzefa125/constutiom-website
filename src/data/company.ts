@@ -25,6 +25,7 @@ export interface CompanyInfo {
   contact: {
     email: string;
     phone: string;
+    whatsappPhone: string;
     phones: string[];
     website: string;
     address: string;
@@ -54,6 +55,7 @@ export const COMPANY_DATA: CompanyInfo = {
   contact: {
     email: "ipileearth1@gmail.com",
     phone: "+234 812 686 8754",
+    whatsappPhone: "+234 808 932 1462",
     phones: ["+234 812 686 8754", "+234 808 932 1462"],
     website: "www.ipileearth.com.ng",
     address: "Abba Father Estate off Estate 15, Estate 15, Redemption Camp, Lagos-Ibadan Expressway, Ogun State, Nigeria",

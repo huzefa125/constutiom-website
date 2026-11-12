@@ -68,7 +68,7 @@ export function ProjectsIntro() {
           </p>
           <div className="pj-intro-img relative aspect-[4/3] w-full max-w-[440px] overflow-hidden rounded-[14px] bg-[#e9e9e9]">
             <Image
-              src="/images/gallery/navy-school-akpabuyo/navy-school-akpabuyo-03.jpg"
+              src="/images/projects/navy-school-akpabuyo/navy-school-akpabuyo-03.webp"
               alt="Covered walkways at Navy School, Akpabuyo"
               fill
               sizes="(max-width: 1024px) 90vw, 440px"

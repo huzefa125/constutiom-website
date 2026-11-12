@@ -4,12 +4,16 @@ import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { BrandLogo } from "@/components/ui/BrandLogo";
+import { telHref, whatsappHref } from "@/components/ui/PhoneActions";
+import { WhatsAppIcon } from "@/components/ui/WhatsAppIcon";
+import { COMPANY_DATA } from "@/data/company";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { SERVICES_DATA } from "@/data/services";
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = React.useState(false);
+  const { phone, whatsappPhone } = COMPANY_DATA.contact;
 
   return (
     <header className="optik-header-section">
@@ -75,11 +79,16 @@ export function Navbar() {
               </Link>
             </div>
 
-            {/* Right: Phone Us Contact Pill (Interlocking badges matching Optik) */}
+            {/* Right: Call & WhatsApp Contact Pill */}
             <div className="optik-header-right">
-              <a href="tel:+2348126868754" className="optik-call-wrap group">
+              <div className="optik-call-wrap">
                 <div className="flex items-center">
-                  <div className="optik-call-icon-wrap">
+                  <a
+                    href={telHref(phone)}
+                    aria-label={`Call ${phone}`}
+                    title={`Call ${phone}`}
+                    className="optik-call-icon-wrap group"
+                  >
                     <Image
                       src="/images/hero/phn-icon.svg"
                       alt="Phone Icon"
@@ -87,22 +96,34 @@ export function Navbar() {
                       height={20}
                       className="w-5 h-5 transition-transform group-hover:scale-110"
                     />
-                  </div>
-                  <div className="optik-call-icon-wrap _02">
-                    <Image
-                      src="/images/hero/arrow-02.svg"
-                      alt="Arrow"
-                      width={16}
-                      height={16}
-                      className="w-4 h-4 transition-transform group-hover:translate-x-0.5"
-                    />
-                  </div>
+                  </a>
+                  <a
+                    href={whatsappHref(whatsappPhone)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Chat on WhatsApp ${whatsappPhone}`}
+                    title={`WhatsApp ${whatsappPhone}`}
+                    className="optik-call-icon-wrap _02"
+                  >
+                    <WhatsAppIcon className="w-5 h-5" />
+                  </a>
                 </div>
                 <div className="optik-call-text-wrap">
-                  <span className="optik-call-text">Phone Us</span>
-                  <span className="optik-call-number">+234 812 686 8754</span>
+                  <span className="optik-call-text">Call / WhatsApp</span>
+                  <a href={telHref(phone)} title={`Call ${phone}`} className="optik-call-number">
+                    {phone}
+                  </a>
+                  <a
+                    href={whatsappHref(whatsappPhone)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={`Chat on WhatsApp ${whatsappPhone}`}
+                    className="optik-call-number hover:text-[#25D366]"
+                  >
+                    {whatsappPhone}
+                  </a>
                 </div>
-              </a>
+              </div>
             </div>
 
             {/* Mobile Menu Toggle Button */}
@@ -186,9 +207,9 @@ export function Navbar() {
                 </Link>
               </div>
 
-              <div className="pt-4 border-t border-neutral-100">
-                <a href="tel:+2348126868754" className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center text-white">
+              <div className="flex flex-col gap-3 pt-4 border-t border-neutral-100">
+                <a href={telHref(phone)} className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-black flex items-center justify-center text-white shrink-0">
                     <Image
                       src="/images/hero/phn-icon.svg"
                       alt="Phone Icon"
@@ -199,9 +220,31 @@ export function Navbar() {
                   </div>
                   <div>
                     <span className="block text-xs text-neutral-500">Phone Us</span>
-                    <span className="font-semibold text-sm text-black">+234 812 686 8754</span>
+                    <span className="font-semibold text-sm text-black">{phone}</span>
                   </div>
                 </a>
+                <div className="flex items-center gap-3">
+                  <a
+                    href={whatsappHref(whatsappPhone)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Chat on WhatsApp ${whatsappPhone}`}
+                    className="w-10 h-10 rounded-full bg-[#25D366] flex items-center justify-center text-white shrink-0"
+                  >
+                    <WhatsAppIcon className="w-5 h-5" />
+                  </a>
+                  <div>
+                    <span className="block text-xs text-neutral-500">WhatsApp Only</span>
+                    <a
+                      href={whatsappHref(whatsappPhone)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-semibold text-sm text-black hover:text-[#25D366]"
+                    >
+                      {whatsappPhone}
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           )}

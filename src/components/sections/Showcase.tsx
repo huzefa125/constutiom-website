@@ -6,10 +6,10 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { whenActive, type GsapLib } from "@/lib/gsap";
 
 const CARDS = [
-  { src: "/images/gallery/navy-barracks-kuje/navy-barracks-kuje-06.jpg", alt: "Compressed Earth Brick building, Kuje" },
-  { src: "/images/gallery/navy-barracks-atimbo/navy-barracks-atimbo-10.jpg", alt: "Blue-roofed CEB building, Atimbo" },
-  { src: "/images/gallery/navy-barracks-kuje/navy-barracks-kuje-03.jpg", alt: "Orange CEB bungalow, Kuje" },
-  { src: "/images/gallery/navy-school-akpabuyo/navy-school-akpabuyo-01.jpg", alt: "School building, Akpabuyo" },
+  { src: "/images/projects/navy-barracks-kuje/navy-barracks-kuje-01.webp", alt: "Compressed Earth Brick building, Kuje" },
+  { src: "/images/projects/navy-barracks-atimbo/navy-barracks-atimbo-03.webp", alt: "Blue-roofed CEB building, Atimbo" },
+  { src: "/images/projects/navy-barracks-kuje/navy-barracks-kuje-05.webp", alt: "Orange CEB bungalow, Kuje" },
+  { src: "/images/projects/navy-school-akpabuyo/navy-school-akpabuyo-02.webp", alt: "School building, Akpabuyo" },
 ];
 
 // Resting pose for each depth in the stack (0 = front)

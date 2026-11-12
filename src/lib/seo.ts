@@ -4,7 +4,7 @@ import { COMPANY_DATA } from "@/data/company";
 export const SITE_URL = "https://www.ipileearth.com.ng";
 export const SITE_NAME = "Ipile Earth Synergy";
 const TITLE_SUFFIX = "Ipile Earth";
-export const DEFAULT_OG_IMAGE = "/images/gallery/navy-barracks-atimbo/navy-barracks-atimbo-10.jpg";
+export const DEFAULT_OG_IMAGE = "/images/og-default.jpg";
 
 interface PageMetaInput {
   title: string;
@@ -82,6 +82,10 @@ export const ORGANIZATION_SCHEMA = {
   },
   areaServed: { "@type": "Country", name: "Nigeria" },
   knowsAbout: [
+    "Low cost construction in Nigeria",
+    "African construction company",
+    "Low cost housing",
+    "House under 20 million naira",
     "Compressed Earth Brick construction",
     "Interlocking bricks",
     "Affordable housing in Nigeria",

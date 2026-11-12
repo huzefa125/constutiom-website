@@ -537,9 +537,8 @@ body {
 .optik-call-wrap {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   text-decoration: none;
-  cursor: pointer;
 }
 
 .optik-call-icon-wrap {
@@ -551,40 +550,42 @@ body {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  color: #000000;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .optik-call-icon-wrap._02 {
   background-color: #ffffff;
+  color: #25d366;
   margin-left: -14px;
   position: relative;
   z-index: 1;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-/* Hover: both badges turn the same maroon, so the pair reads as one button.
-   A white ring keeps the overlap crisp instead of two competing colours. */
-.optik-call-wrap:hover .optik-call-icon-wrap,
-.optik-call-wrap:focus-visible .optik-call-icon-wrap {
+.optik-call-icon-wrap:hover,
+.optik-call-icon-wrap:focus-visible {
   background-color: #800020;
+  color: #ffffff;
 }
 
-.optik-call-wrap:hover .optik-call-icon-wrap._02,
-.optik-call-wrap:focus-visible .optik-call-icon-wrap._02 {
-  box-shadow: 0 0 0 3px #ffffff, 0 6px 16px rgba(128, 0, 32, 0.28);
+.optik-call-icon-wrap:hover img,
+.optik-call-icon-wrap:focus-visible img {
+  filter: brightness(0) invert(1);
 }
 
-.optik-call-wrap:hover .optik-call-number {
+.optik-call-icon-wrap._02:hover,
+.optik-call-icon-wrap._02:focus-visible {
+  background-color: #25d366;
+  color: #ffffff;
+  box-shadow: 0 0 0 3px #ffffff, 0 6px 16px rgba(37, 211, 102, 0.35);
+  transform: scale(1.06);
+}
+
+.optik-call-number:hover,
+.optik-call-number:focus-visible {
   color: #800020;
-}
-
-.optik-call-wrap:hover .optik-call-icon-wrap img,
-.optik-call-wrap:focus-visible .optik-call-icon-wrap img {
-  filter: brightness(0) invert(1);
-}
-
-.optik-call-wrap:hover .optik-call-icon-wrap._02 img {
-  filter: brightness(0) invert(1);
 }
 
 .optik-call-text-wrap {
@@ -596,8 +597,8 @@ body {
 .optik-call-text {
   font-family: 'Urbanist', var(--font-urbanist), -apple-system, BlinkMacSystemFont, sans-serif;
   color: rgba(20, 20, 20, 0.74);
-  font-size: 14px;
-  line-height: 100%;
+  font-size: 13px;
+  line-height: 110%;
   font-weight: 500;
 }
 
@@ -605,7 +606,7 @@ body {
   transition: color 0.2s ease;
   font-family: 'Urbanist', var(--font-urbanist), -apple-system, BlinkMacSystemFont, sans-serif;
   color: #000000;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 120%;
   font-weight: 600;
 }

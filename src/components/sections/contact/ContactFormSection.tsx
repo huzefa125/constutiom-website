@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Image from "next/image";
+import { OpenPopupButton } from "@/components/ui/TimedPopupForm";
 
 export function ContactFormSection() {
   const [isSubmitting, setIsSubmitting] = React.useState(false);
@@ -32,7 +33,7 @@ export function ContactFormSection() {
   };
 
   return (
-    <section id="contact-form" className="relative w-full scroll-mt-8 bg-[#f7f7f7]">
+    <section className="relative w-full bg-[#f7f7f7]">
       {/* 1. Full-bleed Sunset Curved Villa with Circular Glass Pool (Natural Aspect Ratio) */}
       <div className="w-full relative">
         <Image
@@ -47,7 +48,10 @@ export function ContactFormSection() {
       </div>
 
       {/* 2. Overlaid Floating Form Card with Negative Top Margin (Matches Images 2 & 3) */}
-      <div className="relative z-10 w-full max-w-[1300px] mx-auto px-5 sm:px-8 -mt-20 sm:-mt-28 md:-mt-36 lg:-mt-44 pb-20 sm:pb-28 lg:pb-36">
+      <div
+        id="contact-form"
+        className="relative z-10 w-full max-w-[1300px] mx-auto px-5 sm:px-8 -mt-20 sm:-mt-28 md:-mt-36 lg:-mt-44 pb-20 sm:pb-28 lg:pb-36 scroll-mt-24 sm:scroll-mt-28"
+      >
         <div className="w-full max-w-[856px] mx-auto bg-white rounded-[8px] sm:rounded-[12px] p-8 sm:p-12 lg:p-16 shadow-[0_16px_40px_rgba(0,0,0,0.08)]">
           {/* Header Tag */}
           <div className="flex items-center gap-2 mb-3">
@@ -153,8 +157,8 @@ export function ContactFormSection() {
                 />
               </div>
 
-              {/* Submit Button (Black background, white/peach text, rounded-[8px]) */}
-              <div className="pt-2">
+              {/* Submit Button & Quick Popup Option */}
+              <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <button
                   type="submit"
                   disabled={isSubmitting}
@@ -162,6 +166,9 @@ export function ContactFormSection() {
                 >
                   {isSubmitting ? "SENDING..." : "SEND MY MESSAGE"}
                 </button>
+                <OpenPopupButton className="font-[Urbanist] text-xs uppercase tracking-wider text-black/60 hover:text-[#800020] underline transition-colors text-left sm:text-right">
+                  Or open quick consultation popup →
+                </OpenPopupButton>
               </div>
             </form>
           )}

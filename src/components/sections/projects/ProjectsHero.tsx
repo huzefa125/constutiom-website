@@ -26,9 +26,8 @@ export function ProjectsHero() {
               </span>
             </h1>
 
-            <p className="hero-rise mb-8 mt-7 max-w-[380px] font-[Urbanist] text-[18px] font-medium leading-[145%] text-black/80 sm:mb-10 sm:mt-9 sm:max-w-[440px] sm:text-[20px]">
-              Barracks, schools, churches and homes. Every project here was built by our crews, in earth brick and
-              steel, and photographed on site.
+            <p className="hero-rise mb-8 mt-7 max-w-[420px] font-[Urbanist] text-[18px] font-medium leading-[145%] text-black/80 sm:mb-10 sm:mt-9 sm:max-w-[460px] sm:text-[20px]">
+              An African construction company delivering low cost construction in Nigeria: defense barracks, school campuses, low cost housing and residential developments, including houses under 20 million naira.
             </p>
 
             <div className="hero-rise" style={{ "--d": "0.5s" } as React.CSSProperties}>

@@ -112,7 +112,7 @@ export function ProjectsFeatured() {
               </div>
               <div className="mt-4 flex items-center justify-between gap-4 font-[Urbanist] text-xs font-bold uppercase tracking-[0.14em]">
                 <span className="text-black">{s.name}</span>
-                <span className="shrink-0 border-b border-black pb-[2px] text-black transition-colors group-hover:border-[#800020] group-hover:text-[#800020]">
+                <span className="shrink-0 font-[Urbanist] text-xs font-bold uppercase tracking-[0.14em] text-black transition-colors group-hover:text-[#800020]">
                   View project ↗
                 </span>
               </div>

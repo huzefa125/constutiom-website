@@ -1,8 +1,9 @@
 import * as React from "react";
 import { COMPANY_DATA } from "@/data/company";
+import { CallWhatsAppRow } from "@/components/ui/PhoneActions";
 
 export function ContactOffices() {
-  const { phones, email, website, address } = COMPANY_DATA.contact;
+  const { phone, whatsappPhone, email, website, address } = COMPANY_DATA.contact;
   const mapQuery = encodeURIComponent("Redemption Camp, Lagos-Ibadan Expressway, Ogun State, Nigeria");
 
   return (
@@ -58,17 +59,22 @@ export function ContactOffices() {
                 Call or write to us, we reply promptly.
               </p>
               <div className="w-full h-px bg-black/20 mb-5" />
-              <div className="flex flex-col gap-1 font-heading font-bold text-[15px] sm:text-[16px] text-black">
-                {phones.map((p) => (
-                  <a
-                    key={p}
-                    href={`tel:${p.replace(/\s+/g, "")}`}
-                    className="hover:text-[#800020] transition-colors"
-                  >
-                    {p}
-                  </a>
-                ))}
-                <a href={`mailto:${email}`} className="break-all hover:text-[#800020] transition-colors">
+              <div className="flex flex-col gap-2 font-heading font-bold text-[15px] sm:text-[16px] text-black">
+                <CallWhatsAppRow
+                  number={phone}
+                  size="sm"
+                  showCall={true}
+                  showWhatsApp={false}
+                  numberClassName="font-heading font-bold text-[15px] sm:text-[16px] text-black transition-colors hover:text-[#800020]"
+                />
+                <CallWhatsAppRow
+                  number={whatsappPhone}
+                  size="sm"
+                  showCall={false}
+                  showWhatsApp={true}
+                  numberClassName="font-heading font-bold text-[15px] sm:text-[16px] text-black transition-colors hover:text-[#800020]"
+                />
+                <a href={`mailto:${email}`} className="break-all hover:text-[#800020] transition-colors mt-1">
                   {email}
                 </a>
               </div>

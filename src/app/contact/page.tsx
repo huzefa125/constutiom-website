@@ -23,8 +23,8 @@ export default function ContactPage() {
         ])}
       />
       <ContactHero />
-      <ContactOffices />
       <ContactFormSection />
+      <ContactOffices />
     </div>
   );
 }

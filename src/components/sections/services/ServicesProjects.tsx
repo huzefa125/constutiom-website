@@ -8,6 +8,7 @@ const FEATURED = [
   "navy-barracks-kuje",
   "navy-barracks-atimbo",
   "navy-school-akpabuyo",
+  "karu-housing-development",
   "brickville-court",
   "rccg-mission-house",
 ];
@@ -28,9 +29,14 @@ export function ServicesProjects() {
     <section className="w-full bg-[#f7f7f7] px-5 py-20 sm:px-8 sm:py-28 lg:px-12 lg:py-36">
       <div className="mx-auto w-full max-w-[1300px]">
         <div className="mb-10 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between lg:mb-12">
-          <SectionHeading eyebrow="Proof on the ground">
-            Work we have <span className="text-[#800020]">delivered</span>
-          </SectionHeading>
+          <div className="flex flex-col gap-3">
+            <SectionHeading eyebrow="Proof on the ground">
+              Work we have <span className="text-[#800020]">delivered</span>
+            </SectionHeading>
+            <p className="max-w-[660px] font-[Urbanist] text-[15px] sm:text-[16px] font-medium leading-[150%] text-black/75">
+              As an African construction company delivering low cost construction in Nigeria, we engineer low cost housing, defense quarters and quality residential houses under 20 million naira in precision Compressed Earth Brick.
+            </p>
+          </div>
           <Link
             href="/projects"
             className="group inline-flex shrink-0 items-center gap-2 font-[Urbanist] text-sm font-bold uppercase tracking-wider text-[#800020]"
@@ -46,8 +52,8 @@ export function ServicesProjects() {
             alt: `${p.name}, ${p.location}`,
             title: p.name,
             label: String(i + 1).padStart(2, "0"),
-            href: "/projects",
-            linkText: "View projects",
+            href: `/projects#${p.id}`,
+            linkText: `View ${p.name}`,
           }))}
         />
 
